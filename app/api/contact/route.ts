@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { sql, initDB } from "@/lib/db";
+import { initDB } from "@/lib/db";
 
 export async function POST(req: NextRequest) {
   try {
@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: false, error: "Missing required fields" }, { status: 400 });
     }
 
-    await initDB();
+    const sql = await initDB();
 
     await sql`
       INSERT INTO contact_submissions (name, email, company, budget, service, message)
