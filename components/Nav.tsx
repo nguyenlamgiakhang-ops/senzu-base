@@ -27,12 +27,13 @@ export default function Nav() {
     { href: "/about",   label: t.nav.about },
     { href: "/services",label: t.nav.services },
     { href: "/news",    label: t.nav.news },
+    { href: "/team",    label: t.nav.team },
     { href: "/contact", label: t.nav.contact },
   ];
 
   return (
     <>
-      <nav className="fixed top-0 w-full z-50 glass-panel !rounded-none !border-x-0 !border-t-0 bg-black/10">
+      <nav className="fixed top-0 w-full z-50 !rounded-none border-b border-white/5" style={{ background: "rgba(2, 6, 23, 0.85)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}>
         <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="cursor-pointer flex items-center gap-2 group">
