@@ -14,8 +14,13 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const marqueeItems = [
-  "CYBERAGENT","★","GOOGLE","★","META","★","TIKTOK","★","YAHOO!","★","LINE","★",
+const partners = [
+  { name: "CyberAgent", logo: "/partners/cyberagent.svg" },
+  { name: "Google",     logo: "/partners/google.svg"     },
+  { name: "Meta",       logo: "/partners/meta.svg"       },
+  { name: "TikTok",     logo: "/partners/tiktok.svg"     },
+  { name: "Yahoo!",     logo: "/partners/yahoo.svg"      },
+  { name: "LINE",       logo: "/partners/line.svg"       },
 ];
 
 export default function HomePage() {
@@ -86,9 +91,17 @@ export default function HomePage() {
         <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-[#020617] to-transparent z-10 pointer-events-none"></div>
         <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[#020617] to-transparent z-10 pointer-events-none"></div>
         {[0, 1].map((d) => (
-          <div key={d} aria-hidden={d === 1} className="flex whitespace-nowrap animate-marquee items-center gap-20 pr-20 shrink-0 min-w-max">
-            {[...marqueeItems, ...marqueeItems].map((item, i) => (
-              <span key={i} className={item === "★" ? "text-senzuGlow/40 text-lg" : "text-2xl font-bold text-white/30 hover:text-white/80 transition cursor-default"}>{item}</span>
+          <div key={d} aria-hidden={d === 1} className="flex whitespace-nowrap animate-marquee items-center gap-16 pr-16 shrink-0 min-w-max">
+            {[...partners, ...partners].map((partner, i) => (
+              <span key={i} className="flex items-center gap-16">
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  height={28}
+                  className="partner-logo h-7 w-auto"
+                />
+                <span className="text-senzuGlow/30 text-sm select-none">✦</span>
+              </span>
             ))}
           </div>
         ))}

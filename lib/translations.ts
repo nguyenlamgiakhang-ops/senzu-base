@@ -169,7 +169,7 @@ const translations: Record<Locale, Translations> = {
       statCards: [
         { value: "200+", label: "Dự án thành công" },
         { value: "100%", label: "Minh bạch" },
-        { value: "2nd", label: "Năm tăng trưởng" },
+        { value: "2+", label: "Năm hoạt động" },
         { value: "JP", label: "Tiêu chuẩn Nhật" },
       ],
       capBadge: "/// What We Do",
@@ -429,7 +429,7 @@ const translations: Record<Locale, Translations> = {
       statCards: [
         { value: "200+", label: "Successful Projects" },
         { value: "100%", label: "Transparency" },
-        { value: "2nd", label: "Year of Growth" },
+        { value: "2+", label: "Years Active" },
         { value: "JP", label: "JP Standard" },
       ],
       capBadge: "/// What We Do",
@@ -689,7 +689,7 @@ const translations: Record<Locale, Translations> = {
       statCards: [
         { value: "200+", label: "成功プロジェクト" },
         { value: "100%", label: "透明性" },
-        { value: "2nd", label: "成長の年" },
+        { value: "2+", label: "活動年数" },
         { value: "JP", label: "日本基準" },
       ],
       capBadge: "/// 事業内容",
