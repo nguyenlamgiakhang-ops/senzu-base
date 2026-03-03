@@ -69,14 +69,17 @@ export default function Nav() {
             </Link>
           </div>
 
-          {/* Hamburger — mobile only */}
-          <button
-            className="md:hidden relative z-[60] p-2 text-white hover:text-senzuGlow transition-colors duration-200"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-          >
-            {isOpen ? <X size={26} weight="bold" /> : <List size={26} weight="bold" />}
-          </button>
+          {/* Mobile: Language switcher + Hamburger */}
+          <div className="md:hidden flex items-center gap-1 relative z-[60]">
+            <LanguageSwitcher />
+            <button
+              className="p-2 text-white hover:text-senzuGlow transition-colors duration-200"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+            >
+              {isOpen ? <X size={26} weight="bold" /> : <List size={26} weight="bold" />}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -115,7 +118,6 @@ export default function Nav() {
             className="mobile-nav-item relative flex flex-col items-center gap-4 w-full max-w-xs"
             style={{ animationDelay: `${navItems.length * 0.07}s` }}
           >
-            <LanguageSwitcher />
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}

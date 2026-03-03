@@ -37,14 +37,14 @@ export default function HomePage() {
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
               <span className="text-xs font-bold text-green-300 tracking-[0.2em] uppercase">{h.badge}</span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-bold leading-tight tracking-tight">
+            <h1 className="text-[2.25rem] sm:text-5xl md:text-8xl font-bold leading-tight tracking-tight">
               {h.h1Line1} <br />
               <span className="text-gradient">{h.h1Line2}</span>
             </h1>
             <p className="text-xl text-gray-300 font-light max-w-lg leading-relaxed border-l-2 border-senzuGlow/50 pl-6">
               {h.subtitle}
             </p>
-            <div className="flex gap-6 pt-6">
+            <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <Link href="/services" className="px-8 py-4 rounded-full bg-senzu hover:bg-green-500 text-white font-bold transition duration-300 shadow-[0_0_40px_rgba(0,132,61,0.4)] flex items-center gap-2 group">
                 {h.exploreBtn}
                 <span className="group-hover:translate-x-1 transition">→</span>
@@ -108,19 +108,19 @@ export default function HomePage() {
       </section>
 
       {/* ORIGIN */}
-      <section className="py-32 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+      <section className="py-16 md:py-32 px-4 md:px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-20 items-center">
           <div className="space-y-8">
             <div>
               <p className="text-senzuGlow text-xs font-black tracking-[0.4em] uppercase mb-4">{h.originBadge}</p>
-              <h2 className="text-5xl md:text-6xl font-bold leading-tight tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight tracking-tight">
                 {h.originH2Line1}<br />
                 <span className="text-gradient">CyberAgent</span><br />
                 {h.originH2Line2}
               </h2>
             </div>
             <p className="text-gray-400 text-lg leading-relaxed max-w-md">{h.originDesc}</p>
-            <div className="flex gap-8 pt-4">
+            <div className="flex flex-wrap gap-6 pt-4">
               {[
                 { value: "May 2024", label: h.stats.founded },
                 { value: "Tokyo", label: h.stats.hq },
@@ -145,11 +145,11 @@ export default function HomePage() {
       </section>
 
       {/* CAPABILITIES */}
-      <section className="py-24 px-6">
+      <section className="py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-12 md:mb-20">
             <p className="text-senzuGlow text-xs font-black tracking-[0.4em] uppercase mb-4">{h.capBadge}</p>
-            <h2 className="text-5xl font-bold">{h.capH2} <span className="text-gradient">{h.capH2Span}</span></h2>
+            <h2 className="text-3xl md:text-5xl font-bold">{h.capH2} <span className="text-gradient">{h.capH2Span}</span></h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {h.capabilities.map((cap, i) => {
@@ -171,16 +171,16 @@ export default function HomePage() {
       </section>
 
       {/* VALUES — asymmetric layout */}
-      <section className="py-24 px-6">
+      <section className="py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <p className="text-senzuGlow text-xs font-black tracking-[0.4em] uppercase mb-4">{h.valuesBadge}</p>
-            <h2 className="text-5xl font-bold">{h.valuesH2} <span className="text-gradient">{h.valuesH2Span}</span></h2>
+            <h2 className="text-3xl md:text-5xl font-bold">{h.valuesH2} <span className="text-gradient">{h.valuesH2Span}</span></h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {/* Featured value — spans 2 cols, horizontal layout */}
-            <div className="md:col-span-2 glass-card rounded-3xl p-10 flex items-center gap-10 group relative overflow-hidden">
+            <div className="md:col-span-2 glass-card rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 group relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-senzuGlow/60 to-transparent rounded-l-3xl"></div>
               <Eye weight="duotone" size={80} className="text-senzuGlow shrink-0 opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
               <div>
@@ -217,9 +217,9 @@ export default function HomePage() {
       </section>
 
       {/* JOURNAL PREVIEW */}
-      <section className="py-24 px-6">
+      <section className="py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-end mb-12">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3 mb-8 md:mb-12">
             <div>
               <p className="text-senzuGlow text-xs font-black tracking-[0.4em] uppercase mb-4">{h.journalBadge}</p>
               <h2 className="text-4xl font-bold">{h.journalH2}</h2>
@@ -254,11 +254,11 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 px-6">
-        <div className="max-w-4xl mx-auto text-center glass-card rounded-[48px] p-16 relative overflow-hidden">
+      <section className="py-16 md:py-32 px-4 md:px-6">
+        <div className="max-w-4xl mx-auto text-center glass-card rounded-3xl md:rounded-[48px] p-8 md:p-16 relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-1 bg-gradient-to-r from-transparent via-senzuGlow to-transparent"></div>
           <p className="text-senzuGlow text-xs font-black tracking-[0.4em] uppercase mb-6">{h.ctaBadge}</p>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight">
             {h.ctaH2}<br />
             <span className="text-gradient">{h.ctaH2Span}</span>
           </h2>

@@ -9,10 +9,10 @@ export default function ServicesPage() {
 
   return (
     <div className="page-enter">
-      <section className="py-32 px-6 text-center">
+      <section className="py-20 md:py-32 px-4 md:px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <p className="text-senzuGlow text-xs font-black tracking-[0.4em] uppercase mb-6">{s.badge}</p>
-          <h1 className="text-6xl md:text-8xl font-bold leading-tight tracking-tight mb-6">
+          <h1 className="text-[2.25rem] sm:text-5xl md:text-8xl font-bold leading-tight tracking-tight mb-6">
             {s.h1} <span className="text-gradient">{s.h1Span}</span>
           </h1>
           <p className="text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed">
@@ -21,7 +21,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-16 px-6">
+      <section className="py-10 md:py-16 px-4 md:px-6">
         <div className="max-w-7xl mx-auto space-y-6">
           <div className="service-card glass-card rounded-3xl p-10 md:p-14 grid md:grid-cols-2 gap-10 items-center">
             <div className="relative overflow-hidden">
@@ -34,7 +34,7 @@ export default function ServicesPage() {
                 <p className="text-gray-400 leading-relaxed">{s.s1.desc}</p>
               </div>
               <span
-                className="absolute right-0 bottom-0 font-black leading-none select-none pointer-events-none text-white"
+                className="watermark-number absolute right-0 bottom-0 font-black leading-none select-none pointer-events-none text-white"
                 style={{ fontSize: "200px", opacity: 0.03 }}
               >01</span>
             </div>
@@ -58,7 +58,7 @@ export default function ServicesPage() {
                 <p className="text-gray-400 leading-relaxed">{s.s2.desc}</p>
               </div>
               <span
-                className="absolute right-0 bottom-0 font-black leading-none select-none pointer-events-none text-white"
+                className="watermark-number absolute right-0 bottom-0 font-black leading-none select-none pointer-events-none text-white"
                 style={{ fontSize: "200px", opacity: 0.03 }}
               >02</span>
             </div>
@@ -82,7 +82,7 @@ export default function ServicesPage() {
                 <p className="text-gray-400 leading-relaxed">{s.s3.desc}</p>
               </div>
               <span
-                className="absolute right-0 bottom-0 font-black leading-none select-none pointer-events-none text-white"
+                className="watermark-number absolute right-0 bottom-0 font-black leading-none select-none pointer-events-none text-white"
                 style={{ fontSize: "200px", opacity: 0.03 }}
               >03</span>
             </div>
@@ -97,11 +97,11 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6">
+      <section className="py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <p className="text-senzuGlow text-xs font-black tracking-[0.4em] uppercase mb-4">{s.strengthBadge}</p>
-            <h2 className="text-4xl font-bold">{s.strengthH2} <span className="text-gradient">{s.strengthH2Span}</span></h2>
+            <h2 className="text-3xl md:text-4xl font-bold">{s.strengthH2} <span className="text-gradient">{s.strengthH2Span}</span></h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {s.strengths.map((strength, i) => {

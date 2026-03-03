@@ -36,19 +36,19 @@ export default function ContactPage() {
 
   return (
     <div className="page-enter">
-      <section className="py-32 px-6 text-center">
+      <section className="py-20 md:py-32 px-4 md:px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <p className="text-senzuGlow text-xs font-black tracking-[0.4em] uppercase mb-6">{c.badge}</p>
-          <h1 className="text-6xl md:text-8xl font-bold leading-tight tracking-tight mb-6">
+          <h1 className="text-[2.25rem] sm:text-5xl md:text-8xl font-bold leading-tight tracking-tight mb-6">
             {c.h1} <span className="text-gradient">{c.h1Span}</span>
           </h1>
           <p className="text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed">{c.subtitle}</p>
         </div>
       </section>
 
-      <section className="py-16 px-6 pb-32">
+      <section className="py-10 md:py-16 px-4 md:px-6 pb-16 md:pb-32">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-          <div className="md:col-span-2 glass-card rounded-3xl p-10">
+          <div className="md:col-span-2 glass-card rounded-3xl p-6 md:p-10">
             <h2 className="text-2xl font-bold mb-8">{c.formTitle}</h2>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid md:grid-cols-2 gap-5">

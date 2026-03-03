@@ -11,17 +11,17 @@ export default function NewsPage() {
 
   return (
     <div className="page-enter">
-      <section className="py-32 px-6 text-center">
+      <section className="py-20 md:py-32 px-4 md:px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <p className="text-senzuGlow text-xs font-black tracking-[0.4em] uppercase mb-6">{n.badge}</p>
-          <h1 className="text-6xl md:text-8xl font-bold leading-tight tracking-tight mb-6">
+          <h1 className="text-[2.25rem] sm:text-5xl md:text-8xl font-bold leading-tight tracking-tight mb-6">
             {n.h1} <span className="text-gradient">{n.h1Span}</span>
           </h1>
           <p className="text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed">{n.subtitle}</p>
         </div>
       </section>
 
-      <section className="py-16 px-6">
+      <section className="py-10 md:py-16 px-4 md:px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
           <div className="glass-card rounded-3xl overflow-hidden group flex flex-col">
             <div className="relative h-48 overflow-hidden shrink-0">
@@ -92,8 +92,8 @@ export default function NewsPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6">
-        <div className="max-w-4xl mx-auto glass-card rounded-3xl p-12 text-center">
+      <section className="py-12 md:py-24 px-4 md:px-6">
+        <div className="max-w-4xl mx-auto glass-card rounded-3xl p-8 md:p-12 text-center">
           <UsersThree weight="duotone" size={48} className="text-senzuGlow mx-auto mb-6" />
           <h2 className="text-3xl font-bold mb-4">{n.joinH2} <span className="text-gradient">{n.joinH2Span}</span></h2>
           <p className="text-gray-400 mb-8 max-w-md mx-auto">{n.joinDesc}</p>

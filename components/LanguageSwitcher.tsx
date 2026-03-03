@@ -28,7 +28,7 @@ export default function LanguageSwitcher() {
   const current = locales.find((l) => l.code === locale)!;
 
   return (
-    <div ref={ref} className="relative hidden md:block">
+    <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((v) => !v)}
         className="flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel text-xs font-bold text-gray-300 hover:text-white transition duration-200"
