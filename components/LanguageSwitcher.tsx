@@ -46,7 +46,7 @@ export default function LanguageSwitcher() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-2 w-40 glass-panel rounded-2xl overflow-hidden shadow-2xl border border-white/10 z-50">
+        <div className="absolute right-0 top-full mt-2 w-40 rounded-2xl overflow-hidden shadow-2xl border border-white/10 z-50" style={{ background: "rgba(10, 15, 30, 0.97)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}>
           {locales.map(({ code, label, flag }) => (
             <button
               key={code}
