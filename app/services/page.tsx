@@ -23,55 +23,73 @@ export default function ServicesPage() {
 
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto space-y-6">
-          <div className="glass-card rounded-3xl p-10 md:p-14 grid md:grid-cols-2 gap-10 items-center">
-            <div>
-              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-senzuGlow/10 border border-senzuGlow/20 mb-6">
-                <Target weight="duotone" size={18} className="text-senzuGlow" />
-                <span className="text-xs font-bold text-senzuGlow tracking-widest uppercase">{s.s1.badge}</span>
+          <div className="service-card glass-card rounded-3xl p-10 md:p-14 grid md:grid-cols-2 gap-10 items-center">
+            <div className="relative overflow-hidden">
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-senzuGlow/10 border border-senzuGlow/20 mb-6">
+                  <Target weight="duotone" size={18} className="text-senzuGlow" />
+                  <span className="text-xs font-bold text-senzuGlow tracking-widest uppercase">{s.s1.badge}</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">{s.s1.title}</h2>
+                <p className="text-gray-400 leading-relaxed">{s.s1.desc}</p>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">{s.s1.title}</h2>
-              <p className="text-gray-400 leading-relaxed">{s.s1.desc}</p>
+              <span
+                className="absolute right-0 bottom-0 font-black leading-none select-none pointer-events-none text-white"
+                style={{ fontSize: "200px", opacity: 0.03 }}
+              >01</span>
             </div>
             <div className="grid grid-cols-2 gap-3">
               {["Google Ads","Yahoo! Ads","SNS Ads (Meta/TikTok)","GA4 Analytics","GTM Setup","LP Optimization"].map((f) => (
-                <div key={f} className="flex items-center gap-2 text-sm text-gray-300 bg-white/5 rounded-xl p-3">
-                  <SealCheck weight="duotone" size={16} className="text-senzuGlow shrink-0" />{f}
+                <div key={f} className="service-tag flex items-center gap-2 text-sm text-gray-300 bg-white/5 rounded-xl p-3">
+                  <SealCheck weight="duotone" size={16} className="service-tag-icon text-senzuGlow shrink-0" />{f}
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="glass-card rounded-3xl p-10 md:p-14 grid md:grid-cols-2 gap-10 items-center">
-            <div className="md:order-2">
-              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
-                <PaintBrush weight="duotone" size={18} className="text-purple-400" />
-                <span className="text-xs font-bold text-purple-400 tracking-widest uppercase">{s.s2.badge}</span>
+          <div className="service-card glass-card rounded-3xl p-10 md:p-14 grid md:grid-cols-2 gap-10 items-center">
+            <div className="md:order-2 relative overflow-hidden">
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
+                  <PaintBrush weight="duotone" size={18} className="text-purple-400" />
+                  <span className="text-xs font-bold text-purple-400 tracking-widest uppercase">{s.s2.badge}</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">{s.s2.title}</h2>
+                <p className="text-gray-400 leading-relaxed">{s.s2.desc}</p>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">{s.s2.title}</h2>
-              <p className="text-gray-400 leading-relaxed">{s.s2.desc}</p>
+              <span
+                className="absolute right-0 bottom-0 font-black leading-none select-none pointer-events-none text-white"
+                style={{ fontSize: "200px", opacity: 0.03 }}
+              >02</span>
             </div>
             <div className="grid grid-cols-2 gap-3 md:order-1">
               {["Brand Identity","Touchpoint Design (O2O)","Emotional Connection","Visual Direction","Content Strategy","CX Mapping"].map((f) => (
-                <div key={f} className="flex items-center gap-2 text-sm text-gray-300 bg-white/5 rounded-xl p-3">
-                  <SealCheck weight="duotone" size={16} className="text-purple-400 shrink-0" />{f}
+                <div key={f} className="service-tag flex items-center gap-2 text-sm text-gray-300 bg-white/5 rounded-xl p-3">
+                  <SealCheck weight="duotone" size={16} className="service-tag-icon text-purple-400 shrink-0" />{f}
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="glass-card rounded-3xl p-10 md:p-14 grid md:grid-cols-2 gap-10 items-center">
-            <div>
-              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
-                <Plant weight="duotone" size={18} className="text-blue-400" />
-                <span className="text-xs font-bold text-blue-400 tracking-widest uppercase">{s.s3.badge}</span>
+          <div className="service-card glass-card rounded-3xl p-10 md:p-14 grid md:grid-cols-2 gap-10 items-center">
+            <div className="relative overflow-hidden">
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
+                  <Plant weight="duotone" size={18} className="text-blue-400" />
+                  <span className="text-xs font-bold text-blue-400 tracking-widest uppercase">{s.s3.badge}</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">{s.s3.title}</h2>
+                <p className="text-gray-400 leading-relaxed">{s.s3.desc}</p>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">{s.s3.title}</h2>
-              <p className="text-gray-400 leading-relaxed">{s.s3.desc}</p>
+              <span
+                className="absolute right-0 bottom-0 font-black leading-none select-none pointer-events-none text-white"
+                style={{ fontSize: "200px", opacity: 0.03 }}
+              >03</span>
             </div>
             <div className="grid grid-cols-2 gap-3">
               {["Marketer Development","Process Transfer","DX & Automation","KPI Framework","Team Building","Ops Consulting"].map((f) => (
-                <div key={f} className="flex items-center gap-2 text-sm text-gray-300 bg-white/5 rounded-xl p-3">
-                  <SealCheck weight="duotone" size={16} className="text-blue-400 shrink-0" />{f}
+                <div key={f} className="service-tag flex items-center gap-2 text-sm text-gray-300 bg-white/5 rounded-xl p-3">
+                  <SealCheck weight="duotone" size={16} className="service-tag-icon text-blue-400 shrink-0" />{f}
                 </div>
               ))}
             </div>

@@ -23,40 +23,40 @@ export default function NewsPage() {
 
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
-          <div className="glass-card rounded-3xl overflow-hidden group">
-            <div className="relative h-48 overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="Website Relaunch" fill className="object-cover opacity-50 group-hover:opacity-70 transition duration-500 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>
+          <div className="glass-card rounded-3xl overflow-hidden group flex flex-col">
+            <div className="relative h-48 overflow-hidden shrink-0">
+              <Image src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="Website Relaunch" fill className="news-card-img object-cover opacity-50 group-hover:opacity-70" />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(13, 17, 23, 0) 0%, rgba(13, 17, 23, 0.9) 100%)" }}></div>
               <div className="absolute top-4 left-4">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-senzuGlow/20 border border-senzuGlow/30 text-xs font-bold text-senzuGlow">
                   <Newspaper weight="duotone" size={12} />{n.card1.tag}
                 </span>
               </div>
             </div>
-            <div className="p-6">
+            <div className="p-6 flex flex-col flex-1">
               <h3 className="text-xl font-bold mb-2 group-hover:text-senzuGlow transition">{n.card1.title}</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">{n.card1.desc}</p>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between mt-auto">
                 <span className="text-xs text-gray-500">{n.card1.date}</span>
                 <span className="text-senzuGlow text-sm font-bold flex items-center gap-1">Read more <ArrowRight size={14} /></span>
               </div>
             </div>
           </div>
 
-          <div className="glass-card rounded-3xl overflow-hidden group">
-            <div className="relative h-48 overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" alt="We're Hiring" fill className="object-cover opacity-50 group-hover:opacity-70 transition duration-500 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>
+          <div className="glass-card rounded-3xl overflow-hidden group flex flex-col">
+            <div className="relative h-48 overflow-hidden shrink-0">
+              <Image src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" alt="We're Hiring" fill className="news-card-img object-cover opacity-50 group-hover:opacity-70" />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(13, 17, 23, 0) 0%, rgba(13, 17, 23, 0.9) 100%)" }}></div>
               <div className="absolute top-4 left-4">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/20 border border-orange-500/30 text-xs font-bold text-orange-400">
                   <Fire weight="duotone" size={12} />{n.card2.tag}
                 </span>
               </div>
             </div>
-            <div className="p-6">
+            <div className="p-6 flex flex-col flex-1">
               <h3 className="text-xl font-bold mb-2 group-hover:text-orange-400 transition">{n.card2.title}</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">{n.card2.desc}</p>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between mt-auto">
                 <div className="flex gap-2">
                   <span className="px-2 py-1 rounded-md bg-white/5 text-xs text-gray-400">Remote</span>
                   <span className="px-2 py-1 rounded-md bg-white/5 text-xs text-gray-400">Freelance</span>
@@ -68,10 +68,10 @@ export default function NewsPage() {
             </div>
           </div>
 
-          <div className="glass-card rounded-3xl overflow-hidden group opacity-70">
-            <div className="relative h-48 overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Insight Blog" fill className="object-cover opacity-30 group-hover:opacity-50 transition duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
+          <div className="glass-card rounded-3xl overflow-hidden group opacity-70 flex flex-col">
+            <div className="relative h-48 overflow-hidden shrink-0">
+              <Image src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Insight Blog" fill className="news-card-img object-cover opacity-30 group-hover:opacity-50" />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(13, 17, 23, 0) 0%, rgba(13, 17, 23, 0.9) 100%)" }}></div>
               <div className="absolute top-4 left-4">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-xs font-bold text-blue-400">
                   <Lightbulb weight="duotone" size={12} />{n.card3.tag}
@@ -81,10 +81,12 @@ export default function NewsPage() {
                 <span className="px-4 py-2 rounded-full bg-white/10 text-xs font-bold tracking-widest uppercase">{n.card3.comingSoon}</span>
               </div>
             </div>
-            <div className="p-6">
+            <div className="p-6 flex flex-col flex-1">
               <h3 className="text-xl font-bold mb-2">{n.card3.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-4">{n.card3.desc}</p>
-              <span className="text-xs text-gray-600">{n.card3.comingSoon}</span>
+              <div className="mt-auto">
+                <span className="text-xs text-gray-600">{n.card3.comingSoon}</span>
+              </div>
             </div>
           </div>
         </div>

@@ -83,10 +83,10 @@ export default function ContactPage() {
                 <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">{c.labels.message}</label>
                 <textarea name="message" required rows={5} placeholder={c.placeholders.message} className="form-input w-full px-4 py-3 rounded-xl text-sm resize-none" />
               </div>
-              <button type="submit" disabled={formState !== "idle"} className="w-full py-4 rounded-xl bg-senzu hover:bg-green-500 text-white font-bold transition duration-300 shadow-[0_0_30px_rgba(0,132,61,0.3)] flex items-center justify-center gap-2 disabled:opacity-70">
+              <button type="submit" disabled={formState !== "idle"} className="group w-full py-4 rounded-xl bg-senzu hover:bg-green-500 text-white font-bold transition-all duration-300 shadow-[0_0_30px_rgba(0,132,61,0.3)] hover:shadow-[0_0_20px_rgba(0,184,92,0.4)] flex items-center justify-center gap-2 disabled:opacity-70">
                 {formState === "loading" && <><CircleNotch size={18} className="animate-spin" />{c.submitLoading}</>}
                 {formState === "success" && <><CheckCircle size={18} />{c.submitSuccess}</>}
-                {formState === "idle" && <><PaperPlaneTilt weight="duotone" size={18} />{c.submitIdle}</>}
+                {formState === "idle" && <><PaperPlaneTilt weight="duotone" size={18} className="transition-transform duration-300 group-hover:translate-x-[3px] group-hover:-translate-y-[3px]" />{c.submitIdle}</>}
               </button>
             </form>
           </div>
@@ -96,19 +96,27 @@ export default function ContactPage() {
               <h3 className="text-lg font-bold">{c.infoTitle}</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3 text-sm">
-                  <MapPin weight="duotone" size={18} className="text-senzuGlow mt-0.5 shrink-0" />
-                  <span className="text-gray-400">PMO Shibuya II, 3-1-1-211 Shibuya, Tokyo</span>
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style={{ background: "rgba(0,184,92,0.12)", border: "1px solid rgba(0,184,92,0.2)" }}>
+                    <MapPin weight="duotone" size={15} style={{ color: "#00B85C" }} />
+                  </div>
+                  <span className="text-gray-400 mt-1">PMO Shibuya II, 3-1-1-211 Shibuya, Tokyo</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
-                  <Envelope weight="duotone" size={18} className="text-senzuGlow shrink-0" />
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: "rgba(0,184,92,0.12)", border: "1px solid rgba(0,184,92,0.2)" }}>
+                    <Envelope weight="duotone" size={15} style={{ color: "#00B85C" }} />
+                  </div>
                   <a href="mailto:info@senzu.co.jp" className="text-gray-400 hover:text-white transition">info@senzu.co.jp</a>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
-                  <Clock weight="duotone" size={18} className="text-senzuGlow shrink-0" />
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: "rgba(0,184,92,0.12)", border: "1px solid rgba(0,184,92,0.2)" }}>
+                    <Clock weight="duotone" size={15} style={{ color: "#00B85C" }} />
+                  </div>
                   <span className="text-gray-400">{c.hours}</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
-                  <Timer weight="duotone" size={18} className="text-senzuGlow shrink-0" />
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: "rgba(0,184,92,0.12)", border: "1px solid rgba(0,184,92,0.2)" }}>
+                    <Timer weight="duotone" size={15} style={{ color: "#00B85C" }} />
+                  </div>
                   <span className="text-gray-400">{c.responseTime}</span>
                 </div>
               </div>

@@ -23,7 +23,9 @@ export default function AboutPage() {
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
           <div className="glass-card rounded-3xl p-10 space-y-6">
-            <Buildings weight="duotone" size={36} className="text-senzuGlow" />
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style={{ background: "rgba(0, 184, 92, 0.15)", border: "1px solid rgba(0, 184, 92, 0.25)" }}>
+              <Buildings weight="duotone" size={28} style={{ color: "#00B85C" }} />
+            </div>
             <div>
               <p className="text-senzuGlow text-xs font-black tracking-[0.3em] uppercase mb-2">{a.originCard.label}</p>
               <h2 className="text-2xl font-bold mb-4">{a.originCard.title}</h2>
@@ -41,8 +43,10 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="glass-card rounded-3xl p-10 space-y-6 border-senzuGlow/20">
-            <Handshake weight="duotone" size={36} className="text-senzuGlow" />
+          <div className="glass-card rounded-3xl p-10 space-y-6" style={{ border: "1px solid rgba(0, 184, 92, 0.4)", boxShadow: "0 0 30px rgba(0, 184, 92, 0.08)" }}>
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style={{ background: "rgba(0, 184, 92, 0.15)", border: "1px solid rgba(0, 184, 92, 0.25)" }}>
+              <Handshake weight="duotone" size={28} style={{ color: "#00B85C" }} />
+            </div>
             <div>
               <p className="text-senzuGlow text-xs font-black tracking-[0.3em] uppercase mb-2">{a.missionCard.label}</p>
               <h2 className="text-2xl font-bold mb-4">{a.missionCard.title}</h2>
@@ -59,7 +63,9 @@ export default function AboutPage() {
           </div>
 
           <div className="glass-card rounded-3xl p-10 space-y-6">
-            <Users weight="duotone" size={36} className="text-senzuGlow" />
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style={{ background: "rgba(0, 184, 92, 0.15)", border: "1px solid rgba(0, 184, 92, 0.25)" }}>
+              <Users weight="duotone" size={28} style={{ color: "#00B85C" }} />
+            </div>
             <div>
               <p className="text-senzuGlow text-xs font-black tracking-[0.3em] uppercase mb-2">{a.companyCard.label}</p>
               <h2 className="text-2xl font-bold mb-4">{a.companyCard.title}</h2>
@@ -98,13 +104,20 @@ export default function AboutPage() {
           </div>
           <div className="grid md:grid-cols-4 gap-6">
             {a.fourS.map((s, i) => (
-              <div key={s.word} className="glass-card rounded-3xl p-8 text-center">
-                <div className="text-5xl font-black text-senzuGlow mb-2">
+              <div key={s.word} className="glass-card rounded-3xl p-8 relative overflow-hidden">
+                {/* Watermark "S" */}
+                <span
+                  className="watermark-letter absolute right-[-10px] bottom-[-20px] font-black leading-none select-none pointer-events-none"
+                  style={{ fontSize: "140px", color: "#00B85C", opacity: 0.06 }}
+                >
                   {s.letter}
-                  <span className="text-xs font-normal text-gray-500 block mt-1">0{i + 1}</span>
+                </span>
+                {/* Content */}
+                <div className="relative z-10">
+                  <span className="text-xs font-black text-gray-600 tracking-[0.3em] mb-5 block">0{i + 1}</span>
+                  <h3 className="text-xl font-bold mb-3">{s.word}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{s.word}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
