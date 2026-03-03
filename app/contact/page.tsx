@@ -69,13 +69,13 @@ export default function ContactPage() {
                 <div>
                   <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">{c.labels.budget}</label>
                   <select name="budget" className="form-input form-select w-full px-4 py-3 rounded-xl text-sm">
-                    {c.budgetOptions.map((opt, i) => <option key={i} value={i === 0 ? "" : `budget-${i}`}>{opt}</option>)}
+                    {c.budgetOptions.map((opt, i) => <option key={i} value={i === 0 ? "" : opt}>{opt}</option>)}
                   </select>
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">{c.labels.service}</label>
                   <select name="service" required className="form-input form-select w-full px-4 py-3 rounded-xl text-sm">
-                    {c.serviceOptions.map((opt, i) => <option key={i} value={i === 0 ? "" : `service-${i}`}>{opt}</option>)}
+                    {c.serviceOptions.map((opt, i) => <option key={i} value={i === 0 ? "" : opt}>{opt}</option>)}
                   </select>
                 </div>
               </div>
