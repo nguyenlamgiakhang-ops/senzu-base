@@ -136,6 +136,9 @@ export type Translations = {
     toastTitle: string;
     toastDesc: string;
   };
+  footer: {
+    tagline: string;
+  };
 };
 
 const translations: Record<Locale, Translations> = {
@@ -397,6 +400,9 @@ const translations: Record<Locale, Translations> = {
       toastTitle: "Gửi thành công!",
       toastDesc: "We'll respond within 24h",
     },
+    footer: {
+      tagline: "Kết nối tiềm năng ngủ quên với giá trị mới thông qua sự minh bạch và công nghệ vị nhân sinh.",
+    },
   },
 
   en: {
@@ -657,6 +663,9 @@ const translations: Record<Locale, Translations> = {
       toastTitle: "Sent successfully!",
       toastDesc: "We'll respond within 24h",
     },
+    footer: {
+      tagline: "Connecting dormant potential with new value through transparency and human-centered technology.",
+    },
   },
 
   ja: {
@@ -916,6 +925,9 @@ const translations: Record<Locale, Translations> = {
       hiringApply: "Youtrustで応募 →",
       toastTitle: "送信完了！",
       toastDesc: "24時間以内に返信します",
+    },
+    footer: {
+      tagline: "透明性と人間中心テクノロジーを通じて、眠れる可能性を新たな価値に結びつけます。",
     },
   },
 };

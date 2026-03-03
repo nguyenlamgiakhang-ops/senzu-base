@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   Diamond,
   Target,
@@ -230,20 +231,52 @@ export default function HomePage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {h.newsItems.map((news, i) => {
-              const icons = [
-                <Newspaper key="n" weight="duotone" size={20} className="text-senzuGlow" />,
-                <Fire key="f" weight="duotone" size={20} className="text-orange-400" />,
-                <Lightbulb key="l" weight="duotone" size={20} className="text-blue-400" />,
+              const images = [
+                "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80",
+                "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80",
+                "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
               ];
-              const colors = ["from-green-500/10", "from-orange-500/10", "from-blue-500/10"];
+              const imgOpacity = [
+                "opacity-50 group-hover:opacity-70",
+                "opacity-50 group-hover:opacity-70",
+                "opacity-30 group-hover:opacity-50",
+              ];
+              const badgeClass = [
+                "bg-senzuGlow/20 border border-senzuGlow/30 text-senzuGlow",
+                "bg-orange-500/20 border border-orange-500/30 text-orange-400",
+                "bg-blue-500/20 border border-blue-500/30 text-blue-400",
+              ];
+              const hoverTitle = [
+                "group-hover:text-senzuGlow",
+                "group-hover:text-orange-400",
+                "group-hover:text-blue-400",
+              ];
+              const icons = [
+                <Newspaper key="n" weight="duotone" size={12} />,
+                <Fire key="f" weight="duotone" size={12} />,
+                <Lightbulb key="l" weight="duotone" size={12} />,
+              ];
               return (
                 <Link href="/news" key={i} className="glass-card rounded-3xl overflow-hidden group block">
-                  <div className={`h-40 bg-gradient-to-br ${colors[i]} to-transparent flex items-center justify-center`}>
-                    <div className="text-5xl opacity-30">{icons[i]}</div>
+                  <div className="relative h-44 overflow-hidden shrink-0">
+                    <Image
+                      src={images[i]}
+                      alt={news.title}
+                      fill
+                      className={`news-card-img object-cover ${imgOpacity[i]}`}
+                    />
+                    <div
+                      className="absolute inset-0"
+                      style={{ background: "linear-gradient(to bottom, rgba(13,17,23,0) 0%, rgba(13,17,23,0.85) 100%)" }}
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold ${badgeClass[i]}`}>
+                        {icons[i]}{news.tag}
+                      </span>
+                    </div>
                   </div>
                   <div className="p-6">
-                    <span className="text-xs text-senzuGlow font-bold tracking-widest uppercase">{news.tag}</span>
-                    <h3 className="text-lg font-bold mt-2 mb-1 group-hover:text-senzuGlow transition">{news.title}</h3>
+                    <h3 className={`text-lg font-bold mb-1 transition ${hoverTitle[i]}`}>{news.title}</h3>
                     <p className="text-xs text-gray-500">{news.date}</p>
                   </div>
                 </Link>

@@ -285,6 +285,19 @@ body {
   background: rgba(74, 222, 128, 0.6);
 }
 
+/* ── Footer Links ── */
+.footer-link {
+  color: #A0AAB2;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: #00B85C;
+  transform: translateX(2px);
+}
+
 /* ── Mobile Nav Overlay Enter Animation ── */
 .mobile-nav-overlay {
   animation: mobileNavEnter 0.3s ease-out both;
