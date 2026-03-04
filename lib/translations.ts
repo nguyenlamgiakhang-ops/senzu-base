@@ -158,7 +158,7 @@ const translations: Record<Locale, Translations> = {
       h1Line1: "Kiến tạo",
       h1Line2: "Bước ngoặt.",
       subtitle:
-        "Senzu kết nối tiềm năng ngủ quên với giá trị mới thông qua sự minh bạch và công nghệ vị nhân sinh.",
+        "Senzu khai phá các tiềm năng ẩn để kiến tạo giá trị mới, dựa trên nền tảng công nghệ minh bạch và lấy con người làm trung tâm.",
       exploreBtn: "Explore Solutions",
       dnaBtn: "Our DNA",
       scrollText: "Scroll",
@@ -248,8 +248,12 @@ const translations: Record<Locale, Translations> = {
       missionCard: {
         label: "Mission",
         title: "Accelerator of Potential",
-        desc: "Kết nối \"tiềm năng ngủ quên\" với \"giá trị mới\" — đó là sứ mệnh cốt lõi của Senzu. Chúng tôi không chỉ là agency, mà là đối tác tăng tốc tăng trưởng bền vững cho doanh nghiệp.",
-        bullets: ["CX-first thinking", "Data-driven decisions", "Long-term partnership"],
+        desc: 'Kết nối "tiềm năng ngủ quên" với "giá trị mới" — đó là sứ mệnh cốt lõi của Senzu. Chúng tôi không chỉ là agency, mà là đối tác tăng tốc tăng trưởng bền vững cho doanh nghiệp.',
+        bullets: [
+          "CX-first thinking",
+          "Data-driven decisions",
+          "Long-term partnership",
+        ],
       },
       companyCard: {
         label: "Company",
@@ -403,7 +407,8 @@ const translations: Record<Locale, Translations> = {
       toastDesc: "We'll respond within 24h",
     },
     footer: {
-      tagline: "Kết nối tiềm năng ngủ quên với giá trị mới thông qua sự minh bạch và công nghệ vị nhân sinh.",
+      tagline:
+        "Kết nối tiềm năng ngủ quên với giá trị mới thông qua sự minh bạch và công nghệ vị nhân sinh.",
     },
   },
 
@@ -513,7 +518,11 @@ const translations: Record<Locale, Translations> = {
         label: "Mission",
         title: "Accelerator of Potential",
         desc: "Connecting 'dormant potential' with 'new value' — that is Senzu's core mission. We are not just an agency, but a sustainable growth acceleration partner for businesses.",
-        bullets: ["CX-first thinking", "Data-driven decisions", "Long-term partnership"],
+        bullets: [
+          "CX-first thinking",
+          "Data-driven decisions",
+          "Long-term partnership",
+        ],
       },
       companyCard: {
         label: "Company",
@@ -667,7 +676,8 @@ const translations: Record<Locale, Translations> = {
       toastDesc: "We'll respond within 24h",
     },
     footer: {
-      tagline: "Connecting dormant potential with new value through transparency and human-centered technology.",
+      tagline:
+        "Connecting dormant potential with new value through transparency and human-centered technology.",
     },
   },
 
@@ -743,7 +753,11 @@ const translations: Record<Locale, Translations> = {
       journalH2: "ジャーナル＆ニュース",
       viewAll: "すべて見る",
       newsItems: [
-        { tag: "プレスリリース", title: "新ウェブサイト公開", date: "2024年8月" },
+        {
+          tag: "プレスリリース",
+          title: "新ウェブサイト公開",
+          date: "2024年8月",
+        },
         {
           tag: "採用情報",
           title: "デジタルプランナー / マーケティングコンサルタント",
@@ -777,7 +791,11 @@ const translations: Record<Locale, Translations> = {
         label: "ミッション",
         title: "ポテンシャルのアクセラレーター",
         desc: "「眠れる可能性」と「新たな価値」をつなぐ — それがSenzuのコアミッションです。単なるエージェンシーではなく、持続的成長のアクセラレーターパートナーです。",
-        bullets: ["CXファーストの思考", "データドリブンな意思決定", "長期的なパートナーシップ"],
+        bullets: [
+          "CXファーストの思考",
+          "データドリブンな意思決定",
+          "長期的なパートナーシップ",
+        ],
       },
       companyCard: {
         label: "会社情報",
@@ -815,7 +833,8 @@ const translations: Record<Locale, Translations> = {
       badge: "/// サービス内容",
       h1: "サービス＆",
       h1Span: "ソリューション",
-      subtitleMain: "私たちのすべてのソリューションは一つの質問から始まります：",
+      subtitleMain:
+        "私たちのすべてのソリューションは一つの質問から始まります：",
       subtitleEmphasis: " あなたの顧客が本当に必要としているものは何ですか？",
       s1: {
         badge: "01 — デジタルマーケティング",
@@ -931,7 +950,8 @@ const translations: Record<Locale, Translations> = {
       toastDesc: "24時間以内に返信します",
     },
     footer: {
-      tagline: "透明性と人間中心テクノロジーを通じて、眠れる可能性を新たな価値に結びつけます。",
+      tagline:
+        "透明性と人間中心テクノロジーを通じて、眠れる可能性を新たな価値に結びつけます。",
     },
   },
 };
