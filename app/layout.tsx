@@ -7,7 +7,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 export const metadata: Metadata = {
   title: "Senzu Inc. - Glass Pro System",
   description:
-    "Senzu kết nối tiềm năng ngủ quên với giá trị mới thông qua sự minh bạch và công nghệ vị nhân sinh.",
+    "Senzu kết nối những tiềm năng chưa được khai phá với giá trị mới thông qua sự minh bạch và công nghệ lấy con người làm trung tâm.",
 };
 
 export default function RootLayout({
