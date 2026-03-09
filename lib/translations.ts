@@ -408,7 +408,7 @@ const translations: Record<Locale, Translations> = {
     },
     footer: {
       tagline:
-        "Kết nối tiềm năng ngủ quên với giá trị mới thông qua sự minh bạch và công nghệ vị nhân sinh.",
+        "Kết nối những tiềm năng chưa được khai phá với giá trị mới thông qua sự minh bạch và công nghệ lấy con người làm trung tâm.",
     },
   },
 
