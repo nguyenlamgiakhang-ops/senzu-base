@@ -7,7 +7,6 @@ export type Translations = {
     services: string;
     news: string;
     contact: string;
-    team: string;
     startProject: string;
   };
   home: {
@@ -150,7 +149,6 @@ const translations: Record<Locale, Translations> = {
       services: "Solutions",
       news: "Journal",
       contact: "Contact",
-      team: "Team",
       startProject: "Start Project",
     },
     home: {
@@ -419,7 +417,6 @@ const translations: Record<Locale, Translations> = {
       services: "Solutions",
       news: "Journal",
       contact: "Contact",
-      team: "Team",
       startProject: "Start Project",
     },
     home: {
@@ -688,7 +685,6 @@ const translations: Record<Locale, Translations> = {
       services: "ソリューション",
       news: "ジャーナル",
       contact: "お問い合わせ",
-      team: "チーム",
       startProject: "始める",
     },
     home: {
