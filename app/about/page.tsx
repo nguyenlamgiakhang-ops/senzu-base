@@ -1,6 +1,6 @@
 "use client";
 
-import { Buildings, Handshake, Users, Globe, Envelope, MapPin } from "@phosphor-icons/react/dist/ssr";
+import { Buildings, Handshake, Users, Globe, Envelope, MapPin, IdentificationCard } from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function AboutPage() {
@@ -73,15 +73,19 @@ export default function AboutPage() {
             <div className="space-y-3">
               <div className="flex items-start gap-3 text-sm">
                 <MapPin weight="duotone" size={18} className="text-senzuGlow mt-0.5 shrink-0" />
-                <span className="text-gray-400">PMO Shibuya II, 3-1-1-211 Shibuya, Tokyo</span>
+                <span className="text-gray-400">158 Đường Nguyễn Văn Thủ, Phường Tân Định, TP Hồ Chí Minh, Việt Nam</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Globe weight="duotone" size={18} className="text-senzuGlow shrink-0" />
                 <span className="text-gray-400">senzu.co.jp</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
+                <IdentificationCard weight="duotone" size={18} className="text-senzuGlow shrink-0" />
+                <span className="text-gray-400">MST: 0319430261</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm">
                 <Envelope weight="duotone" size={18} className="text-senzuGlow shrink-0" />
-                <span className="text-gray-400">info@senzu.co.jp</span>
+                <span className="text-gray-400">keiri_base@senzu.co.jp</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Users weight="duotone" size={18} className="text-senzuGlow shrink-0" />

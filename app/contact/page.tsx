@@ -99,13 +99,13 @@ export default function ContactPage() {
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style={{ background: "rgba(0,184,92,0.12)", border: "1px solid rgba(0,184,92,0.2)" }}>
                     <MapPin weight="duotone" size={15} style={{ color: "#00B85C" }} />
                   </div>
-                  <span className="text-gray-400 mt-1">PMO Shibuya II, 3-1-1-211 Shibuya, Tokyo</span>
+                  <span className="text-gray-400 mt-1">158 Đường Nguyễn Văn Thủ, Phường Tân Định, TP Hồ Chí Minh, Việt Nam</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: "rgba(0,184,92,0.12)", border: "1px solid rgba(0,184,92,0.2)" }}>
                     <Envelope weight="duotone" size={15} style={{ color: "#00B85C" }} />
                   </div>
-                  <a href="mailto:info@senzu.co.jp" className="text-gray-400 hover:text-white transition">info@senzu.co.jp</a>
+                  <a href="mailto:keiri_base@senzu.co.jp" className="text-gray-400 hover:text-white transition">keiri_base@senzu.co.jp</a>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: "rgba(0,184,92,0.12)", border: "1px solid rgba(0,184,92,0.2)" }}>

@@ -31,8 +31,8 @@ export default function Footer() {
       external: true,
     },
     {
-      href: "mailto:info@senzu.co.jp",
-      label: "info@senzu.co.jp",
+      href: "mailto:keiri_base@senzu.co.jp",
+      label: "keiri_base@senzu.co.jp",
       icon: <Envelope weight="duotone" size={15} />,
       external: false,
     },
@@ -55,11 +55,11 @@ export default function Footer() {
           <div className="space-y-5">
             <Link href="/" className="inline-block group">
               <Image
-                src="https://senzu.co.jp/wp-content/themes/senzu/assets/img/logo-hr.png"
+                src="/logo/SENZU BASE white.png"
                 alt="Senzu Inc."
-                width={110}
-                height={30}
-                className="h-7 w-auto brightness-200 contrast-125 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] transition duration-300"
+                width={260}
+                height={72}
+                className="h-18 w-auto brightness-200 contrast-125 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] transition duration-300"
               />
             </Link>
             <p className="text-sm text-gray-500 leading-relaxed max-w-xs">
@@ -113,7 +113,7 @@ export default function Footer() {
           style={{ borderTop: "1px solid rgba(255, 255, 255, 0.05)" }}
         >
           <p className="text-xs text-gray-600">
-            © 2026 Senzu Inc. All rights reserved.
+            © 2026 CÔNG TY TNHH SENZU BASE. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="footer-link text-xs">

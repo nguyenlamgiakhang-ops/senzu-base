@@ -14,35 +14,50 @@ export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
 
   // Đóng menu khi chuyển trang
-  useEffect(() => { setIsOpen(false); }, [pathname]);
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   // Khoá scroll body khi menu mở
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [isOpen]);
 
   const navItems = [
-    { href: "/",        label: t.nav.home },
-    { href: "/about",   label: t.nav.about },
-    { href: "/services",label: t.nav.services },
-    { href: "/news",    label: t.nav.news },
-    { href: "/team",    label: t.nav.team },
+    { href: "/", label: t.nav.home },
+    { href: "/about", label: t.nav.about },
+    { href: "/services", label: t.nav.services },
+    { href: "/news", label: t.nav.news },
+    { href: "/team", label: t.nav.team },
     { href: "/contact", label: t.nav.contact },
   ];
 
   return (
     <>
-      <nav className="fixed top-0 w-full z-50 !rounded-none border-b border-white/5" style={{ background: "rgba(2, 6, 23, 0.85)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}>
+      <nav
+        className="fixed top-0 w-full z-50 !rounded-none border-b border-white/5"
+        style={{
+          background: "rgba(2, 6, 23, 0.85)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+        }}
+      >
         <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="cursor-pointer flex items-center gap-2 group">
+          <Link
+            href="/"
+            className="cursor-pointer flex items-center gap-2 group"
+          >
             <Image
-              src="https://senzu.co.jp/wp-content/themes/senzu/assets/img/logo-hr.png"
+              src="/logo/SENZU BASE white.png"
               alt="Senzu Inc."
-              width={120}
-              height={32}
-              className="h-8 w-auto brightness-200 contrast-125 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition"
+              width={500}
+              height={60}
+              unoptimized
+              className="h-4 md:h-6 w-auto group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition"
             />
           </Link>
 
@@ -78,7 +93,11 @@ export default function Nav() {
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? "Close menu" : "Open menu"}
             >
-              {isOpen ? <X size={26} weight="bold" /> : <List size={26} weight="bold" />}
+              {isOpen ? (
+                <X size={26} weight="bold" />
+              ) : (
+                <List size={26} weight="bold" />
+              )}
             </button>
           </div>
         </div>
@@ -105,7 +124,9 @@ export default function Nav() {
                 href={item.href}
                 onClick={() => setIsOpen(false)}
                 className={`mobile-nav-item text-3xl font-bold tracking-widest uppercase transition-colors duration-200 ${
-                  pathname === item.href ? "text-senzuGlow" : "text-white/75 hover:text-white"
+                  pathname === item.href
+                    ? "text-senzuGlow"
+                    : "text-white/75 hover:text-white"
                 }`}
                 style={{ animationDelay: `${i * 0.07}s` }}
               >

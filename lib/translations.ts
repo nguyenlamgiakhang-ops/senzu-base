@@ -257,7 +257,7 @@ const translations: Record<Locale, Translations> = {
       },
       companyCard: {
         label: "Company",
-        title: "Senzu Inc.",
+        title: "CÔNG TY TNHH SENZU BASE",
       },
       teamCount: "26 thành viên",
       ceoLabel: "CEO",
@@ -526,7 +526,7 @@ const translations: Record<Locale, Translations> = {
       },
       companyCard: {
         label: "Company",
-        title: "Senzu Inc.",
+        title: "CÔNG TY TNHH SENZU BASE",
       },
       teamCount: "26 members",
       ceoLabel: "CEO",
@@ -799,7 +799,7 @@ const translations: Record<Locale, Translations> = {
       },
       companyCard: {
         label: "会社情報",
-        title: "Senzu Inc.",
+        title: "CÔNG TY TNHH SENZU BASE",
       },
       teamCount: "26名のメンバー",
       ceoLabel: "CEO",
