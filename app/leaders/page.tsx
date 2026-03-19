@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Briefcase, Trophy, Heart } from "@phosphor-icons/react";
+import { Handshake } from "@phosphor-icons/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const ceos = [
@@ -24,7 +24,7 @@ const ceos = [
     glowColor: "rgba(0, 184, 92, 0.12)",
     labelColor: "#00B85C",
     labelBg: "rgba(0, 184, 92, 0.15)",
-    imgStyle: { objectPosition: "50% calc(0% - 150px)" },
+    imgStyle: {},
   },
 ];
 
@@ -101,18 +101,24 @@ export default function TeamPage() {
                 </div>
 
                 {/* Content */}
-                <div className="px-6 md:px-8 pb-8 -mt-6 flex flex-col gap-6">
-                  {/* Name + title */}
+                <div className="px-6 md:px-8 pb-8 pt-6 flex flex-col gap-6">
+                  {/* Name + company + role */}
                   <div>
-                    <p
-                      className="text-[10px] font-black tracking-[0.35em] uppercase mb-1"
-                      style={{ color: ceo.labelColor }}
+                    {/* Company badge */}
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-3"
+                      style={{ background: ceo.labelBg, border: `1px solid ${ceo.borderColor}` }}
                     >
-                      {data.title}
-                    </p>
-                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
+                      <span
+                        className="text-[10px] font-black tracking-[0.25em] uppercase"
+                        style={{ color: ceo.labelColor }}
+                      >
+                        {data.company}
+                      </span>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-1">
                       {data.name}
                     </h2>
+                    <p className="text-sm font-semibold text-gray-400">{data.role}</p>
                   </div>
 
                   {/* Bio */}
@@ -129,74 +135,6 @@ export default function TeamPage() {
                       </li>
                     ))}
                   </ul>
-
-                  {/* Career */}
-                  <div
-                    className="pt-4 border-t"
-                    style={{ borderColor: ceo.borderColor }}
-                  >
-                    <p
-                      className="text-[10px] font-black tracking-[0.3em] uppercase mb-3 flex items-center gap-2"
-                      style={{ color: ceo.labelColor }}
-                    >
-                      <Briefcase size={12} weight="fill" />
-                      {tm.careerLabel}
-                    </p>
-                    <div className="space-y-2">
-                      {data.career.map((c, i) => (
-                        <div key={i} className="flex items-start gap-3">
-                          <span
-                            className="text-[10px] font-bold shrink-0 mt-0.5 whitespace-nowrap"
-                            style={{ color: ceo.labelColor, opacity: 0.8 }}
-                          >
-                            {c.period}
-                          </span>
-                          <span className="text-gray-400 text-xs leading-relaxed">
-                            {c.role}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Achievement */}
-                  <div
-                    className="rounded-2xl px-4 py-3"
-                    style={{
-                      background: ceo.labelBg,
-                      border: `1px solid ${ceo.borderColor}`,
-                    }}
-                  >
-                    <p
-                      className="text-[10px] font-black tracking-[0.3em] uppercase mb-1 flex items-center gap-2"
-                      style={{ color: ceo.labelColor }}
-                    >
-                      <Trophy size={12} weight="fill" />
-                      {tm.achievementLabel}
-                    </p>
-                    <p className="text-white text-sm font-medium">
-                      {data.achievement}
-                    </p>
-                  </div>
-
-                  {/* Hobbies */}
-                  <div className="flex items-start gap-2">
-                    <Heart
-                      size={13}
-                      weight="fill"
-                      className="mt-0.5 shrink-0"
-                      style={{ color: ceo.labelColor }}
-                    />
-                    <p className="text-gray-500 text-xs leading-relaxed">
-                      <span
-                        className="font-bold mr-1"
-                        style={{ color: ceo.labelColor, opacity: 0.8 }}
-                      >
-                        {tm.hobbiesLabel}:
-                      </span>
-                      {data.hobbies}
-                    </p>
-                  </div>
 
                   {/* Quote */}
                   <div
@@ -233,7 +171,7 @@ export default function TeamPage() {
               className="h-px flex-1 max-w-32"
               style={{ background: "rgba(0,184,92,0.3)" }}
             />
-            <span className="text-2xl">🤝</span>
+            <Handshake size={28} weight="duotone" style={{ color: "#00B85C" }} />
             <div
               className="h-px flex-1 max-w-32"
               style={{ background: "rgba(99,179,237,0.3)" }}

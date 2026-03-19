@@ -30,7 +30,7 @@ export default function Nav() {
     { href: "/", label: t.nav.home },
     { href: "/about", label: t.nav.about },
     { href: "/services", label: t.nav.services },
-    { href: "/team", label: t.nav.team },
+    { href: "/leaders", label: t.nav.team },
     { href: "/news", label: t.nav.news },
     { href: "/contact", label: t.nav.contact },
   ];
