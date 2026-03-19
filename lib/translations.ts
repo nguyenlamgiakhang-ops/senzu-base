@@ -7,6 +7,7 @@ export type Translations = {
     services: string;
     news: string;
     contact: string;
+    team: string;
     startProject: string;
   };
   home: {
@@ -136,6 +137,39 @@ export type Translations = {
     toastTitle: string;
     toastDesc: string;
   };
+  team: {
+    badge: string;
+    h1: string;
+    h1Span: string;
+    subtitle: string;
+    careerLabel: string;
+    achievementLabel: string;
+    hobbiesLabel: string;
+    vn: {
+      name: string;
+      origin: string;
+      title: string;
+      bio: string[];
+      career: Array<{ period: string; role: string }>;
+      achievement: string;
+      hobbies: string;
+      quote: string;
+    };
+    jp: {
+      name: string;
+      origin: string;
+      title: string;
+      bio: string[];
+      career: Array<{ period: string; role: string }>;
+      achievement: string;
+      hobbies: string;
+      quote: string;
+    };
+    visionBadge: string;
+    visionH2: string;
+    visionH2Span: string;
+    visionDesc: string;
+  };
   footer: {
     tagline: string;
   };
@@ -149,6 +183,7 @@ const translations: Record<Locale, Translations> = {
       services: "Solutions",
       news: "Journal",
       contact: "Contact",
+      team: "Leaders",
       startProject: "Start Project",
     },
     home: {
@@ -156,7 +191,7 @@ const translations: Record<Locale, Translations> = {
       h1Line1: "Kiến tạo",
       h1Line2: "Bước ngoặt.",
       subtitle:
-        "Senzu khai phá các tiềm năng ẩn để kiến tạo giá trị mới, dựa trên nền tảng công nghệ minh bạch và lấy con người làm trung tâm.",
+        "Senzu Base khai phá các tiềm năng ẩn để kiến tạo giá trị mới, dựa trên nền tảng công nghệ minh bạch và lấy con người làm trung tâm.",
       exploreBtn: "Explore Solutions",
       dnaBtn: "Our DNA",
       scrollText: "Scroll",
@@ -167,7 +202,7 @@ const translations: Record<Locale, Translations> = {
       originH2Line1: "Born from",
       originH2Line2: "Japan.",
       originDesc:
-        "Senzu được thành lập bởi cựu nhân viên CyberAgent — tập đoàn công nghệ & truyền thông hàng đầu Nhật Bản. Chúng tôi mang tiêu chuẩn Nhật Bản vào thị trường Đông Nam Á.",
+        "Senzu Base được thành lập bởi cựu nhân viên CyberAgent — tập đoàn công nghệ & truyền thông hàng đầu Nhật Bản. Chúng tôi mang tiêu chuẩn Nhật Bản vào thị trường Đông Nam Á.",
       stats: { founded: "Thành lập", hq: "Trụ sở", standard: "Tiêu chuẩn" },
       statCards: [
         { value: "200+", label: "Dự án thành công" },
@@ -228,7 +263,7 @@ const translations: Record<Locale, Translations> = {
       ctaBadge: "/// Let's Begin",
       ctaH2: "Ready to create a",
       ctaH2Span: "breakthrough?",
-      ctaDesc: "Hãy cùng Senzu biến tiềm năng của bạn thành giá trị thực.",
+      ctaDesc: "Hãy cùng Senzu Base biến tiềm năng của bạn thành giá trị thực.",
       ctaBtn: "Start Your Project",
     },
     about: {
@@ -239,14 +274,14 @@ const translations: Record<Locale, Translations> = {
       originCard: {
         label: "Origin",
         title: "CyberAgent Japan Alumni",
-        desc: "Senzu được thành lập bởi cựu nhân viên CyberAgent — tập đoàn công nghệ và truyền thông hàng đầu Nhật Bản. Chúng tôi mang DNA của sự đổi mới và tiêu chuẩn cao nhất vào từng dự án.",
+        desc: "Senzu Base được thành lập bởi cựu nhân viên CyberAgent — tập đoàn công nghệ và truyền thông hàng đầu Nhật Bản. Chúng tôi mang DNA của sự đổi mới và tiêu chuẩn cao nhất vào từng dự án.",
         founded: "Thành lập",
         hq: "Trụ sở",
       },
       missionCard: {
         label: "Mission",
         title: "Accelerator of Potential",
-        desc: 'Kết nối "tiềm năng ngủ quên" với "giá trị mới" — đó là sứ mệnh cốt lõi của Senzu. Chúng tôi không chỉ là agency, mà là đối tác tăng tốc tăng trưởng bền vững cho doanh nghiệp.',
+        desc: 'Kết nối "tiềm năng ngủ quên" với "giá trị mới" — đó là sứ mệnh cốt lõi của Senzu Base. Chúng tôi không chỉ là agency, mà là đối tác tăng tốc tăng trưởng bền vững cho doanh nghiệp.',
         bullets: [
           "CX-first thinking",
           "Data-driven decisions",
@@ -306,7 +341,7 @@ const translations: Record<Locale, Translations> = {
         title: "In-house Training & Growth",
         desc: "Chuyển giao năng lực marketing để đội ngũ của bạn tự chủ tăng trưởng. Từ đào tạo marketer đến triển khai DX & Automation.",
       },
-      strengthBadge: "/// Why Senzu",
+      strengthBadge: "/// Why Senzu Base",
       strengthH2: "Core",
       strengthH2Span: "Strengths",
       strengths: [
@@ -328,27 +363,27 @@ const translations: Record<Locale, Translations> = {
       badge: "/// Updates & Careers",
       h1: "Journal &",
       h1Span: "Careers",
-      subtitle: "Tin tức, insight và cơ hội nghề nghiệp mới nhất từ Senzu.",
+      subtitle: "Tin tức, insight và cơ hội nghề nghiệp mới nhất từ Senzu Base.",
       card1: {
         tag: "Press Release",
-        title: "Website mới ra mắt — Bước ngoặt mới của Senzu",
-        desc: "Chúng tôi tự hào ra mắt website mới với giao diện hiện đại, phản ánh rõ hơn định hướng và giá trị cốt lõi của Senzu.",
+        title: "Website mới ra mắt — Bước ngoặt mới của Senzu Base",
+        desc: "Chúng tôi tự hào ra mắt website mới với giao diện hiện đại, phản ánh rõ hơn định hướng và giá trị cốt lõi của Senzu Base.",
         date: "Aug 2024",
       },
       card2: {
         tag: "We're Hiring",
         title: "Digital Planner / Marketing Consultant",
-        desc: "Remote / Freelance / Shibuya. Tham gia đội ngũ Senzu và cùng chúng tôi kiến tạo tương lai của CX marketing.",
+        desc: "Remote / Freelance / Shibuya. Tham gia đội ngũ Senzu Base và cùng chúng tôi kiến tạo tương lai của CX marketing.",
         applyText: "Apply",
       },
       card3: {
         tag: "Insight Blog",
         title: "Tối ưu CX trong kỷ nguyên AI",
-        desc: "Góc nhìn của Senzu về cách AI đang thay đổi cách thương hiệu kết nối với khách hàng.",
+        desc: "Góc nhìn của Senzu Base về cách AI đang thay đổi cách thương hiệu kết nối với khách hàng.",
         comingSoon: "Sắp ra mắt",
       },
       joinH2: "Gia nhập đội ngũ",
-      joinH2Span: "Senzu",
+      joinH2Span: "Senzu Base",
       joinDesc:
         "Chúng tôi đang tìm kiếm những người đam mê marketing, CX và muốn tạo ra tác động thực sự.",
       joinBtn1: "Xem vị trí trên Youtrust",
@@ -359,7 +394,7 @@ const translations: Record<Locale, Translations> = {
       h1: "Get In Touch &",
       h1Span: "Collaborate",
       subtitle:
-        "Chia sẻ dự án của bạn với chúng tôi. Senzu sẽ phản hồi trong vòng 24 giờ làm việc.",
+        "Chia sẻ dự án của bạn với chúng tôi. Senzu Base sẽ phản hồi trong vòng 24 giờ làm việc.",
       formTitle: "Gửi yêu cầu",
       labels: {
         name: "Họ và tên *",
@@ -404,6 +439,52 @@ const translations: Record<Locale, Translations> = {
       toastTitle: "Gửi thành công!",
       toastDesc: "We'll respond within 24h",
     },
+    team: {
+      badge: "/// Người Sáng Lập",
+      h1: "Gặp gỡ",
+      h1Span: "Founders",
+      subtitle: "Senzu Base được dẫn dắt bởi hai người sáng lập với tầm nhìn chung — kết nối tinh hoa Nhật Bản và năng lượng Đông Nam Á để tạo ra đột phá thực sự.",
+      careerLabel: "Kinh nghiệm",
+      achievementLabel: "Thành tích nổi bật",
+      hobbiesLabel: "Sở thích",
+      vn: {
+        name: "Nguyễn Hữu Thắng",
+        origin: "🇻🇳 Việt Nam",
+        title: "Co-founder & CEO / Senzu Base",
+        bio: [
+          "Cựu nhân viên CyberAgent Nhật Bản, tích lũy kinh nghiệm trong lĩnh vực digital marketing và CX tại thị trường Nhật.",
+          "Kiến tạo chiến lược tăng trưởng bền vững cho doanh nghiệp, kết nối tiêu chuẩn Nhật Bản với thị trường Đông Nam Á.",
+        ],
+        career: [
+          { period: "2020 ~ 2024", role: "CyberAgent Japan — Digital Marketing" },
+          { period: "2024 ~ nay", role: "Senzu Base — Co-founder & CEO" },
+        ],
+        achievement: "Đồng kiến tạo Senzu Base — đạt 50+ khách hàng chỉ sau 1,5 năm",
+        hobbies: "Du lịch · Đọc sách · Marketing Strategy",
+        quote: "\"Tiềm năng lớn nhất thường nằm ở nơi chưa ai nhìn thấy.\"",
+      },
+      jp: {
+        name: "平原 匠",
+        origin: "🇯🇵 Nhật Bản",
+        title: "代表取締役 / 株式会社センズ",
+        bio: [
+          "CyberAgent xuất thân — tư vấn digital marketing cho các ngành sách điện tử, viễn thông, bất động sản, xe hơi, nhân sự, du lịch, OTT, hôn nhân và chuyển nhà.",
+          "Lấy triết lý \"trải nghiệm khách hàng là tối thượng\" làm cốt lõi, tập trung cải thiện toàn bộ hành trình người dùng chứ không chỉ kết quả số liệu.",
+          "Đang song song phát triển sản phẩm nội bộ (dự kiến ra mắt năm tài chính 2026) bên cạnh dịch vụ tư vấn.",
+        ],
+        career: [
+          { period: "2020/04 ~ 2024/05", role: "CyberAgent — Sales & Marketing Consultant" },
+          { period: "2024/05 ~ nay", role: "株式会社センズ — 代表取締役 (CEO)" },
+        ],
+        achievement: "Chỉ 1,5 năm sau khi thành lập — vượt mốc 50 khách hàng",
+        hobbies: "Du lịch · Đọc sách · Karaoke · Ramen · Dẫn bạn bè khám phá Kochi",
+        quote: "「人生の起点を創る」— Kiến tạo điểm xuất phát của cuộc đời.",
+      },
+      visionBadge: "/// Tầm Nhìn Chung",
+      visionH2: "Hai nền văn hóa,",
+      visionH2Span: "một sứ mệnh.",
+      visionDesc: "Sự kết hợp giữa sự cần mẫn và tiêu chuẩn cao của Nhật Bản với sự năng động và hiểu biết thị trường Đông Nam Á tạo ra lợi thế cạnh tranh độc đáo — không ai khác có được.",
+    },
     footer: {
       tagline:
         "Kết nối những tiềm năng chưa được khai phá với giá trị mới thông qua sự minh bạch và công nghệ lấy con người làm trung tâm.",
@@ -417,6 +498,7 @@ const translations: Record<Locale, Translations> = {
       services: "Solutions",
       news: "Journal",
       contact: "Contact",
+      team: "Leaders",
       startProject: "Start Project",
     },
     home: {
@@ -424,7 +506,7 @@ const translations: Record<Locale, Translations> = {
       h1Line1: "Building",
       h1Line2: "Breakthroughs.",
       subtitle:
-        "Senzu connects dormant potential with new value through transparency and human-centered technology.",
+        "Senzu Base connects dormant potential with new value through transparency and human-centered technology.",
       exploreBtn: "Explore Solutions",
       dnaBtn: "Our DNA",
       scrollText: "Scroll",
@@ -435,7 +517,7 @@ const translations: Record<Locale, Translations> = {
       originH2Line1: "Born from",
       originH2Line2: "Japan.",
       originDesc:
-        "Senzu was founded by former CyberAgent employees — Japan's leading technology and media conglomerate. We bring Japanese standards to the Southeast Asian market.",
+        "Senzu Base was founded by former CyberAgent employees — Japan's leading technology and media conglomerate. We bring Japanese standards to the Southeast Asian market.",
       stats: { founded: "Founded", hq: "HQ", standard: "Standard" },
       statCards: [
         { value: "200+", label: "Successful Projects" },
@@ -496,7 +578,7 @@ const translations: Record<Locale, Translations> = {
       ctaBadge: "/// Let's Begin",
       ctaH2: "Ready to create a",
       ctaH2Span: "breakthrough?",
-      ctaDesc: "Let Senzu transform your untapped potential into real value.",
+      ctaDesc: "Let Senzu Base transform your untapped potential into real value.",
       ctaBtn: "Start Your Project",
     },
     about: {
@@ -507,14 +589,14 @@ const translations: Record<Locale, Translations> = {
       originCard: {
         label: "Origin",
         title: "CyberAgent Japan Alumni",
-        desc: "Senzu was founded by former CyberAgent employees — Japan's leading technology and media conglomerate. We bring the DNA of innovation and the highest standards to every project.",
+        desc: "Senzu Base was founded by former CyberAgent employees — Japan's leading technology and media conglomerate. We bring the DNA of innovation and the highest standards to every project.",
         founded: "Founded",
         hq: "Headquarters",
       },
       missionCard: {
         label: "Mission",
         title: "Accelerator of Potential",
-        desc: "Connecting 'dormant potential' with 'new value' — that is Senzu's core mission. We are not just an agency, but a sustainable growth acceleration partner for businesses.",
+        desc: "Connecting 'dormant potential' with 'new value' — that is Senzu Base's core mission. We are not just an agency, but a sustainable growth acceleration partner for businesses.",
         bullets: [
           "CX-first thinking",
           "Data-driven decisions",
@@ -574,7 +656,7 @@ const translations: Record<Locale, Translations> = {
         title: "In-house Training & Growth",
         desc: "Transferring marketing capabilities so your team can grow autonomously. From marketer training to DX & Automation implementation.",
       },
-      strengthBadge: "/// Why Senzu",
+      strengthBadge: "/// Why Senzu Base",
       strengthH2: "Core",
       strengthH2Span: "Strengths",
       strengths: [
@@ -596,27 +678,27 @@ const translations: Record<Locale, Translations> = {
       badge: "/// Updates & Careers",
       h1: "Journal &",
       h1Span: "Careers",
-      subtitle: "Latest news, insights and career opportunities from Senzu.",
+      subtitle: "Latest news, insights and career opportunities from Senzu Base.",
       card1: {
         tag: "Press Release",
-        title: "New Website Launch — A New Milestone for Senzu",
-        desc: "We are proud to launch our new website with a modern interface, better reflecting Senzu's direction and core values.",
+        title: "New Website Launch — A New Milestone for Senzu Base",
+        desc: "We are proud to launch our new website with a modern interface, better reflecting Senzu Base's direction and core values.",
         date: "Aug 2024",
       },
       card2: {
         tag: "We're Hiring",
         title: "Digital Planner / Marketing Consultant",
-        desc: "Remote / Freelance / Shibuya. Join the Senzu team and help us shape the future of CX marketing.",
+        desc: "Remote / Freelance / Shibuya. Join the Senzu Base team and help us shape the future of CX marketing.",
         applyText: "Apply",
       },
       card3: {
         tag: "Insight Blog",
         title: "Optimizing CX in the AI Era",
-        desc: "Senzu's perspective on how AI is changing the way brands connect with customers.",
+        desc: "Senzu Base's perspective on how AI is changing the way brands connect with customers.",
         comingSoon: "Coming Soon",
       },
       joinH2: "Join the",
-      joinH2Span: "Senzu Team",
+      joinH2Span: "Senzu Base Team",
       joinDesc:
         "We are looking for people passionate about marketing, CX and wanting to make a real impact.",
       joinBtn1: "View Positions on Youtrust",
@@ -627,7 +709,7 @@ const translations: Record<Locale, Translations> = {
       h1: "Get In Touch &",
       h1Span: "Collaborate",
       subtitle:
-        "Share your project with us. Senzu will respond within 24 business hours.",
+        "Share your project with us. Senzu Base will respond within 24 business hours.",
       formTitle: "Send Request",
       labels: {
         name: "Full Name *",
@@ -672,6 +754,52 @@ const translations: Record<Locale, Translations> = {
       toastTitle: "Sent successfully!",
       toastDesc: "We'll respond within 24h",
     },
+    team: {
+      badge: "/// Our Founders",
+      h1: "Meet Our",
+      h1Span: "Founders",
+      subtitle: "Senzu Base is led by two founders sharing a single vision — bridging Japanese excellence and Southeast Asian energy to create real breakthroughs.",
+      careerLabel: "Career",
+      achievementLabel: "Key Achievement",
+      hobbiesLabel: "Hobbies",
+      vn: {
+        name: "Nguyen Huu Thang",
+        origin: "🇻🇳 Vietnam",
+        title: "Co-founder & CEO / Senzu Base",
+        bio: [
+          "Former CyberAgent Japan employee with experience in digital marketing and CX in the Japanese market.",
+          "Architect of sustainable growth strategies, connecting Japanese standards with the Southeast Asian market.",
+        ],
+        career: [
+          { period: "2020 ~ 2024", role: "CyberAgent Japan — Digital Marketing" },
+          { period: "2024 ~ Present", role: "Senzu Base — Co-founder & CEO" },
+        ],
+        achievement: "Co-built Senzu Base — surpassing 50 clients in just 1.5 years",
+        hobbies: "Travel · Reading · Marketing Strategy",
+        quote: "\"The greatest potential often lies where no one has looked yet.\"",
+      },
+      jp: {
+        name: "Hirahara Takumi",
+        origin: "🇯🇵 Japan",
+        title: "Representative Director / Senzu Inc.",
+        bio: [
+          "CyberAgent alumni — digital marketing consultant across e-books, telecom, real estate, automotive, HR, travel, OTT, wedding, and moving industries.",
+          "Driven by a 'customer experience supremacy' philosophy — committed to improving the full user journey, not just metrics.",
+          "Simultaneously developing an in-house product (expected release FY2026) alongside consulting services.",
+        ],
+        career: [
+          { period: "Apr 2020 ~ May 2024", role: "CyberAgent — Sales & Marketing Consultant" },
+          { period: "May 2024 ~ Present", role: "Senzu Inc. — Representative Director (CEO)" },
+        ],
+        achievement: "Just 1.5 years after founding — surpassed 50 client companies",
+        hobbies: "Travel · Reading · Karaoke · Ramen · Exploring Kochi with friends",
+        quote: "「人生の起点を創る」— Creating starting points of life.",
+      },
+      visionBadge: "/// Shared Vision",
+      visionH2: "Two cultures,",
+      visionH2Span: "one mission.",
+      visionDesc: "The combination of Japan's diligence and high standards with Southeast Asia's dynamism and market understanding creates a unique competitive advantage — one that no other agency can replicate.",
+    },
     footer: {
       tagline:
         "Connecting dormant potential with new value through transparency and human-centered technology.",
@@ -685,6 +813,7 @@ const translations: Record<Locale, Translations> = {
       services: "ソリューション",
       news: "ジャーナル",
       contact: "お問い合わせ",
+      team: "リーダー",
       startProject: "始める",
     },
     home: {
@@ -692,7 +821,7 @@ const translations: Record<Locale, Translations> = {
       h1Line1: "切り拓く",
       h1Line2: "突破口を。",
       subtitle:
-        "Senzuは透明性と人間中心テクノロジーを通じて、眠れる可能性を新たな価値に結びつけます。",
+        "Senzu Baseは透明性と人間中心テクノロジーを通じて、眠れる可能性を新たな価値に結びつけます。",
       exploreBtn: "ソリューションを見る",
       dnaBtn: "DNAとは",
       scrollText: "スクロール",
@@ -703,7 +832,7 @@ const translations: Record<Locale, Translations> = {
       originH2Line1: "誕生は",
       originH2Line2: "日本から。",
       originDesc:
-        "SenzuはCyberAgent（日本トップのテクノロジー・メディア企業）の元社員によって設立されました。日本基準の品質を東南アジア市場にもたらします。",
+        "Senzu BaseはCyberAgent（日本トップのテクノロジー・メディア企業）の元社員によって設立されました。日本基準の品質を東南アジア市場にもたらします。",
       stats: { founded: "設立", hq: "本社", standard: "基準" },
       statCards: [
         { value: "200+", label: "成功プロジェクト" },
@@ -768,7 +897,7 @@ const translations: Record<Locale, Translations> = {
       ctaBadge: "/// さあ始めましょう",
       ctaH2: "突破口を",
       ctaH2Span: "創りませんか？",
-      ctaDesc: "Senzuと一緒に、あなたの潜在能力を現実の価値に変えましょう。",
+      ctaDesc: "Senzu Baseと一緒に、あなたの潜在能力を現実の価値に変えましょう。",
       ctaBtn: "プロジェクトを始める",
     },
     about: {
@@ -779,14 +908,14 @@ const translations: Record<Locale, Translations> = {
       originCard: {
         label: "起源",
         title: "CyberAgent Japan 出身",
-        desc: "SenzuはCyberAgent（日本トップのテクノロジー・メディア企業）の元社員によって設立されました。イノベーションのDNAと最高基準をすべてのプロジェクトに持ち込みます。",
+        desc: "Senzu BaseはCyberAgent（日本トップのテクノロジー・メディア企業）の元社員によって設立されました。イノベーションのDNAと最高基準をすべてのプロジェクトに持ち込みます。",
         founded: "設立",
         hq: "本社",
       },
       missionCard: {
         label: "ミッション",
         title: "ポテンシャルのアクセラレーター",
-        desc: "「眠れる可能性」と「新たな価値」をつなぐ — それがSenzuのコアミッションです。単なるエージェンシーではなく、持続的成長のアクセラレーターパートナーです。",
+        desc: "「眠れる可能性」と「新たな価値」をつなぐ — それがSenzu Baseのコアミッションです。単なるエージェンシーではなく、持続的成長のアクセラレーターパートナーです。",
         bullets: [
           "CXファーストの思考",
           "データドリブンな意思決定",
@@ -847,7 +976,7 @@ const translations: Record<Locale, Translations> = {
         title: "インハウストレーニング＆成長",
         desc: "チームが自律的に成長できるようマーケティング能力を移転します。マーケターのトレーニングからDX＆オートメーションの実装まで。",
       },
-      strengthBadge: "/// Senzuを選ぶ理由",
+      strengthBadge: "/// Senzu Baseを選ぶ理由",
       strengthH2: "コア",
       strengthH2Span: "ストレングス",
       strengths: [
@@ -869,26 +998,26 @@ const translations: Record<Locale, Translations> = {
       badge: "/// 情報＆採用",
       h1: "ジャーナル＆",
       h1Span: "キャリア",
-      subtitle: "Senzuからの最新ニュース、インサイト、キャリア機会。",
+      subtitle: "Senzu Baseからの最新ニュース、インサイト、キャリア機会。",
       card1: {
         tag: "プレスリリース",
-        title: "新ウェブサイト公開 — Senzuの新たなマイルストーン",
-        desc: "Senzuの方向性とコアバリューをより明確に反映したモダンなインターフェースを持つ新ウェブサイトを公開しました。",
+        title: "新ウェブサイト公開 — Senzu Baseの新たなマイルストーン",
+        desc: "Senzu Baseの方向性とコアバリューをより明確に反映したモダンなインターフェースを持つ新ウェブサイトを公開しました。",
         date: "2024年8月",
       },
       card2: {
         tag: "採用情報",
         title: "デジタルプランナー / マーケティングコンサルタント",
-        desc: "リモート / フリーランス / 渋谷。SenzuチームのメンバーとなりCXマーケティングの未来を創りましょう。",
+        desc: "リモート / フリーランス / 渋谷。Senzu BaseチームのメンバーとなりCXマーケティングの未来を創りましょう。",
         applyText: "応募",
       },
       card3: {
         tag: "インサイトブログ",
         title: "AI時代のCX最適化",
-        desc: "AIがブランドと顧客のつながり方をどう変えているかについてのSenzuの視点。",
+        desc: "AIがブランドと顧客のつながり方をどう変えているかについてのSenzu Baseの視点。",
         comingSoon: "近日公開",
       },
-      joinH2: "Senzuチームに",
+      joinH2: "Senzu Baseチームに",
       joinH2Span: "参加しませんか",
       joinDesc:
         "マーケティング、CXに情熱を持ち、真のインパクトを生み出したい人を探しています。",
@@ -900,7 +1029,7 @@ const translations: Record<Locale, Translations> = {
       h1: "お問い合わせ＆",
       h1Span: "コラボレーション",
       subtitle:
-        "プロジェクトをお聞かせください。Senzuは24営業時間以内に返信します。",
+        "プロジェクトをお聞かせください。Senzu Baseは24営業時間以内に返信します。",
       formTitle: "お問い合わせを送る",
       labels: {
         name: "氏名 *",
@@ -944,6 +1073,52 @@ const translations: Record<Locale, Translations> = {
       hiringApply: "Youtrustで応募 →",
       toastTitle: "送信完了！",
       toastDesc: "24時間以内に返信します",
+    },
+    team: {
+      badge: "/// ファウンダー紹介",
+      h1: "出会う",
+      h1Span: "ファウンダーたち",
+      subtitle: "Senzu Baseは、共通のビジョンを持つ2人のファウンダーが率いています — 日本の卓越性と東南アジアのエネルギーを融合し、真の突破口を創り出す。",
+      careerLabel: "経歴",
+      achievementLabel: "実績",
+      hobbiesLabel: "趣味",
+      vn: {
+        name: "グエン・フー・タン",
+        origin: "🇻🇳 ベトナム",
+        title: "Co-founder & CEO / Senzu Base",
+        bio: [
+          "CyberAgent Japan元社員として、日本市場でのデジタルマーケティングとCXの経験を積む。",
+          "持続的な成長戦略を設計し、日本基準を東南アジア市場と結びつける架け橋となる。",
+        ],
+        career: [
+          { period: "2020 ~ 2024", role: "CyberAgent Japan — デジタルマーケティング" },
+          { period: "2024 ~ 現在", role: "Senzu Base — Co-founder & CEO" },
+        ],
+        achievement: "Senzu Baseを共同創業 — 創業1年半で50社を突破",
+        hobbies: "旅行 · 読書 · マーケティング戦略",
+        quote: "「最大の可能性は、誰もまだ気づいていない場所に眠っている。」",
+      },
+      jp: {
+        name: "平原 匠",
+        origin: "🇯🇵 日本",
+        title: "代表取締役 / 株式会社センズ",
+        bio: [
+          "サイバーエージェント出身。電子書籍・通信・不動産・車・人材・旅行・VoD・結婚・引越しなど幅広い業界のデジタルマーケティングを担当。",
+          "「顧客体験至上主義」を掲げ、数字の成果だけでなく、ユーザーインサイトに徹底的に向き合い、顧客体験そのものの改善にこだわる。",
+          "コンサルティング支援と並行して、自社プロダクトも開発中（2026年度リリース予定）。",
+        ],
+        career: [
+          { period: "2020/04 ~ 2024/05", role: "サイバーエージェント — 営業・マーケティングコンサル" },
+          { period: "2024/05 ~ 現在", role: "株式会社センズ — 代表取締役" },
+        ],
+        achievement: "創業1年半で取引社数50社を突破",
+        hobbies: "旅行 · 読書 · カラオケ · ラーメン · 地元高知県に友人を案内すること",
+        quote: "「人生の起点を創る — すべての始まりを、ともに。」",
+      },
+      visionBadge: "/// 共通のビジョン",
+      visionH2: "二つの文化、",
+      visionH2Span: "一つのミッション。",
+      visionDesc: "日本の勤勉さと高い基準と、東南アジアのダイナミズムと市場理解の組み合わせが、他のどのエージェンシーにも真似できないユニークな競争優位性を生み出します。",
     },
     footer: {
       tagline:

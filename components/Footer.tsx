@@ -55,7 +55,7 @@ export default function Footer() {
             <Link href="/" className="inline-block group">
               <Image
                 src="/logo/SENZU BASE white.png"
-                alt="Senzu Inc."
+                alt="Senzu Base"
                 width={260}
                 height={72}
                 className="h-18 w-auto brightness-200 contrast-125 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] transition duration-300"

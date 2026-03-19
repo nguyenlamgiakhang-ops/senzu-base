@@ -30,6 +30,7 @@ export default function Nav() {
     { href: "/", label: t.nav.home },
     { href: "/about", label: t.nav.about },
     { href: "/services", label: t.nav.services },
+    { href: "/team", label: t.nav.team },
     { href: "/news", label: t.nav.news },
     { href: "/contact", label: t.nav.contact },
   ];
@@ -52,7 +53,7 @@ export default function Nav() {
           >
             <Image
               src="/logo/SENZU BASE white.png"
-              alt="Senzu Inc."
+              alt="Senzu Base"
               width={500}
               height={60}
               unoptimized

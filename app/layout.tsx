@@ -5,9 +5,9 @@ import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 export const metadata: Metadata = {
-  title: "Senzu Inc. - Glass Pro System",
+  title: "Senzu Base - Glass Pro System",
   description:
-    "Senzu kết nối những tiềm năng chưa được khai phá với giá trị mới thông qua sự minh bạch và công nghệ lấy con người làm trung tâm.",
+    "Senzu Base kết nối những tiềm năng chưa được khai phá với giá trị mới thông qua sự minh bạch và công nghệ lấy con người làm trung tâm.",
 };
 
 export default function RootLayout({
