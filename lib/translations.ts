@@ -31,7 +31,9 @@ export type Translations = {
     capH2: string;
     capH2Span: string;
     capAgencyLabel: string;
+    capAgencySubtitle: string;
     capSoftwareLabel: string;
+    capSoftwareSubtitle: string;
     capSolutionsBtn: string;
     capabilities: Array<{ title: string; desc: string }>;
     softwareCapabilities: Array<{ title: string; desc: string }>;
@@ -227,7 +229,9 @@ const translations: Record<Locale, Translations> = {
       capH2: "Hai mảng",
       capH2Span: "dịch vụ",
       capAgencyLabel: "Agency",
+      capAgencySubtitle: "Tư vấn & Sáng tạo",
       capSoftwareLabel: "Phần mềm",
+      capSoftwareSubtitle: "Phần mềm doanh nghiệp",
       capSolutionsBtn: "Xem tất cả giải pháp",
       capabilities: [
         {
@@ -235,7 +239,7 @@ const translations: Record<Locale, Translations> = {
           desc: "Chiến lược quảng cáo đa kênh dựa trên dữ liệu, tiếp cận đúng người đúng thời điểm.",
         },
         {
-          title: "Sáng tạo thương hiệu & Thiết kế CX",
+          title: "Xây dựng thương hiệu & Thiết kế CX",
           desc: "Xây dựng thương hiệu gắn kết cảm xúc và trải nghiệm khách hàng đột phá.",
         },
         {
@@ -366,8 +370,8 @@ const translations: Record<Locale, Translations> = {
         desc: "Chiến lược quảng cáo đa kênh dựa trên dữ liệu và tư duy lấy khách hàng làm trọng tâm. Chúng tôi giúp bạn tiếp cận đúng người, đúng thời điểm với ngân sách tối ưu nhất.",
       },
       s2: {
-        badge: "02 — Sáng tạo thương hiệu",
-        title: "Sáng tạo thương hiệu & Thiết kế CX",
+        badge: "02 — Xây dựng thương hiệu",
+        title: "Xây dựng thương hiệu & Thiết kế CX",
         desc: "Xây dựng nhận diện thương hiệu gắn kết cảm xúc với khách hàng. Từ nhận diện thương hiệu đến từng điểm chạm trải nghiệm.",
       },
       s3: {
@@ -422,7 +426,7 @@ const translations: Record<Locale, Translations> = {
       card2: {
         tag: "Đang tuyển dụng",
         title: "Digital Planner / Tư vấn Marketing",
-        desc: "Làm việc từ xa / Cộng tác / Shibuya. Tham gia đội ngũ Senzu Base và cùng chúng tôi kiến tạo tương lai của marketing.",
+        desc: "Làm việc từ xa / Freelance / Shibuya. Tham gia đội ngũ Senzu Base và cùng chúng tôi kiến tạo tương lai của marketing.",
         applyText: "Ứng tuyển",
       },
       card3: {
@@ -456,7 +460,7 @@ const translations: Record<Locale, Translations> = {
       placeholders: {
         name: "Nguyễn Văn A",
         email: "you@company.com",
-        company: "Tên công ty của bạn",
+        company: "Tên công ty / Thương hiệu của bạn",
         message: "Mô tả ngắn về dự án, mục tiêu và thách thức của bạn...",
       },
       budgetOptions: [
@@ -465,12 +469,12 @@ const translations: Record<Locale, Translations> = {
         "5 – 20 triệu VND",
         "20 – 50 triệu VND",
         "Trên 50 triệu VND",
-        "Thương lượng trực tiếp",
+        "Thoả thuận",
       ],
       serviceOptions: [
         "Chọn dịch vụ",
         "Tư vấn Digital Marketing",
-        "Sáng tạo thương hiệu",
+        "Xây dựng thương hiệu (Branding)",
         "Đào tạo nội bộ & Tăng trưởng",
         "Tư vấn chiến lược tổng thể",
         "Khác / Muốn trao đổi thêm",
@@ -483,7 +487,7 @@ const translations: Record<Locale, Translations> = {
       responseTime: "Phản hồi trong 24 giờ làm việc",
       hiringBadge: "Đang tuyển dụng",
       hiringTitle: "Digital Planner",
-      hiringLocation: "Làm việc từ xa / Cộng tác / Shibuya",
+      hiringLocation: "Làm việc từ xa / Freelance / Shibuya",
       hiringApply: "Ứng tuyển trên Youtrust →",
       toastTitle: "Gửi thành công!",
       toastDesc: "Chúng tôi sẽ phản hồi trong 24 giờ",
@@ -523,8 +527,8 @@ const translations: Record<Locale, Translations> = {
           "Song song phát triển sản phẩm nội bộ (dự kiến ra mắt năm tài chính 2026) bên cạnh dịch vụ tư vấn.",
         ],
         career: [
-          { period: "2020/04 ~ 2024/05", role: "CyberAgent — Sales & Marketing Consultant" },
-          { period: "2024/05 ~ nay", role: "株式会社センズ — 代表取締役 (CEO)" },
+          { period: "2020 ~ 2024", role: "CyberAgent — Sales & Marketing Consultant" },
+          { period: "2024 ~ nay", role: "株式会社センズ — 代表取締役 (CEO)" },
         ],
         achievement: "Chỉ 1,5 năm sau khi thành lập — vượt mốc 50 khách hàng",
         hobbies: "Du lịch · Đọc sách · Karaoke · Ramen · Dẫn bạn bè khám phá Kochi",
@@ -579,7 +583,9 @@ const translations: Record<Locale, Translations> = {
       capH2: "Two areas",
       capH2Span: "of service",
       capAgencyLabel: "Agency",
+      capAgencySubtitle: "Consulting & Creative",
       capSoftwareLabel: "Software",
+      capSoftwareSubtitle: "Business Software",
       capSolutionsBtn: "View all solutions",
       capabilities: [
         {
@@ -601,11 +607,11 @@ const translations: Record<Locale, Translations> = {
           desc: "Create professional landing pages fast, no coding required, optimized for conversions.",
         },
         {
-          title: "Auto Software",
+          title: "Workflow Automation Tools",
           desc: "Automate operations, customer care, and marketing workflows.",
         },
         {
-          title: "Management Software",
+          title: "Business Management Platform",
           desc: "Manage data, teams, and business performance on a single platform.",
         },
       ],
@@ -652,7 +658,7 @@ const translations: Record<Locale, Translations> = {
       badge: "/// Our Identity",
       h1: "DNA &",
       h1Span: "Mission",
-      mottoTranslation: "Creating the Starting Point of Life",
+      mottoTranslation: "Where Your Journey Begins",
       originCard: {
         label: "Origin",
         title: "CyberAgent Japan Alumni",
@@ -662,7 +668,7 @@ const translations: Record<Locale, Translations> = {
       },
       missionCard: {
         label: "Mission",
-        title: "Accelerator of Potential",
+        title: "Potential Accelerator",
         desc: "Connecting 'dormant potential' with 'new value' — that is Senzu Base's core mission. We are not just an agency, but a sustainable growth acceleration partner for businesses.",
         bullets: [
           "CX-first thinking",
@@ -672,7 +678,7 @@ const translations: Record<Locale, Translations> = {
       },
       companyCard: {
         label: "Company",
-        title: "CÔNG TY TNHH SENZU BASE",
+        title: "SENZU BASE CO., LTD.",
       },
       teamCount: "26 members",
       ceoLabel: "CEO",
@@ -734,12 +740,12 @@ const translations: Record<Locale, Translations> = {
       },
       s5: {
         badge: "05 — Automation",
-        title: "Auto Software",
+        title: "Workflow Automation Tools",
         desc: "Automate operations, customer care, and marketing workflows. Save time, reduce errors, and elevate the user experience.",
       },
       s6: {
         badge: "06 — Management",
-        title: "Management Software",
+        title: "Business Management Platform",
         desc: "Manage data, teams, and business performance on a single platform. Intuitive dashboard with real-time reporting.",
       },
       strengthBadge: "/// Why Senzu Base",
@@ -817,7 +823,7 @@ const translations: Record<Locale, Translations> = {
         "$200 – $800 USD",
         "$800 – $2,000 USD",
         "Over $2,000 USD",
-        "Negotiate directly",
+        "To be discussed",
       ],
       serviceOptions: [
         "Select service",
@@ -869,15 +875,15 @@ const translations: Record<Locale, Translations> = {
         name: "Hirahara Takumi",
         origin: "🇯🇵 Japan",
         company: "Senzu Inc. (株式会社センズ)",
-        role: "Representative Director CEO",
+        role: "Representative Director & CEO",
         bio: [
-          "CyberAgent alumni — digital marketing consultant across e-books, telecom, real estate, automotive, HR, travel, OTT, wedding, and moving industries.",
+          "CyberAgent alumnus — digital marketing consultant across e-books, telecom, real estate, automotive, HR, travel, OTT, wedding, and moving industries.",
           "Driven by a 'customer experience supremacy' philosophy — committed to improving the full user journey, not just metrics.",
           "Simultaneously developing an in-house product (expected release FY2026) alongside consulting services.",
         ],
         career: [
-          { period: "Apr 2020 ~ May 2024", role: "CyberAgent — Sales & Marketing Consultant" },
-          { period: "May 2024 ~ Present", role: "Senzu Inc. — Representative Director (CEO)" },
+          { period: "2020 ~ 2024", role: "CyberAgent — Sales & Marketing Consultant" },
+          { period: "2024 ~ Present", role: "Senzu Inc. — Representative Director & CEO" },
         ],
         achievement: "Just 1.5 years after founding — surpassed 50 client companies",
         hobbies: "Travel · Reading · Karaoke · Ramen · Exploring Kochi with friends",
@@ -909,7 +915,7 @@ const translations: Record<Locale, Translations> = {
       h1Line1: "切り拓く",
       h1Line2: "突破口を。",
       subtitle:
-        "Senzu Baseは透明性と人間中心テクノロジーを通じて、眠れる可能性を新たな価値に結びつけます。",
+        "Senzu Baseは透明性と人間中心テクノロジーを通じて、眠っている可能性を新たな価値に結びつけます。",
       exploreBtn: "ソリューションを見る",
       dnaBtn: "DNAとは",
       scrollText: "スクロール",
@@ -925,14 +931,16 @@ const translations: Record<Locale, Translations> = {
       statCards: [
         { value: "200+", label: "成功プロジェクト" },
         { value: "100%", label: "透明性" },
-        { value: "2+", label: "活動年数" },
+        { value: "2+", label: "事業年数" },
         { value: "JP", label: "日本基準" },
       ],
       capBadge: "/// ソリューション",
       capH2: "2つの",
       capH2Span: "サービス領域",
       capAgencyLabel: "Agency",
+      capAgencySubtitle: "コンサルティング＆クリエイティブ",
       capSoftwareLabel: "ソフトウェア",
+      capSoftwareSubtitle: "ビジネスソフトウェア",
       capSolutionsBtn: "すべてのソリューションを見る",
       capabilities: [
         {
@@ -944,17 +952,17 @@ const translations: Record<Locale, Translations> = {
           desc: "感情的なつながりと革新的な顧客体験を生み出すブランド構築。",
         },
         {
-          title: "インハウストレーニング＆成長",
+          title: "内製化支援＆グロース",
           desc: "チームが自律的に成長できるようマーケティング能力を移転します。",
         },
       ],
       softwareCapabilities: [
         {
-          title: "ランディングページソフト",
+          title: "LP制作ツール",
           desc: "コーディング不要でプロ品質のランディングページを素早く作成。",
         },
         {
-          title: "オートソフト",
+          title: "業務自動化ソフトウェア",
           desc: "業務フロー・顧客対応・マーケティングを自動化して時間を節約。",
         },
         {
@@ -1029,12 +1037,12 @@ const translations: Record<Locale, Translations> = {
       },
       companyCard: {
         label: "会社情報",
-        title: "CÔNG TY TNHH SENZU BASE",
+        title: "SENZU BASE Co., Ltd.",
       },
       teamCount: "26名のメンバー",
       ceoLabel: "CEO",
       cultureBadge: "/// カルチャーコード",
-      cultureH2: "ザ・",
+      cultureH2: "私たちの",
       cultureH2Span: "4Sカルチャー",
       fourS: [
         {
@@ -1067,7 +1075,7 @@ const translations: Record<Locale, Translations> = {
       subtitleEmphasis: " あなたの顧客が本当に必要としているものは何ですか？",
       agencyLabel: "Agency",
       agencyDesc: "日本基準のコンサルティング＆クリエイティブサービス",
-      itLabel: "Software",
+      itLabel: "ソフトウェア",
       itDesc: "企業のために設計されたソフトウェア",
       s1: {
         badge: "01 — デジタルマーケティング",
@@ -1080,18 +1088,18 @@ const translations: Record<Locale, Translations> = {
         desc: "顧客との感情的なつながりを生み出すブランドアイデンティティの構築。ブランドアイデンティティから各体験タッチポイントまで。",
       },
       s3: {
-        badge: "03 — インハウストレーニング",
-        title: "インハウストレーニング＆成長",
+        badge: "03 — 内製化支援",
+        title: "内製化支援＆グロース",
         desc: "チームが自律的に成長できるようマーケティング能力を移転します。マーケターのトレーニングからDX＆オートメーションの実装まで。",
       },
       s4: {
         badge: "04 — ランディングページ",
-        title: "ランディングページソフト",
+        title: "LP制作ツール",
         desc: "コーディング不要でプロ品質のランディングページを素早く作成。美しいデザイン、高速表示、分析ツール内蔵でコンバージョンを最大化。",
       },
       s5: {
         badge: "05 — オートメーション",
-        title: "オートソフト",
+        title: "業務自動化ソフトウェア",
         desc: "業務フロー・顧客対応・マーケティングを自動化。時間を節約し、ミスを削減し、ユーザー体験を向上させます。",
       },
       s6: {
@@ -1174,13 +1182,13 @@ const translations: Record<Locale, Translations> = {
         "20万〜80万円",
         "80万〜200万円",
         "200万円以上",
-        "直接交渉",
+        "要相談",
       ],
       serviceOptions: [
         "サービスを選択",
         "デジタルマーケティングコンサルティング",
         "ブランドクリエイティブ",
-        "インハウストレーニング＆成長",
+        "内製化支援＆グロース",
         "総合戦略コンサルティング",
         "その他 / もっと相談したい",
       ],
@@ -1199,7 +1207,7 @@ const translations: Record<Locale, Translations> = {
     },
     team: {
       badge: "/// ファウンダー紹介",
-      h1: "出会う",
+      h1: "私たちの",
       h1Span: "ファウンダーたち",
       subtitle: "Senzu Baseは、共通のビジョンを持つ2人のファウンダーが率いています — 日本とベトナムの卓越性を融合し、真の突破口を創り出す。",
       careerLabel: "経歴",
@@ -1233,8 +1241,8 @@ const translations: Record<Locale, Translations> = {
           "コンサルティング支援と並行して、自社プロダクトも開発中（2026年度リリース予定）。",
         ],
         career: [
-          { period: "2020/04 ~ 2024/05", role: "サイバーエージェント — 営業・マーケティングコンサル" },
-          { period: "2024/05 ~ 現在", role: "株式会社センズ — 代表取締役" },
+          { period: "2020 ~ 2024", role: "サイバーエージェント — 営業・マーケティングコンサル" },
+          { period: "2024 ~ 現在", role: "株式会社センズ — 代表取締役" },
         ],
         achievement: "創業1年半で取引社数50社を突破",
         hobbies: "旅行 · 読書 · カラオケ · ラーメン · 地元高知県に友人を案内すること",
@@ -1247,7 +1255,7 @@ const translations: Record<Locale, Translations> = {
     },
     footer: {
       tagline:
-        "透明性と人間中心テクノロジーを通じて、眠れる可能性を新たな価値に結びつけます。",
+        "透明性と人間中心テクノロジーを通じて、眠っている可能性を新たな価値に結びつけます。",
     },
   },
 };

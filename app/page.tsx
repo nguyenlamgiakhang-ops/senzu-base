@@ -97,6 +97,7 @@ export default function HomePage() {
                   src={partner.logo}
                   alt={partner.name}
                   height={28}
+                  width={80}
                   className="partner-logo h-7 w-auto"
                 />
                 <span className="text-senzuGlow/30 text-sm select-none">✦</span>
@@ -107,7 +108,7 @@ export default function HomePage() {
       </section>
 
       {/* ORIGIN */}
-      <section className="py-16 md:py-32 px-4 md:px-6">
+      <section className="below-fold py-16 md:py-32 px-4 md:px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-20 items-center">
           <div className="space-y-8">
             <div>
@@ -144,7 +145,7 @@ export default function HomePage() {
       </section>
 
       {/* SOLUTIONS OVERVIEW */}
-      <section className="py-12 md:py-24 px-4 md:px-6">
+      <section className="below-fold py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <p className="text-senzuGlow text-xs font-black tracking-[0.4em] uppercase mb-4">{h.capBadge}</p>
@@ -156,7 +157,7 @@ export default function HomePage() {
             <div className="glass-card rounded-3xl p-8 md:p-10 flex flex-col gap-6">
               <div>
                 <p className="text-senzuGlow text-xs font-black tracking-[0.35em] uppercase mb-2">{h.capAgencyLabel}</p>
-                <h3 className="text-2xl font-bold text-white">Tư vấn & Sáng tạo</h3>
+                <h3 className="text-2xl font-bold text-white">{h.capAgencySubtitle}</h3>
               </div>
               <div className="flex flex-col gap-3">
                 {h.capabilities.map((cap, i) => (
@@ -172,7 +173,7 @@ export default function HomePage() {
             <div className="glass-card rounded-3xl p-8 md:p-10 flex flex-col gap-6">
               <div>
                 <p className="text-senzuGlow text-xs font-black tracking-[0.35em] uppercase mb-2">{h.capSoftwareLabel}</p>
-                <h3 className="text-2xl font-bold text-white">Phần mềm doanh nghiệp</h3>
+                <h3 className="text-2xl font-bold text-white">{h.capSoftwareSubtitle}</h3>
               </div>
               <div className="flex flex-col gap-3">
                 {h.softwareCapabilities.map((cap, i) => (
@@ -202,7 +203,7 @@ export default function HomePage() {
       </section>
 
       {/* VALUES — asymmetric layout */}
-      <section className="py-12 md:py-24 px-4 md:px-6">
+      <section className="below-fold py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10 md:mb-16">
             <p className="text-senzuGlow text-xs font-black tracking-[0.4em] uppercase mb-4">{h.valuesBadge}</p>
@@ -248,7 +249,7 @@ export default function HomePage() {
       </section>
 
       {/* JOURNAL PREVIEW */}
-      <section className="py-12 md:py-24 px-4 md:px-6">
+      <section className="below-fold py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3 mb-8 md:mb-12">
             <div>
@@ -293,6 +294,7 @@ export default function HomePage() {
                       src={images[i]}
                       alt={news.title}
                       fill
+                      loading="lazy"
                       className={`news-card-img object-cover ${imgOpacity[i]}`}
                     />
                     <div
@@ -317,7 +319,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-32 px-4 md:px-6">
+      <section className="below-fold py-16 md:py-32 px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center glass-card rounded-3xl md:rounded-[48px] p-8 md:p-16 relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-1 bg-gradient-to-r from-transparent via-senzuGlow to-transparent"></div>
           <p className="text-senzuGlow text-xs font-black tracking-[0.4em] uppercase mb-6">{h.ctaBadge}</p>

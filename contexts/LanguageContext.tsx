@@ -5,6 +5,8 @@ import {
   useContext,
   useState,
   useEffect,
+  useCallback,
+  useMemo,
   ReactNode,
 } from "react";
 import translations, { type Locale, type Translations } from "@/lib/translations";
@@ -31,15 +33,18 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  function setLocale(newLocale: Locale) {
+  const setLocale = useCallback((newLocale: Locale) => {
     setLocaleState(newLocale);
     localStorage.setItem("senzu-locale", newLocale);
-  }
+  }, []);
+
+  const value = useMemo(
+    () => ({ locale, setLocale, t: translations[locale] }),
+    [locale, setLocale]
+  );
 
   return (
-    <LanguageContext.Provider
-      value={{ locale, setLocale, t: translations[locale] }}
-    >
+    <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
   );
