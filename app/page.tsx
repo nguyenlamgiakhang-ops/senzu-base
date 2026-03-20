@@ -268,9 +268,9 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-6">
             {h.newsItems.map((news, i) => {
               const images = [
-                "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80",
-                "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80",
-                "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
+                "/news/外観①.jpg",
+                "/news/ラウンジ②.jpg",
+                "/news/エントランス①.jpg",
               ];
               const imgOpacity = [
                 "opacity-50 group-hover:opacity-70",
