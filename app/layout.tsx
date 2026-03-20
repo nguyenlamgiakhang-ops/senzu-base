@@ -10,7 +10,7 @@ const beVietnamPro = Be_Vietnam_Pro({
   weight: ["300", "400", "500", "700", "800", "900"],
   display: "swap",
   variable: "--font-be-vietnam-pro",
-  preload: true,
+  preload: false,
 });
 
 const BASE_URL = "https://senzu-base.vn";
