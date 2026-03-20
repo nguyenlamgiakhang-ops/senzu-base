@@ -25,7 +25,7 @@ export default function NewsPage() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
           <div className="glass-card rounded-3xl overflow-hidden group flex flex-col">
             <div className="relative h-48 overflow-hidden shrink-0">
-              <Image src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="Website Relaunch" fill className="news-card-img object-cover opacity-50 group-hover:opacity-70" />
+              <Image src="/news/外観①.jpg" alt="Website Relaunch" fill className="news-card-img object-cover opacity-50 group-hover:opacity-70" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(13, 17, 23, 0) 0%, rgba(13, 17, 23, 0.9) 100%)" }}></div>
               <div className="absolute top-4 left-4">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-senzuGlow/20 border border-senzuGlow/30 text-xs font-bold text-senzuGlow">
@@ -45,7 +45,7 @@ export default function NewsPage() {
 
           <div className="glass-card rounded-3xl overflow-hidden group flex flex-col">
             <div className="relative h-48 overflow-hidden shrink-0">
-              <Image src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" alt="We're Hiring" fill className="news-card-img object-cover opacity-50 group-hover:opacity-70" />
+              <Image src="/news/ラウンジ①.jpg" alt="We're Hiring" fill className="news-card-img object-cover opacity-50 group-hover:opacity-70" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(13, 17, 23, 0) 0%, rgba(13, 17, 23, 0.9) 100%)" }}></div>
               <div className="absolute top-4 left-4">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/20 border border-orange-500/30 text-xs font-bold text-orange-400">
@@ -70,7 +70,7 @@ export default function NewsPage() {
 
           <div className="glass-card rounded-3xl overflow-hidden group opacity-70 flex flex-col">
             <div className="relative h-48 overflow-hidden shrink-0">
-              <Image src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Insight Blog" fill className="news-card-img object-cover opacity-30 group-hover:opacity-50" />
+              <Image src="/news/エントランス①.jpg" alt="Insight Blog" fill className="news-card-img object-cover opacity-30 group-hover:opacity-50" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(13, 17, 23, 0) 0%, rgba(13, 17, 23, 0.9) 100%)" }}></div>
               <div className="absolute top-4 left-4">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-xs font-bold text-blue-400">
