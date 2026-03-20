@@ -56,21 +56,13 @@ export default function HomePage() {
 
           <div className="md:col-span-5 relative h-[600px] hidden md:flex items-center justify-center">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-[#00843D] blur-[140px] rounded-full opacity-40"></div>
-            <div className="absolute top-12 right-0 w-[280px] h-[380px] rounded-[40px] bg-black/40 backdrop-blur-2xl border border-white/10 p-8 flex flex-col justify-between shadow-2xl animate-float z-10 rotate-3 hover:rotate-0 hover:z-30 transition-all duration-300 cursor-pointer">
+            <div className="absolute top-12 right-0 w-[280px] h-[380px] rounded-[40px] bg-black/40 backdrop-blur-2xl border border-white/10 p-10 flex flex-col justify-between shadow-2xl animate-float z-10 rotate-3 hover:rotate-0 hover:z-30 transition-all duration-300 cursor-pointer">
               <div className="flex justify-between items-start">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-white/20 to-transparent"></div>
-                <Diamond weight="duotone" className="text-senzuGlow" size={32} />
-              </div>
-              {/* Project image grid */}
-              <div className="grid grid-cols-2 gap-2 my-2">
-                {["/news/外観①.jpg", "/news/外観②.jpg", "/news/ラウンジ①.jpg", "/news/エントランス①.jpg"].map((src, i) => (
-                  <div key={i} className="relative h-[72px] rounded-2xl overflow-hidden">
-                    <Image src={src} alt="" fill className="object-cover opacity-60" />
-                  </div>
-                ))}
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/20 to-transparent"></div>
+                <Diamond weight="duotone" className="text-4xl text-senzuGlow" size={40} />
               </div>
               <div className="space-y-1">
-                <span className="text-5xl font-extrabold text-white block tracking-tighter">200+</span>
+                <span className="text-6xl font-extrabold text-white block tracking-tighter">200+</span>
                 <span className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.4em] block">{h.projectsLabel}</span>
               </div>
             </div>
