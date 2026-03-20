@@ -55,24 +55,29 @@ export default function HomePage() {
           </div>
 
           <div className="md:col-span-5 relative h-[600px] hidden md:flex items-center justify-center">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-[#00843D] blur-[140px] rounded-full opacity-40"></div>
-            <div className="absolute top-12 right-0 w-[280px] h-[380px] rounded-[40px] bg-black/40 backdrop-blur-2xl border border-white/10 p-10 flex flex-col justify-between shadow-2xl animate-float z-10 rotate-3 hover:rotate-0 hover:z-30 transition-all duration-300 cursor-pointer">
-              <div className="flex justify-between items-start">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/20 to-transparent"></div>
-                <Diamond weight="duotone" className="text-4xl text-senzuGlow" size={40} />
-              </div>
-              <div className="space-y-1">
-                <span className="text-6xl font-extrabold text-white block tracking-tighter">200+</span>
-                <span className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.4em] block">{h.projectsLabel}</span>
+            {/* Green glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-[#00843D] blur-[140px] rounded-full opacity-30 pointer-events-none"></div>
+
+            {/* Main image */}
+            <div className="relative w-[300px] h-[420px] rounded-[40px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.6)] border border-white/10 z-10">
+              <Image src="/news/ラウンジ①.jpg" alt="SENZU Office" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+            </div>
+
+            {/* Badge: 200+ Projects — bottom-left, floating */}
+            <div className="absolute bottom-20 left-0 z-20 flex items-center gap-3 px-5 py-4 rounded-2xl bg-black/50 backdrop-blur-xl border border-white/10 shadow-xl animate-float">
+              <Diamond weight="duotone" className="text-senzuGlow shrink-0" size={28} />
+              <div>
+                <span className="text-2xl font-extrabold text-white block leading-none tracking-tight">200+</span>
+                <span className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.35em]">{h.projectsLabel}</span>
               </div>
             </div>
-            <div className="absolute bottom-16 left-[-10px] w-[300px] rounded-[32px] bg-[#05110a]/10 border border-senzu/40 p-10 shadow-[0_40px_80px_rgba(0,0,0,0.7)] z-20 animate-float -rotate-3 hover:rotate-0 hover:z-30 transition-all duration-300 cursor-pointer" style={{ animationDelay: "-3s" }}>
-              <div className="relative">
-                <span className="text-[10px] text-senzuGlow uppercase tracking-[0.3em] font-black mb-6 block">{h.coreStrength}</span>
-                <h3 className="text-4xl font-bold text-white leading-[1.1] tracking-tight">CyberAgent<br />DNA</h3>
-                <p className="text-sm text-gray-400 mt-6 font-medium">{h.jpStandard}</p>
-                <div className="absolute -top-4 -right-4 w-16 h-16 bg-senzu/20 blur-2xl rounded-full"></div>
-              </div>
+
+            {/* Badge: CyberAgent DNA — top-right, floating */}
+            <div className="absolute top-14 right-0 z-20 px-5 py-4 rounded-2xl bg-black/50 backdrop-blur-xl border border-senzu/30 shadow-xl animate-float" style={{ animationDelay: "-3s" }}>
+              <span className="text-[9px] text-senzuGlow uppercase tracking-[0.35em] font-black block mb-1">{h.coreStrength}</span>
+              <span className="text-lg font-bold text-white leading-tight block">CyberAgent<br />DNA</span>
+              <p className="text-xs text-gray-400 mt-2">{h.jpStandard}</p>
             </div>
           </div>
         </div>
