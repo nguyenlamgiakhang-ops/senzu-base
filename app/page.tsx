@@ -60,7 +60,7 @@ export default function HomePage() {
 
             {/* Main image */}
             <div className="relative w-[300px] h-[420px] rounded-[40px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.6)] border border-white/10 z-10">
-              <Image src="/news/ラウンジ①.jpg" alt="SENZU Office" fill className="object-cover" />
+              <Image src="/news/ラウンジ①.jpg" alt="SENZU Office" fill priority className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             </div>
 
