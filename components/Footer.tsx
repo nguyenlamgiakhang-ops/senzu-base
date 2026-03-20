@@ -57,7 +57,8 @@ export default function Footer() {
                 src="/logo/SENZU BASE white.png"
                 alt="Senzu Base"
                 width={260}
-                height={72}
+                height={30}
+                sizes="260px"
                 className="h-18 w-auto brightness-200 contrast-125 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] transition duration-300"
               />
             </Link>

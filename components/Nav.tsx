@@ -54,9 +54,10 @@ export default function Nav() {
             <Image
               src="/logo/SENZU BASE white.png"
               alt="Senzu Base"
-              width={500}
-              height={60}
-              unoptimized
+              width={204}
+              height={24}
+              sizes="204px"
+              priority
               className="h-4 md:h-6 w-auto group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition"
             />
           </Link>
