@@ -342,4 +342,22 @@ body {
   .service-card:hover {
     transform: none;
   }
+
+  /* ── Nav: tắt backdrop-filter (inline style, cần !important) ── */
+  nav {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(2, 6, 23, 0.97) !important;
+  }
+
+  /* ── Marquee section backdrop-blur-sm ── */
+  .backdrop-blur-sm {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* ── Scroll indicator: tắt bounce animation ── */
+  .animate-bounce {
+    animation: none !important;
+  }
 }
