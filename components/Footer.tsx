@@ -62,7 +62,7 @@ export default function Footer() {
                 className="h-18 w-auto brightness-200 contrast-125 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] transition duration-300"
               />
             </Link>
-            <p className="text-sm text-gray-500 leading-relaxed max-w-xs">
+            <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
               {t.footer.tagline}
             </p>
             {/* Green accent line */}
@@ -112,7 +112,7 @@ export default function Footer() {
           className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-6"
           style={{ borderTop: "1px solid rgba(255, 255, 255, 0.05)" }}
         >
-          <p className="text-xs text-gray-600">
+          <p className="text-xs text-gray-400">
             © 2026 CÔNG TY TNHH SENZU BASE. All rights reserved.
           </p>
           <div className="flex gap-6">

@@ -322,10 +322,11 @@ body {
     font-size: 80px !important;
   }
 
-  /* ── Aurora orbs: thu nhỏ để tránh horizontal overflow ── */
-  .orb-1 { width: 300px; height: 300px; }
-  .orb-2 { width: 250px; height: 250px; }
-  .orb-3 { width: 200px; height: 200px; }
+  /* ── Aurora orbs: thu nhỏ + giảm blur + tắt animation để tiết kiệm GPU ── */
+  .orb-1 { width: 200px; height: 200px; }
+  .orb-2 { width: 180px; height: 180px; }
+  .orb-3 { width: 150px; height: 150px; }
+  .orb { filter: blur(40px); animation: none; }
 
   /* ── Glass card inner padding tighter on mobile ── */
   .glass-card {

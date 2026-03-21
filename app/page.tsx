@@ -133,7 +133,7 @@ export default function HomePage() {
               ].map((stat) => (
                 <div key={stat.label}>
                   <div className="text-2xl font-bold text-senzuGlow">{stat.value}</div>
-                  <div className="text-xs text-gray-500 mt-1">{stat.label}</div>
+                  <div className="text-xs text-gray-400 mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -314,7 +314,7 @@ export default function HomePage() {
                   </div>
                   <div className="p-6">
                     <h3 className={`text-lg font-bold mb-1 transition ${hoverTitle[i]}`}>{news.title}</h3>
-                    <p className="text-xs text-gray-500">{news.date}</p>
+                    <p className="text-xs text-gray-400">{news.date}</p>
                   </div>
                 </Link>
               );
