@@ -7,7 +7,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const beVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
-  weight: ["400", "500", "700", "800", "900"],
+  weight: ["400", "700", "800", "900"],
   display: "swap",
   variable: "--font-be-vietnam-pro",
   preload: true,
