@@ -76,7 +76,7 @@ export default function HomePage() {
             {/* Badge: CyberAgent DNA — top-right, floating */}
             <div className="absolute top-14 right-0 z-20 px-5 py-4 rounded-2xl bg-black/50 backdrop-blur-xl border border-senzu/30 shadow-xl animate-float" style={{ animationDelay: "-3s" }}>
               <span className="text-[9px] text-senzuGlow uppercase tracking-[0.35em] font-black block mb-1">{h.coreStrength}</span>
-              <span className="text-lg font-bold text-white leading-tight block">CyberAgent<br />DNA</span>
+              <span className="text-lg font-bold text-white leading-tight block">Japan ×<br />Vietnam</span>
               <p className="text-xs text-gray-400 mt-2">{h.jpStandard}</p>
             </div>
           </div>
