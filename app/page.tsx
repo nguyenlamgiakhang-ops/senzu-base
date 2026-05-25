@@ -14,7 +14,6 @@ const JournalSection  = dynamic(() => import("@/components/home/JournalSection")
 const CTASection      = dynamic(() => import("@/components/home/CTASection").then(m => m.CTASection),      { ssr: false, loading: () => <div className="py-16 md:py-32" style={{ minHeight: 280 }} /> });
 
 const partners = [
-  { name: "CyberAgent", logo: "/partners/cyberagent.svg" },
   { name: "Google",     logo: "/partners/google.svg"     },
   { name: "Meta",       logo: "/partners/meta.svg"       },
   { name: "TikTok",     logo: "/partners/tiktok.svg"     },

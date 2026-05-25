@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Meet Our Founders",
   description:
-    "Senzu Base is led by two founders: Nguyen Huu Thang (CEO, Vietnam) and Hirahara Takumi (Representative Director & CEO, Japan) — both former CyberAgent professionals.",
+    "Senzu Base is led by Nguyen Huu Thang (CEO) — bridging Japanese excellence and Vietnamese dynamism to create real breakthroughs.",
   openGraph: {
     title: "Meet Our Founders | Senzu Base",
     description:

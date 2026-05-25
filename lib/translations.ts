@@ -217,7 +217,7 @@ const translations: Record<Locale, Translations> = {
       originH2Line1: "Khởi nguồn từ",
       originH2Line2: "Nhật Bản.",
       originDesc:
-        "Senzu Base được thành lập bởi cựu nhân viên CyberAgent — tập đoàn công nghệ & truyền thông hàng đầu Nhật Bản. Chúng tôi mang tiêu chuẩn Nhật Bản vào thị trường Việt Nam.",
+        "Senzu Base được xây dựng trên nền tảng tiêu chuẩn Nhật Bản, mang tinh thần đổi mới và chất lượng cao vào thị trường Việt Nam.",
       stats: { founded: "Thành lập", hq: "Trụ sở", standard: "Tiêu chuẩn" },
       statCards: [
         { value: "200+", label: "Dự án thành công" },
@@ -307,8 +307,8 @@ const translations: Record<Locale, Translations> = {
       mottoTranslation: "Kiến tạo điểm xuất phát của cuộc đời",
       originCard: {
         label: "Nguồn gốc",
-        title: "Xuất thân từ CyberAgent Nhật Bản",
-        desc: "Senzu Base được thành lập bởi cựu nhân viên CyberAgent — tập đoàn công nghệ và truyền thông hàng đầu Nhật Bản. Chúng tôi mang tinh thần đổi mới và tiêu chuẩn cao nhất vào từng dự án.",
+        title: "Nền tảng từ Nhật Bản",
+        desc: "Senzu Base được xây dựng trên nền tảng tiêu chuẩn Nhật Bản. Chúng tôi mang tinh thần đổi mới và tiêu chuẩn cao nhất vào từng dự án.",
         founded: "Thành lập",
         hq: "Trụ sở",
       },
@@ -496,7 +496,7 @@ const translations: Record<Locale, Translations> = {
       badge: "/// Người Sáng Lập",
       h1: "Gặp gỡ",
       h1Span: "Nhà sáng lập",
-      subtitle: "Senzu Base được dẫn dắt bởi hai nhà sáng lập với tầm nhìn chung — kết nối tinh hoa Nhật Bản và Việt Nam để tạo ra đột phá thực sự.",
+      subtitle: "Senzu Base được dẫn dắt bởi nhà sáng lập với tầm nhìn rõ ràng — kết nối tinh hoa Nhật Bản và Việt Nam để tạo ra đột phá thực sự.",
       careerLabel: "Kinh nghiệm",
       achievementLabel: "Thành tích nổi bật",
       hobbiesLabel: "Sở thích",
@@ -509,7 +509,7 @@ const translations: Record<Locale, Translations> = {
           "Dẫn dắt Senzu Base — công ty con tại Việt Nam — kết nối tiêu chuẩn Nhật Bản với thị trường Việt Nam.",
         ],
         career: [
-          { period: "2020 ~ 2024", role: "CyberAgent Japan — Digital Marketing" },
+          { period: "2020 ~ 2024", role: "Japan — Digital Marketing" },
           { period: "2024 ~ nay", role: "Senzu Base — CEO" },
         ],
         achievement: "Senzu Base đạt 50+ khách hàng chỉ sau 1,5 năm hoạt động",
@@ -571,7 +571,7 @@ const translations: Record<Locale, Translations> = {
       originH2Line1: "Born from",
       originH2Line2: "Japan.",
       originDesc:
-        "Senzu Base was founded by former CyberAgent employees — Japan's leading technology and media conglomerate. We bring Japanese standards to the Southeast Asian market.",
+        "Senzu Base is built on a foundation of Japanese standards, bringing a spirit of innovation and high quality to the Southeast Asian market.",
       stats: { founded: "Founded", hq: "HQ", standard: "Standard" },
       statCards: [
         { value: "200+", label: "Successful Projects" },
@@ -661,8 +661,8 @@ const translations: Record<Locale, Translations> = {
       mottoTranslation: "Where Your Journey Begins",
       originCard: {
         label: "Origin",
-        title: "CyberAgent Japan Alumni",
-        desc: "Senzu Base was founded by former CyberAgent employees — Japan's leading technology and media conglomerate. We bring the DNA of innovation and the highest standards to every project.",
+        title: "Japanese Foundation",
+        desc: "Senzu Base is built on a foundation of Japanese standards. We bring the DNA of innovation and the highest standards to every project.",
         founded: "Founded",
         hq: "Headquarters",
       },
@@ -850,7 +850,7 @@ const translations: Record<Locale, Translations> = {
       badge: "/// Our Founders",
       h1: "Meet Our",
       h1Span: "Founders",
-      subtitle: "Senzu Base is led by two founders sharing a single vision — bridging Japanese excellence and Vietnamese energy to create real breakthroughs.",
+      subtitle: "Senzu Base is led by a founder with a clear vision — bridging Japanese excellence and Vietnamese energy to create real breakthroughs.",
       careerLabel: "Career",
       achievementLabel: "Key Achievement",
       hobbiesLabel: "Hobbies",
@@ -860,11 +860,10 @@ const translations: Record<Locale, Translations> = {
         company: "Senzu Base",
         role: "CEO",
         bio: [
-          "Former CyberAgent Japan employee with experience in digital marketing and CX in the Japanese market.",
-          "Leads Senzu Base — the Vietnamese subsidiary — bridging Japanese standards with the Vietnamese market.",
+          "Leads Senzu Base — bridging Japanese standards with the Vietnamese market.",
         ],
         career: [
-          { period: "2020 ~ 2024", role: "CyberAgent Japan — Digital Marketing" },
+          { period: "2020 ~ 2024", role: "Japan — Digital Marketing" },
           { period: "2024 ~ Present", role: "Senzu Base — CEO" },
         ],
         achievement: "Senzu Base surpassed 50 clients in just 1.5 years",
@@ -926,7 +925,7 @@ const translations: Record<Locale, Translations> = {
       originH2Line1: "誕生は",
       originH2Line2: "日本から。",
       originDesc:
-        "Senzu BaseはCyberAgent（日本トップのテクノロジー・メディア企業）の元社員によって設立されました。日本基準の品質を東南アジア市場にもたらします。",
+        "Senzu Baseは日本基準の品質を基盤として構築されています。革新の精神と最高水準をアジア市場にもたらします。",
       stats: { founded: "設立", hq: "本社", standard: "基準" },
       statCards: [
         { value: "200+", label: "成功プロジェクト" },
@@ -1020,8 +1019,8 @@ const translations: Record<Locale, Translations> = {
       mottoTranslation: "人生の起点を創る",
       originCard: {
         label: "起源",
-        title: "CyberAgent Japan 出身",
-        desc: "Senzu BaseはCyberAgent（日本トップのテクノロジー・メディア企業）の元社員によって設立されました。イノベーションのDNAと最高基準をすべてのプロジェクトに持ち込みます。",
+        title: "日本基準の基盤",
+        desc: "Senzu Baseは日本基準の品質を基盤として構築されています。イノベーションのDNAと最高基準をすべてのプロジェクトに持ち込みます。",
         founded: "設立",
         hq: "本社",
       },
@@ -1209,7 +1208,7 @@ const translations: Record<Locale, Translations> = {
       badge: "/// ファウンダー紹介",
       h1: "私たちの",
       h1Span: "ファウンダーたち",
-      subtitle: "Senzu Baseは、共通のビジョンを持つ2人のファウンダーが率いています — 日本とベトナムの卓越性を融合し、真の突破口を創り出す。",
+      subtitle: "Senzu Baseは、明確なビジョンを持つファウンダーが率いています — 日本とベトナムの卓越性を融合し、真の突破口を創り出す。",
       careerLabel: "経歴",
       achievementLabel: "実績",
       hobbiesLabel: "趣味",
@@ -1219,11 +1218,10 @@ const translations: Record<Locale, Translations> = {
         company: "Senzu Base",
         role: "CEO",
         bio: [
-          "CyberAgent Japan元社員として、日本市場でのデジタルマーケティングとCXの経験を積む。",
           "ベトナム法人Senzu Baseを率い、日本基準をベトナム市場と結びつける架け橋となる。",
         ],
         career: [
-          { period: "2020 ~ 2024", role: "CyberAgent Japan — デジタルマーケティング" },
+          { period: "2020 ~ 2024", role: "Japan — デジタルマーケティング" },
           { period: "2024 ~ 現在", role: "Senzu Base — CEO" },
         ],
         achievement: "Senzu Base 創業1年半で50社を突破",

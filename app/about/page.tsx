@@ -172,10 +172,6 @@ export default function AboutPage() {
                 <span className="text-gray-400">{a.teamCount}</span>
               </div>
             </div>
-            <div className="pt-4 border-t border-white/5">
-              <p className="text-xs text-gray-500">{a.ceoLabel}</p>
-              <p className="font-semibold">Takumi Hirahara</p>
-            </div>
           </div>
         </div>
       </section>

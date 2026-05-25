@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Senzu Base",
   },
   description:
-    "Senzu Base is a CyberAgent alumni-founded agency bridging Japanese standards and the Vietnamese market. Digital Marketing, Brand Creative, In-house Training, and Business Software.",
+    "Senzu Base is a Japanese-standard agency bridging Japanese excellence and the Vietnamese market. Digital Marketing, Brand Creative, In-house Training, and Business Software.",
   keywords: [
     "Senzu Base",
     "digital marketing Vietnam",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "brand creative Vietnam",
     "デジタルマーケティング ベトナム",
     "マーケティングコンサルティング",
-    "CyberAgent Vietnam",
+
     "agency Nhật Bản",
   ],
   authors: [{ name: "Senzu Base", url: BASE_URL }],
@@ -91,7 +91,7 @@ const organizationSchema = {
   logo: `${BASE_URL}/logo/SENZU BASE white.png`,
   foundingDate: "2024",
   description:
-    "A CyberAgent alumni-founded agency bridging Japanese standards and the Vietnamese market.",
+    "A Japanese-standard agency bridging Japanese excellence and the Vietnamese market.",
   address: {
     "@type": "PostalAddress",
     addressCountry: "VN",
@@ -108,13 +108,6 @@ const organizationSchema = {
       name: "Nguyen Huu Thang",
       jobTitle: "CEO",
       worksFor: { "@type": "Organization", name: "Senzu Base" },
-    },
-    {
-      "@type": "Person",
-      name: "Hirahara Takumi",
-      alternateName: "平原 匠",
-      jobTitle: "Representative Director & CEO",
-      worksFor: { "@type": "Organization", name: "Senzu Inc." },
     },
   ],
 };

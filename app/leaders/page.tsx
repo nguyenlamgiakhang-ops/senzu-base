@@ -16,16 +16,6 @@ const ceos = [
     labelBg: "rgba(0, 184, 92, 0.15)",
     imgStyle: {},
   },
-  {
-    imgSrc: "/ceo_images/%E5%B9%B3%E5%8E%9F%20%E5%8C%A0.jpg",
-    imgAlt: "Hirahara Takumi",
-    key: "jp" as const,
-    borderColor: "rgba(0, 184, 92, 0.35)",
-    glowColor: "rgba(0, 184, 92, 0.12)",
-    labelColor: "#00B85C",
-    labelBg: "rgba(0, 184, 92, 0.15)",
-    imgStyle: {},
-  },
 ];
 
 export default function TeamPage() {
@@ -51,7 +41,7 @@ export default function TeamPage() {
 
       {/* ── CEO Cards ── */}
       <section className="py-10 md:py-16 px-4 md:px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+        <div className="max-w-2xl mx-auto flex flex-col gap-8">
           {ceos.map((ceo) => {
             const data = tm[ceo.key];
             return (

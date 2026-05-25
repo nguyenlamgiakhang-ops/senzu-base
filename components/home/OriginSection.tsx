@@ -12,7 +12,6 @@ export function OriginSection() {
             <p className="text-senzuGlow text-xs font-black tracking-[0.4em] uppercase mb-4">{h.originBadge}</p>
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight tracking-tight">
               {h.originH2Line1}<br />
-              <span className="text-gradient">CyberAgent</span><br />
               {h.originH2Line2}
             </h2>
           </div>
