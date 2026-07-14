@@ -25,9 +25,11 @@ export default function PageHero({
         {subtitle && <p className="pg-sub">{subtitle}</p>}
       </div>
       <div className="pg-crumb">
-        <Link href="/">{homeLabel}</Link>
-        <span className="sep">/</span>
-        <span className="cur">{crumbLabel}</span>
+        <div className="wrap">
+          <Link href="/">{homeLabel}</Link>
+          <span className="sep">/</span>
+          <span className="cur">{crumbLabel}</span>
+        </div>
       </div>
     </header>
   );

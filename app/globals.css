@@ -25,17 +25,11 @@ a{color:inherit;text-decoration:none}
 /* ---- carousel ---- */
 .slides{position:absolute;inset:0;z-index:0}
 .slide{position:absolute;inset:0;background-size:cover;background-position:center;
-  opacity:0;animation:fade 21s infinite;will-change:opacity,transform}
-.slide.s1{background-image:url('/images/lp/anh-1.jpg');animation-delay:0s}
-.slide.s2{background-image:url('/images/lp/anh-2.jpg');background-position:center 35%;animation-delay:7s}
-.slide.s3{background-image:url('/images/lp/anh-3.jpg');background-color:#eef3df;animation-delay:14s}
-@keyframes fade{
-  0%{opacity:0;transform:scale(1.06)}
-  4%{opacity:1}
-  29%{opacity:1}
-  33%{opacity:0}
-  100%{opacity:0;transform:scale(1.12)}
-}
+  opacity:0;transform:scale(1.06);transition:opacity 1.1s ease,transform 7s ease;will-change:opacity,transform}
+.slide.on{opacity:1;transform:scale(1.1)}
+.slide.s1{background-image:url('/images/lp/anh-1.jpg')}
+.slide.s2{background-image:url('/images/lp/anh-2.jpg');background-position:center 35%}
+.slide.s3{background-image:url('/images/lp/anh-3.jpg');background-color:#eef3df}
 .scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
    linear-gradient(180deg,rgba(8,14,6,.55) 0%,rgba(8,14,6,.12) 22%,rgba(8,14,6,0) 42%),
@@ -106,7 +100,7 @@ a{color:inherit;text-decoration:none}
   .jp{letter-spacing:.22em}
 }
 @media(prefers-reduced-motion:reduce){
-  .slide{animation:none}.slide.s1{opacity:1}
+  .slide{transition:none}
   .jp,.romaji,.wordmark span,.tag-vn{animation:none;opacity:1;transform:none}
 }
 .drawer{position:fixed;top:var(--nav-h);left:0;right:0;z-index:45;background:rgba(16,22,13,.97);
@@ -576,7 +570,7 @@ a{color:inherit;text-decoration:none}
 .pg-title{font-family:var(--display);font-weight:600;color:var(--cream);
   font-size:clamp(2.1rem,5.5vw,3.8rem);letter-spacing:-.012em;line-height:1.06;margin:0}
 .pg-sub{color:rgba(244,247,228,.75);font-size:clamp(.92rem,1.3vw,1.08rem);max-width:46ch;margin-top:.7em}
-.pg-crumb{padding:14px var(--gut);background:var(--paper);border-bottom:1px solid var(--bline)}
+.pg-crumb{padding-block:14px;background:var(--paper);border-bottom:1px solid var(--bline)}
 .pg-crumb a,.pg-crumb span{font-size:.82rem;color:var(--faint);font-weight:600}
 .pg-crumb a:hover{color:var(--forest)}
 .pg-crumb .sep{margin:0 7px;opacity:.35}

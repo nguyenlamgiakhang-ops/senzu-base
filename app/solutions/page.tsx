@@ -33,7 +33,7 @@ export default function SolutionsPage() {
               {s.agency.cards.map((card) => (
                 <article className={`card-sol ${card.cls} reveal`} key={card.n}>
                   <div className="sol-left">
-                    <span className="sol-badge">{card.n}</span>
+                    <span className="sol-badge">{card.n}</span><br />
                     <span className="tag">{card.tag}</span>
                     <h3>{card.title}</h3>
                   </div>
@@ -55,7 +55,7 @@ export default function SolutionsPage() {
               {s.software.cards.map((card) => (
                 <article className={`card-sol ${card.cls} reveal`} key={card.n}>
                   <div className="sol-left">
-                    <span className="sol-badge">{card.n}</span>
+                    <span className="sol-badge">{card.n}</span><br />
                     <span className="tag">{card.tag}</span>
                     <h3>{card.title}</h3>
                   </div>
