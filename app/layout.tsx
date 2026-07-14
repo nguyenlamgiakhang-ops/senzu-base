@@ -25,6 +25,7 @@ const shipporiMincho = Shippori_Mincho({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
   display: "swap",
+  preload: false,
   variable: "--font-shippori-mincho",
 });
 

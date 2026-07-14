@@ -6,7 +6,7 @@
   --sage:#DDE7B8; --sage-2:#E9EFD4; --cream:#F4F7E4; --forest:#214826; --forest-2:#2c5e38;
   --ink:#10160d; --body:var(--font-be-vietnam-pro),"Be Vietnam Pro","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,system-ui,sans-serif;
   --mincho:var(--font-shippori-mincho),"Shippori Mincho",serif;
-  --display:var(--font-fraunces),"Fraunces",var(--font-shippori-mincho),"Shippori Mincho","Yu Mincho","Hiragino Mincho ProN",Georgia,serif;
+  --display:var(--font-fraunces),"Fraunces","Yu Mincho","Hiragino Mincho ProN",Georgia,serif;
   --gut:clamp(20px,4vw,56px);
   --olive:#587334; --sage-mid:#8CAF61; --paper:#F1F5E3;
   --muted:rgba(16,22,13,.72); --faint:rgba(16,22,13,.64); --bline:rgba(33,72,38,.16);
