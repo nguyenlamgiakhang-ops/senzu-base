@@ -1,97 +1,66 @@
 "use client";
 
 import { useLanguage } from "@/contexts/LanguageContext";
+import translations from "@/lib/translations";
 import getHomeContent from "@/lib/i18n/home";
-import Hero from "@/components/home/Hero";
+import getSolutionsContent from "@/lib/i18n/solutions";
+import PageHero from "@/components/PageHero";
 import PlatformWheel from "@/components/home/PlatformWheel";
-import { StatIcon, ProblemIcon, QualityIcon, DuoIcon, CyberIcon, FlowStar, ValuesFan } from "@/components/home/Icons";
+import { MiscIcon, DuoIcon, CyberIcon, FlowStar, ProblemIcon, QualityIcon } from "@/components/home/Icons";
 
-const galleryImgs = ["anh-8.JPG", "anh-4.JPG", "anh-5.JPG", "anh-6.JPG", "anh-7.JPG"];
-const galleryAreas = ["g-p", "g-a", "g-b", "g-c", "g-d"];
-
-export default function HomePage() {
+export default function SolutionsPage() {
   const { locale } = useLanguage();
+  const s = getSolutionsContent(locale);
   const h = getHomeContent(locale);
+  const nav = translations[locale].nav;
 
   return (
     <>
-      <Hero jp={h.hero.jp} romaji={h.hero.romaji} tag={h.hero.tag} />
+      <PageHero jp={s.hero.jp} title={s.hero.title} subtitle={s.hero.sub} crumbLabel={nav.solutions} homeLabel={nav.home} />
 
       <main className="page">
-        {/* DNA */}
-        <section className="section dna" id="dna">
-          <span className="bgk" style={{ top: "1%", right: "-1.5%" }}>起点</span>
-          <div className="wrap">
-            <div className="reveal">
-              <span className="eyebrow"><span className="jp-mini">{h.dna.eyebrowJp}</span> {h.dna.eyebrow}</span>
-              <h2 className="h2">{h.dna.h2Pre}<em>{h.dna.h2Em}</em></h2>
-              <p className="lead">{h.dna.lead}</p>
-              <div style={{ marginTop: "2em" }}>
-                <a className="linka" href="#solutions">{h.dna.linka} <span className="a">→</span></a>
-              </div>
-            </div>
-            <div className="stats reveal">
-              {h.dna.stats.map((s, i) => (
-                <div className="stat" key={s.label}>
-                  <span className="stat-ic"><StatIcon index={i} /></span>
-                  <div>
-                    <b>{s.value}</b>
-                    <span className="stat-l">{s.label}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Activity gallery */}
-        <section className="section gallery-sec">
-          <div className="wrap">
-            <div className="gallery-head reveal">
-              <span className="eyebrow"><span className="jp-mini">{h.gallery.eyebrowJp}</span> {h.gallery.eyebrow}</span>
-            </div>
-            <div className="gallery reveal">
-              {galleryImgs.map((img, i) => (
-                <figure className={`g-item ${galleryAreas[i]}`} key={img}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/images/lp/${img}`} loading="lazy" alt={h.gallery.alts[i]} />
-                </figure>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* SOLUTIONS */}
         <section className="section" id="solutions">
           <div className="wrap">
+            {/* Agency */}
             <div className="sol-head reveal">
               <div>
-                <span className="eyebrow"><span className="jp-mini">{h.solutions.eyebrowJp}</span> {h.solutions.eyebrow}</span>
-                <h2 className="h2" style={{ marginTop: ".35em" }}>{h.solutions.h2Pre}<em>{h.solutions.h2Em}</em></h2>
+                <span className="eyebrow"><span className="jp-mini">{s.agency.eyebrowJp}</span> {s.agency.eyebrow}</span>
+                <h2 className="h2" style={{ marginTop: ".35em" }}>{s.agency.h2Pre}<em>{s.agency.h2Em}</em></h2>
               </div>
-              <a className="linka" href="/solutions">{h.solutions.linka} <span className="a">→</span></a>
+              <a className="linka" href="/contact">{s.agency.linka} <span className="a">→</span></a>
             </div>
             <div className="sol-grid">
-              {h.solutions.cards.map((card) => (
-                <article className={`card-sol ${card.cls} reveal`} key={card.letter}>
+              {s.agency.cards.map((card) => (
+                <article className={`card-sol ${card.cls} reveal`} key={card.n}>
                   <div className="sol-left">
-                    <span className="sol-badge">{card.letter}</span><br />
-                    <span className={`tag ${card.soon ? "soon" : ""}`}>
-                      {card.tag} {card.tagJp && <span className="jp-tag">{card.tagJp}</span>}
-                    </span>
+                    <span className="sol-badge">{card.n}</span>
+                    <span className="tag">{card.tag}</span>
                     <h3>{card.title}</h3>
                   </div>
                   <ul className="sol-list">
-                    {card.items.map((item, idx) =>
-                      typeof item === "string" ? (
-                        <li key={idx}>{item}</li>
-                      ) : (
-                        <li key={idx}>
-                          {item.text}
-                          <span className="soon-note">{item.note}</span>
-                        </li>
-                      )
-                    )}
+                    {card.items.map((it) => <li key={it}>{it}</li>)}
+                  </ul>
+                </article>
+              ))}
+            </div>
+
+            {/* Software */}
+            <div className="sol-head reveal" style={{ marginTop: "clamp(64px,9vw,108px)" }}>
+              <div>
+                <span className="eyebrow"><span className="jp-mini">{s.software.eyebrowJp}</span> {s.software.eyebrow}</span>
+                <h2 className="h2" style={{ marginTop: ".35em" }}>{s.software.h2Pre}<em>{s.software.h2Em}</em>{s.software.h2Post}</h2>
+              </div>
+            </div>
+            <div className="sol-grid">
+              {s.software.cards.map((card) => (
+                <article className={`card-sol ${card.cls} reveal`} key={card.n}>
+                  <div className="sol-left">
+                    <span className="sol-badge">{card.n}</span>
+                    <span className="tag">{card.tag}</span>
+                    <h3>{card.title}</h3>
+                  </div>
+                  <ul className="sol-list">
+                    {card.items.map((it) => <li key={it}>{it}</li>)}
                   </ul>
                 </article>
               ))}
@@ -99,7 +68,33 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Media / platform wheel */}
+        {/* Core strengths (dark) */}
+        <section className="section dark-sec">
+          <span className="bgk-q">強み</span>
+          <div className="wrap">
+            <div className="reveal" style={{ maxWidth: 760 }}>
+              <span className="eyebrow"><span className="jp-mini">{s.strength.eyebrowJp}</span> {s.strength.eyebrow}</span>
+              <h2 className="h2">{s.strength.h2Pre}<em>{s.strength.h2Em}</em></h2>
+            </div>
+            <div className="qwrap reveal">
+              <div className="qmethods">
+                {s.strength.methods.map((m) => (
+                  <div className="qm" key={m.title}>
+                    <span className="qic"><MiscIcon name={m.icon} /></span>
+                    <div><h4>{m.title}</h4><p>{m.desc}</p></div>
+                  </div>
+                ))}
+              </div>
+              <div className="kpi">
+                {s.strength.kpi.map((k) => (
+                  <div className="kpic" key={k.label}><b>{k.value}</b><span>{k.label}</span></div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Platforms */}
         <section className="section media" id="media">
           <div className="wrap">
             <div className="m-head reveal">
@@ -148,9 +143,7 @@ export default function HomePage() {
                 <div className="flow-card">
                   <span className="fc-tag">{h.collab.left.tag}</span>
                   <h3>{h.collab.left.title}</h3>
-                  <ul>
-                    {h.collab.left.items.map((it) => <li className="chk" key={it}>{it}</li>)}
-                  </ul>
+                  <ul>{h.collab.left.items.map((it) => <li className="chk" key={it}>{it}</li>)}</ul>
                 </div>
                 <div className="flow-mid">
                   <span className="flow-mlabel">{h.collab.midTop}</span>
@@ -161,9 +154,7 @@ export default function HomePage() {
                   <FlowStar />
                   <span className="fc-tag">{h.collab.right.tag}</span>
                   <h3>{h.collab.right.title}</h3>
-                  <ul>
-                    {h.collab.right.items.map((it) => <li className="chk" key={it}>{it}</li>)}
-                  </ul>
+                  <ul>{h.collab.right.items.map((it) => <li className="chk" key={it}>{it}</li>)}</ul>
                 </div>
               </div>
               <div className="note-strip chk">{h.collab.notePre}<b>{h.collab.noteB}</b>{h.collab.notePost}</div>
@@ -261,8 +252,8 @@ export default function HomePage() {
               <p className="lead">{h.track.lead}</p>
             </div>
             <div className="trk-stats reveal">
-              {h.track.stats.map((s) => (
-                <div className="trk" key={s.label}><b>{s.value}</b><span>{s.label}</span></div>
+              {h.track.stats.map((st) => (
+                <div className="trk" key={st.label}><b>{st.value}</b><span>{st.label}</span></div>
               ))}
             </div>
             <div className="clients reveal">
@@ -285,50 +276,16 @@ export default function HomePage() {
               <p className="lead">{h.steps.lead}</p>
             </div>
             <div className="steps reveal">
-              {h.steps.items.map((s, i) => (
-                <div className="step" key={s.title}>
+              {h.steps.items.map((st, i) => (
+                <div className="step" key={st.title}>
                   <span className="sn">{i + 1}</span>
                   <div className="stepc">
-                    <span className="st">{s.st}</span>
-                    <h4>{s.title}</h4>
-                    <p>{s.desc}</p>
+                    <span className="st">{st.st}</span>
+                    <h4>{st.title}</h4>
+                    <p>{st.desc}</p>
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Values */}
-        <section className="section value" id="values">
-          <span className="bgk" style={{ bottom: "-3%", left: "-2%" }}>価値</span>
-          <div className="wrap">
-            <div className="reveal">
-              <span className="eyebrow"><span className="jp-mini">{h.values.eyebrowJp}</span> {h.values.eyebrow}</span>
-              <h2 className="h2">{h.values.h2Line1}<br />{h.values.h2Line2}</h2>
-              <ValuesFan />
-            </div>
-            <div className="value-rows reveal">
-              {h.values.rows.map((row) => (
-                <div className="vrow" key={row.k}>
-                  <span className="k">{row.k}</span>
-                  <h3>{row.title}</h3>
-                  <p>{row.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="section" id="cta-sec">
-          <div className="wrap">
-            <div className="cta-block reveal">
-              <span className="eyebrow"><span className="jp-mini">{h.cta.eyebrowJp}</span> {h.cta.eyebrow}</span>
-              <h2>{h.cta.h2}</h2>
-              <p>{h.cta.p}</p>
-              <a className="btn btn-cream" href="mailto:keiri_base@senzu.co.jp">{h.cta.btn} <span className="a">→</span></a>
-              <p className="cta-note">{h.cta.note}</p>
             </div>
           </div>
         </section>

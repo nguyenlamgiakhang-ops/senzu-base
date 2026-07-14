@@ -28,7 +28,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem("senzu-locale") as Locale | null;
-    if (saved && (saved === "vi" || saved === "en" || saved === "ja")) {
+    if (saved && (saved === "vi" || saved === "ja")) {
       setLocaleState(saved);
     }
   }, []);

@@ -1,16 +1,31 @@
 import type { Metadata } from "next";
-import { Be_Vietnam_Pro } from "next/font/google";
+import { Be_Vietnam_Pro, Fraunces, Shippori_Mincho } from "next/font/google";
 import "./globals.css";
-import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const beVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
-  weight: ["400", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
   variable: "--font-be-vietnam-pro",
   preload: true,
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-fraunces",
+});
+
+const shipporiMincho = Shippori_Mincho({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+  variable: "--font-shippori-mincho",
 });
 
 const BASE_URL = "https://senzu-base.vn";
@@ -40,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "vi_VN",
-    alternateLocale: ["en_US", "ja_JP"],
+    alternateLocale: ["ja_JP"],
     url: BASE_URL,
     siteName: "Senzu Base",
     title: "Senzu Base — Japanese-Standard Marketing & CX Agency",
@@ -72,11 +87,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
-  },
   alternates: {
     canonical: BASE_URL,
   },
@@ -100,7 +110,7 @@ const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
-    availableLanguage: ["Vietnamese", "Japanese", "English"],
+    availableLanguage: ["Vietnamese", "Japanese"],
   },
   founders: [
     {
@@ -118,7 +128,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="vi" className={`scroll-smooth ${beVietnamPro.variable}`}>
+    <html
+      lang="vi"
+      className={`${beVietnamPro.variable} ${fraunces.variable} ${shipporiMincho.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
@@ -126,16 +139,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {/* Aurora Background */}
-        <div className="aurora-bg">
-          <div className="orb orb-1"></div>
-          <div className="orb orb-2"></div>
-          <div className="orb orb-3"></div>
-        </div>
-
         <LanguageProvider>
-          <Nav />
-          <main className="pt-20 min-h-screen">{children}</main>
+          <ScrollReveal />
+          {children}
           <Footer />
         </LanguageProvider>
       </body>

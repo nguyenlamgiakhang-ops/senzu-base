@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { List, X } from "@phosphor-icons/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
@@ -12,13 +11,13 @@ export default function Nav() {
   const pathname = usePathname();
   const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
 
-  // Đóng menu khi chuyển trang
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
 
-  // Khoá scroll body khi menu mở
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
     return () => {
@@ -26,131 +25,85 @@ export default function Nav() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 24);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    function measure() {
+      if (navRef.current) {
+        document.documentElement.style.setProperty("--nav-h", `${navRef.current.offsetHeight}px`);
+      }
+    }
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
   const navItems = [
     { href: "/", label: t.nav.home },
+    { href: "/dna", label: t.nav.dna },
+    { href: "/solutions", label: t.nav.solutions },
     { href: "/about", label: t.nav.about },
-    { href: "/services", label: t.nav.services },
-    { href: "/leaders", label: t.nav.team },
     { href: "/news", label: t.nav.news },
     { href: "/contact", label: t.nav.contact },
   ];
 
   return (
     <>
-      <nav
-        className="fixed top-0 w-full z-50 !rounded-none border-b border-white/5"
-        style={{
-          background: "rgba(2, 6, 23, 0.85)",
-          backdropFilter: "blur(20px)",
-          WebkitBackdropFilter: "blur(20px)",
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="cursor-pointer flex items-center gap-2 group"
-          >
-            <Image
-              src="/logo/SENZU BASE white.png"
-              alt="Senzu Base"
-              width={204}
-              height={24}
-              sizes="204px"
-              priority
-              className="h-4 md:h-6 w-auto group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition"
-            />
-          </Link>
+      <nav ref={navRef} className={`nav ${scrolled ? "scrolled" : ""}`} aria-label="Điều hướng chính">
+        <Link className="brand" href="/" aria-label="SENZU BASE trang chủ">
+          <span className="chip">
+            <Image src="/images/lp/base_white_PNG.png" alt="SENZU BASE" width={146} height={52} priority style={{ height: 52, width: "auto" }} />
+          </span>
+        </Link>
 
-          {/* Desktop Nav Links */}
-          <div className="hidden md:flex gap-12 text-sm font-medium tracking-wide uppercase">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`nav-link ${pathname === item.href ? "active" : ""}`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <LanguageSwitcher />
+        <div className="menu">
+          {navItems.map((item) => (
             <Link
-              href="/contact"
-              className="px-6 py-2 rounded-full border border-senzuGlow/30 text-senzuGlow hover:bg-senzuGlow hover:text-black transition duration-300 font-bold text-sm shadow-[0_0_15px_rgba(74,222,128,0.1)]"
+              key={item.href}
+              href={item.href}
+              className={`link ${pathname === item.href ? "active" : ""}`}
             >
-              {t.nav.startProject}
+              {item.label}
             </Link>
-          </div>
+          ))}
+        </div>
 
-          {/* Mobile: Language switcher + Hamburger */}
-          <div className="md:hidden flex items-center gap-1 relative z-[60]">
-            <LanguageSwitcher />
-            <button
-              className="p-2 text-white hover:text-senzuGlow transition-colors duration-200"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label={isOpen ? "Close menu" : "Open menu"}
-            >
-              {isOpen ? (
-                <X size={26} weight="bold" />
-              ) : (
-                <List size={26} weight="bold" />
-              )}
-            </button>
-          </div>
+        <div className="nav-right">
+          <LanguageSwitcher />
+          <Link className="start" href="/contact">
+            {t.nav.start} <span className="a">→</span>
+          </Link>
+          <button
+            className="burger"
+            aria-label={isOpen ? "Đóng menu" : "Mở menu"}
+            onClick={() => setIsOpen((v) => !v)}
+          >
+            {isOpen ? "×" : "≡"}
+          </button>
         </div>
       </nav>
+      <div className="nav-spacer" aria-hidden="true" />
 
-      {/* Mobile Full-screen Overlay */}
-      {isOpen && (
-        <div
-          className="mobile-nav-overlay fixed inset-0 z-40 md:hidden flex flex-col items-center justify-center px-8"
-          style={{
-            background: "rgba(2, 6, 23, 0.97)",
-            backdropFilter: "blur(24px)",
-            WebkitBackdropFilter: "blur(24px)",
-          }}
-        >
-          {/* Decorative glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-senzu/10 blur-[120px] rounded-full pointer-events-none" />
-
-          {/* Nav items */}
-          <div className="relative flex flex-col items-center gap-8 w-full mb-10">
-            {navItems.map((item, i) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className={`mobile-nav-item text-3xl font-bold tracking-widest uppercase transition-colors duration-200 ${
-                  pathname === item.href
-                    ? "text-senzuGlow"
-                    : "text-white/75 hover:text-white"
-                }`}
-                style={{ animationDelay: `${i * 0.07}s` }}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Bottom CTA */}
-          <div
-            className="mobile-nav-item relative flex flex-col items-center gap-4 w-full max-w-xs"
-            style={{ animationDelay: `${navItems.length * 0.07}s` }}
-          >
-            <Link
-              href="/contact"
-              onClick={() => setIsOpen(false)}
-              className="w-full text-center py-3 rounded-full bg-senzu hover:bg-green-500 text-white font-bold transition duration-300 shadow-[0_0_30px_rgba(0,132,61,0.4)]"
-            >
-              {t.nav.startProject}
-            </Link>
-          </div>
+      <div className={`drawer ${isOpen ? "open" : ""}`}>
+        {navItems.map((item) => (
+          <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}>
+            {item.label}
+          </Link>
+        ))}
+        <div style={{ padding: "13px 0" }}>
+          <LanguageSwitcher />
         </div>
-      )}
+        <Link className="start" href="/contact" onClick={() => setIsOpen(false)}>
+          {t.nav.start} <span className="a">→</span>
+        </Link>
+      </div>
     </>
   );
 }

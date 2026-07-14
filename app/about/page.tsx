@@ -1,220 +1,84 @@
 "use client";
 
-import {
-  Buildings,
-  Handshake,
-  Users,
-  Globe,
-  Envelope,
-  MapPin,
-  IdentificationCard,
-} from "@phosphor-icons/react/dist/ssr";
 import { useLanguage } from "@/contexts/LanguageContext";
+import translations from "@/lib/translations";
+import getAboutContent from "@/lib/i18n/about";
+import PageHero from "@/components/PageHero";
 
 export default function AboutPage() {
-  const { t } = useLanguage();
-  const a = t.about;
+  const { locale } = useLanguage();
+  const a = getAboutContent(locale);
+  const nav = translations[locale].nav;
 
   return (
-    <div className="page-enter">
-      <section className="py-20 md:py-32 px-4 md:px-6 text-center">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-senzuGlow text-xs font-black tracking-[0.4em] uppercase mb-6">
-            {a.badge}
-          </p>
-          <h1 className="text-[2.25rem] sm:text-5xl md:text-8xl font-bold leading-tight tracking-tight mb-6">
-            {a.h1} <span className="text-gradient">{a.h1Span}</span>
-          </h1>
-          <p className="text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed">
-            「人生の起点を創る」
-          </p>
-          <p className="text-gray-500 text-lg mt-2">{a.mottoTranslation}</p>
-        </div>
-      </section>
+    <>
+      <PageHero jp={a.hero.jp} title={a.hero.title} subtitle={a.hero.sub} crumbLabel={nav.about} homeLabel={nav.home} />
 
-      <section className="py-10 md:py-16 px-4 md:px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
-          <div className="glass-card rounded-3xl p-10 space-y-6">
-            <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
-              style={{
-                background: "rgba(0, 184, 92, 0.15)",
-                border: "1px solid rgba(0, 184, 92, 0.25)",
-              }}
-            >
-              <Buildings
-                weight="duotone"
-                size={28}
-                style={{ color: "#00B85C" }}
-              />
+      <main className="page">
+        <section className="section about" id="about-content">
+          <span className="bgk" style={{ top: "2%", left: "-1.5%" }}>創業</span>
+          <div className="wrap">
+            <div className="ldr-head reveal">
+              <span className="eyebrow"><span className="jp-mini">{a.ceoSection.eyebrowJp}</span> {a.ceoSection.eyebrow}</span>
+              <h2 className="h2">{a.ceoSection.h2Pre}<em>{a.ceoSection.h2Em}</em></h2>
             </div>
-            <div>
-              <p className="text-senzuGlow text-xs font-black tracking-[0.3em] uppercase mb-2">
-                {a.originCard.label}
-              </p>
-              <h2 className="text-2xl font-bold mb-4">{a.originCard.title}</h2>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {a.originCard.desc}
-              </p>
-            </div>
-            <div className="pt-4 border-t border-white/5">
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">{a.originCard.founded}</span>
-                <span className="font-semibold">May 2024</span>
+
+            <div className="ceo-msg reveal">
+              <div className="ceo-wm-wrap"><span className="ceo-watermark">BASE</span></div>
+              <div className="ceo-left">
+                <h3 className="ceo-title">
+                  {a.ceoSection.title.split("\n").map((line, i, arr) => (
+                    <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
+                  ))}
+                </h3>
+                <div className="ceo-body">
+                  {a.ceoSection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+                </div>
+                <p className="ceo-sign">{a.ceoSection.sign} <span style={{ opacity: 0.6, fontWeight: 400 }}>{a.ceoSection.signJp}</span></p>
               </div>
-              <div className="flex justify-between text-sm mt-2">
-                <span className="text-gray-500">{a.originCard.hq}</span>
-                <span className="font-semibold">Tokyo, Japan</span>
+              <div className="ceo-right">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/lp/HUhu_.png" alt="Nguyễn Hữu Thắng — CEO SENZU BASE" loading="lazy" />
               </div>
             </div>
-          </div>
 
-          <div
-            className="glass-card rounded-3xl p-10 space-y-6"
-            style={{
-              border: "1px solid rgba(0, 184, 92, 0.4)",
-              boxShadow: "0 0 30px rgba(0, 184, 92, 0.08)",
-            }}
-          >
-            <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
-              style={{
-                background: "rgba(0, 184, 92, 0.15)",
-                border: "1px solid rgba(0, 184, 92, 0.25)",
-              }}
-            >
-              <Handshake
-                weight="duotone"
-                size={28}
-                style={{ color: "#00B85C" }}
-              />
-            </div>
-            <div>
-              <p className="text-senzuGlow text-xs font-black tracking-[0.3em] uppercase mb-2">
-                {a.missionCard.label}
+            <div className="cta-block reveal" style={{ marginTop: "clamp(36px,5vw,56px)", borderRadius: 24, padding: "clamp(32px,4vw,56px)", textAlign: "center" }}>
+              <p style={{ fontFamily: "var(--display)", fontWeight: 600, fontSize: "clamp(1.3rem,2.8vw,2rem)", color: "var(--cream)", lineHeight: 1.35, fontStyle: "italic", position: "relative" }}>
+                {a.quote.text}
               </p>
-              <h2 className="text-2xl font-bold mb-4">{a.missionCard.title}</h2>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {a.missionCard.desc}
-              </p>
+              <p style={{ marginTop: 16, fontSize: ".92rem", color: "var(--sage)", fontWeight: 700, position: "relative" }}>{a.quote.by}</p>
             </div>
-            <div className="pt-4 border-t border-white/5 space-y-2">
-              {a.missionCard.bullets.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-2 text-sm text-gray-400"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-senzuGlow"></span>
-                  {item}
+
+            <div className="about-intro" style={{ marginTop: "clamp(52px,7vw,88px)" }}>
+              <div className="about-text reveal">
+                <span className="eyebrow"><span className="jp-mini">{a.vision.eyebrowJp}</span> {a.vision.eyebrow}</span>
+                <h2 className="h2">{a.vision.h2Line1}<br /><em>{a.vision.h2Em}</em></h2>
+                <p className="lead">{a.vision.lead}</p>
+                <a className="linka" href="/contact">{a.vision.linka} <span className="a">→</span></a>
+              </div>
+              <div className="about-cards reveal">
+                <div className="mc">
+                  <h3>{a.vision.mission.title}</h3>
+                  <p>{a.vision.mission.desc}</p>
+                </div>
+                <div className="vc">
+                  <h3>{a.vision.visionCard.title}</h3>
+                  <p>{a.vision.visionCard.desc}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="ml reveal" style={{ marginTop: "clamp(52px,6vw,80px)" }}>
+              {a.milestones.map((m, i) => (
+                <div className="ml-r" key={i}>
+                  <span className="ml-y">{m.y}</span>
+                  <span className="ml-t">{m.t}</span>
                 </div>
               ))}
             </div>
           </div>
-
-          <div className="glass-card rounded-3xl p-10 space-y-6">
-            <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
-              style={{
-                background: "rgba(0, 184, 92, 0.15)",
-                border: "1px solid rgba(0, 184, 92, 0.25)",
-              }}
-            >
-              <Users weight="duotone" size={28} style={{ color: "#00B85C" }} />
-            </div>
-            <div>
-              <p className="text-senzuGlow text-xs font-black tracking-[0.3em] uppercase mb-2">
-                {a.companyCard.label}
-              </p>
-              <h2 className="text-2xl font-bold mb-4">{a.companyCard.title}</h2>
-            </div>
-            <div className="space-y-3">
-              <div className="flex items-start gap-3 text-sm">
-                <MapPin
-                  weight="duotone"
-                  size={18}
-                  className="text-senzuGlow mt-0.5 shrink-0"
-                />
-                <span className="text-gray-400">
-                  158 Đường Nguyễn Văn Thủ, Phường Tân Định, TP Hồ Chí Minh,
-                  Việt Nam
-                </span>
-              </div>
-              <div className="flex items-center gap-3 text-sm">
-                <Globe
-                  weight="duotone"
-                  size={18}
-                  className="text-senzuGlow shrink-0"
-                />
-                <span className="text-gray-400">senzu-base.vn</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm">
-                <IdentificationCard
-                  weight="duotone"
-                  size={18}
-                  className="text-senzuGlow shrink-0"
-                />
-                <span className="text-gray-400">MST: 0319430261</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm">
-                <Envelope
-                  weight="duotone"
-                  size={18}
-                  className="text-senzuGlow shrink-0"
-                />
-                <span className="text-gray-400">keiri_base@senzu.co.jp</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm">
-                <Users
-                  weight="duotone"
-                  size={18}
-                  className="text-senzuGlow shrink-0"
-                />
-                <span className="text-gray-400">{a.teamCount}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 md:py-24 px-4 md:px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10 md:mb-16">
-            <p className="text-senzuGlow text-xs font-black tracking-[0.4em] uppercase mb-4">
-              {a.cultureBadge}
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold">
-              {a.cultureH2}{" "}
-              <span className="text-gradient">{a.cultureH2Span}</span>
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-            {a.fourS.map((s, i) => (
-              <div
-                key={s.word}
-                className="glass-card rounded-3xl p-8 relative overflow-hidden"
-              >
-                {/* Watermark "S" */}
-                <span
-                  className="watermark-letter absolute right-[-10px] bottom-[-20px] font-black leading-none select-none pointer-events-none"
-                  style={{ fontSize: "140px", color: "#00B85C", opacity: 0.06 }}
-                >
-                  {s.letter}
-                </span>
-                {/* Content */}
-                <div className="relative z-10">
-                  <span className="text-xs font-black text-gray-600 tracking-[0.3em] mb-5 block">
-                    0{i + 1}
-                  </span>
-                  <h3 className="text-xl font-bold mb-3">{s.word}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">
-                    {s.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </main>
+    </>
   );
 }
