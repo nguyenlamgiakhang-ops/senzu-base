@@ -21,7 +21,7 @@ const newsVi = {
       tags: ["Remote", "Freelance"],
     },
     {
-      img: "/images/lp/creative.png",
+      img: "/images/lp/creative.jpg",
       alt: "Creative team SENZU BASE",
       pill: "Đang tuyển dụng", pillCls: "hire",
       title: "Creative Designer / Visual Director",
@@ -68,7 +68,7 @@ const newsJa: typeof newsVi = {
       tags: ["Remote", "Freelance"],
     },
     {
-      img: "/images/lp/creative.png",
+      img: "/images/lp/creative.jpg",
       alt: "SENZU BASE クリエイティブチーム",
       pill: "採用中", pillCls: "hire",
       title: "クリエイティブデザイナー / ビジュアルディレクター",

@@ -40,6 +40,7 @@ export default function ContactPage() {
       <main className="page">
         <section className="section" id="ct-content">
           <div className="wrap">
+            <h2 className="sr-only">{locale === "ja" ? "お問い合わせフォーム" : "Biểu mẫu liên hệ"}</h2>
             <div className="ct-grid">
               <form className="ct-form reveal" onSubmit={handleSubmit}>
                 <div className="fr">
@@ -76,7 +77,7 @@ export default function ContactPage() {
                 {c.cards.map((card, i) => (
                   <div className={`ci ${"hi" in card && card.hi ? "hi" : ""}`} key={i}>
                     <span className="ci-ic"><MiscIcon name={card.icon} /></span>
-                    <h4>{card.title}</h4>
+                    <h3>{card.title}</h3>
                     {"link" in card && card.link ? (
                       <a href={card.link.href}>{card.link.label}</a>
                     ) : (

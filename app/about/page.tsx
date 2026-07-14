@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import translations from "@/lib/translations";
 import getAboutContent from "@/lib/i18n/about";
@@ -37,8 +38,14 @@ export default function AboutPage() {
                 <p className="ceo-sign">{a.ceoSection.sign} <span style={{ opacity: 0.6, fontWeight: 400 }}>{a.ceoSection.signJp}</span></p>
               </div>
               <div className="ceo-right">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/lp/HUhu_.png" alt="Nguyễn Hữu Thắng — CEO SENZU BASE" loading="lazy" />
+                <Image
+                  src="/images/lp/HUhu_.jpg"
+                  alt="Nguyễn Hữu Thắng — CEO SENZU BASE"
+                  fill
+                  sizes="(max-width: 860px) 100vw, 50vw"
+                  style={{ objectFit: "cover", objectPosition: "center top" }}
+                  loading="lazy"
+                />
               </div>
             </div>
 

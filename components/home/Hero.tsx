@@ -1,9 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Nav from "@/components/Nav";
 
-const SLIDES = ["s1", "s2", "s3"];
+const SLIDES = [
+  { cls: "s1", src: "/images/lp/anh-1.jpg", objectPosition: "center" },
+  { cls: "s2", src: "/images/lp/anh-2.jpg", objectPosition: "center 35%" },
+  { cls: "s3", src: "/images/lp/anh-3.jpg", objectPosition: "center" },
+];
 
 export default function Hero({ jp, romaji, tag }: { jp: string; romaji: string; tag: string }) {
   const [active, setActive] = useState(0);
@@ -31,8 +36,18 @@ export default function Hero({ jp, romaji, tag }: { jp: string; romaji: string; 
       <h1 className="sr-only">SENZU BASE — 起点をつくる. Marketing &amp; CX chuẩn Nhật tại Việt Nam.</h1>
 
       <div className="slides" aria-hidden="true">
-        {SLIDES.map((s, i) => (
-          <div key={s} className={`slide ${s} ${active === i ? "on" : ""}`} />
+        {SLIDES.map((slide, i) => (
+          <div key={slide.cls} className={`slide ${slide.cls} ${active === i ? "on" : ""}`}>
+            <Image
+              src={slide.src}
+              alt=""
+              fill
+              sizes="100vw"
+              priority={i === 0}
+              loading={i === 0 ? undefined : "lazy"}
+              style={{ objectFit: "cover", objectPosition: slide.objectPosition }}
+            />
+          </div>
         ))}
       </div>
       <div className="scrim" aria-hidden="true" />
@@ -54,6 +69,8 @@ export default function Hero({ jp, romaji, tag }: { jp: string; romaji: string; 
           <button
             key={i}
             type="button"
+            role="tab"
+            aria-selected={active === i}
             className={active === i ? "on" : ""}
             aria-label={`Ảnh ${i + 1}`}
             onClick={() => goTo(i)}

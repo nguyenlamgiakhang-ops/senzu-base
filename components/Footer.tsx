@@ -27,7 +27,7 @@ export default function Footer() {
             <p>{t.footer.tagline}</p>
           </div>
           <div className="ftr-col">
-            <h4>{t.footer.quickLinks}</h4>
+            <h3>{t.footer.quickLinks}</h3>
             {quickLinks.map((item) => (
               <Link key={item.href} href={item.href}>
                 {item.label}
@@ -35,7 +35,7 @@ export default function Footer() {
             ))}
           </div>
           <div className="ftr-col">
-            <h4>{t.footer.connect}</h4>
+            <h3>{t.footer.connect}</h3>
             <a
               href="https://www.linkedin.com/company/senzu-base/posts/?feedView=all"
               target="_blank"

@@ -124,6 +124,8 @@ export default function PlatformWheel({ platforms }: { platforms: Platform[] }) 
             <button
               key={pl.n}
               type="button"
+              role="tab"
+              aria-selected={i === active}
               className={i === active ? "on" : ""}
               aria-label={pl.n}
               onClick={() => jumpTo(i)}

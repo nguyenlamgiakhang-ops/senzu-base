@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import translations from "@/lib/translations";
 import getDnaContent from "@/lib/i18n/dna";
@@ -60,7 +61,7 @@ export default function DnaPage() {
                 {d.mission.methods.map((m) => (
                   <div className="qm" key={m.title}>
                     <span className="qic"><MiscIcon name={m.icon} /></span>
-                    <div><h4>{m.title}</h4><p>{m.desc}</p></div>
+                    <div><h3>{m.title}</h3><p>{m.desc}</p></div>
                   </div>
                 ))}
               </div>
@@ -120,8 +121,14 @@ export default function DnaPage() {
             <div className="gallery reveal">
               {galleryImgs.map((img, i) => (
                 <figure className={`g-item ${galleryAreas[i]}`} key={img}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/images/lp/${img}`} loading="lazy" alt={d.gallery.alts[i]} />
+                  <Image
+                    src={`/images/lp/${img}`}
+                    alt={d.gallery.alts[i]}
+                    fill
+                    sizes="(max-width: 760px) 50vw, 33vw"
+                    style={{ objectFit: "cover" }}
+                    loading="lazy"
+                  />
                 </figure>
               ))}
             </div>

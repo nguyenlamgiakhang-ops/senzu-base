@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import getHomeContent from "@/lib/i18n/home";
 import Hero from "@/components/home/Hero";
@@ -53,8 +54,14 @@ export default function HomePage() {
             <div className="gallery reveal">
               {galleryImgs.map((img, i) => (
                 <figure className={`g-item ${galleryAreas[i]}`} key={img}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/images/lp/${img}`} loading="lazy" alt={h.gallery.alts[i]} />
+                  <Image
+                    src={`/images/lp/${img}`}
+                    alt={h.gallery.alts[i]}
+                    fill
+                    sizes="(max-width: 760px) 50vw, 33vw"
+                    style={{ objectFit: "cover" }}
+                    loading="lazy"
+                  />
                 </figure>
               ))}
             </div>
@@ -215,7 +222,7 @@ export default function HomePage() {
                 {h.quality.methods.map((m) => (
                   <div className="qm" key={m.title}>
                     <span className="qic"><QualityIcon name={m.icon} /></span>
-                    <div><h4>{m.title}</h4><p>{m.desc}</p></div>
+                    <div><h3>{m.title}</h3><p>{m.desc}</p></div>
                   </div>
                 ))}
               </div>
@@ -290,7 +297,7 @@ export default function HomePage() {
                   <span className="sn">{i + 1}</span>
                   <div className="stepc">
                     <span className="st">{s.st}</span>
-                    <h4>{s.title}</h4>
+                    <h3>{s.title}</h3>
                     <p>{s.desc}</p>
                   </div>
                 </div>

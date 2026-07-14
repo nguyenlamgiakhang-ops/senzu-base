@@ -81,7 +81,7 @@ export default function SolutionsPage() {
                 {s.strength.methods.map((m) => (
                   <div className="qm" key={m.title}>
                     <span className="qic"><MiscIcon name={m.icon} /></span>
-                    <div><h4>{m.title}</h4><p>{m.desc}</p></div>
+                    <div><h3>{m.title}</h3><p>{m.desc}</p></div>
                   </div>
                 ))}
               </div>
@@ -206,7 +206,7 @@ export default function SolutionsPage() {
                 {h.quality.methods.map((m) => (
                   <div className="qm" key={m.title}>
                     <span className="qic"><QualityIcon name={m.icon} /></span>
-                    <div><h4>{m.title}</h4><p>{m.desc}</p></div>
+                    <div><h3>{m.title}</h3><p>{m.desc}</p></div>
                   </div>
                 ))}
               </div>
@@ -281,7 +281,7 @@ export default function SolutionsPage() {
                   <span className="sn">{i + 1}</span>
                   <div className="stepc">
                     <span className="st">{st.st}</span>
-                    <h4>{st.title}</h4>
+                    <h3>{st.title}</h3>
                     <p>{st.desc}</p>
                   </div>
                 </div>

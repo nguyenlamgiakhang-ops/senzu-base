@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import translations from "@/lib/translations";
 import getNewsContent from "@/lib/i18n/news";
@@ -27,8 +28,15 @@ export default function NewsPage() {
             <div className="news-grid-img">
               {n.cards.map((card, i) => (
                 <a className="ncard-img reveal" href="#" key={i}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img className="ni" src={card.img} alt={card.alt} loading="lazy" />
+                  <Image
+                    className="ni"
+                    src={card.img}
+                    alt={card.alt}
+                    width={1600}
+                    height={1000}
+                    sizes="(max-width: 700px) 100vw, 50vw"
+                    loading="lazy"
+                  />
                   <div className="nb">
                     <span className={`pill2 ${card.pillCls}`}>{card.pill}</span>
                     <h3>{card.title}</h3>
