@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { initDB } from "@/lib/db";
 
-const NOTIFY_EMAIL = process.env.CONTACT_NOTIFY_EMAIL || "nguyen_lam_gia_khang@senzu.co.jp";
+const NOTIFY_EMAIL = process.env.CONTACT_NOTIFY_EMAIL || "sunshine@senzu.co.jp";
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "SENZU BASE <onboarding@resend.dev>";
 
 // Email subject headers must be 7-bit ASCII per RFC 5322; non-ASCII text needs
