@@ -5,7 +5,7 @@ const newsVi = {
   h2: "Nhật ký & Tuyển dụng",
   cards: [
     {
-      img: "https://www.senzu-base.vn/_next/image?url=%2Fnews%2F%E5%A4%96%E8%A6%B3%E2%91%A0.jpg&w=3840&q=75",
+      img: "/news/外観①.jpg",
       alt: "Văn phòng SENZU BASE",
       pill: "Thông cáo báo chí", pillCls: "",
       title: "Website mới ra mắt — Bước ngoặt mới của SENZU BASE",
@@ -13,7 +13,7 @@ const newsVi = {
       date: "Tháng 8, 2024",
     },
     {
-      img: "https://www.senzu-base.vn/_next/image?url=%2Fnews%2F%E3%83%A9%E3%82%A6%E3%83%B3%E3%82%B8%E2%91%A0.jpg&w=3840&q=75",
+      img: "/news/ラウンジ①.jpg",
       alt: "Không gian làm việc SENZU BASE",
       pill: "Đang tuyển dụng", pillCls: "hire",
       title: "Digital Planner / Tư vấn Marketing",
@@ -29,7 +29,7 @@ const newsVi = {
       tags: ["Remote", "Full-time", "Creative"],
     },
     {
-      img: "https://www.senzu-base.vn/_next/image?url=%2Fnews%2F%E3%82%A8%E3%83%B3%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%E2%91%A0.jpg&w=3840&q=75",
+      img: "/news/エントランス①.jpg",
       alt: "Entrance SENZU BASE",
       pill: "Blog chuyên sâu · Sắp ra mắt", pillCls: "soon",
       title: "Tối ưu trải nghiệm khách hàng trong kỷ nguyên AI",
@@ -52,7 +52,7 @@ const newsJa: typeof newsVi = {
   h2: "ジャーナル & 採用",
   cards: [
     {
-      img: "https://www.senzu-base.vn/_next/image?url=%2Fnews%2F%E5%A4%96%E8%A6%B3%E2%91%A0.jpg&w=3840&q=75",
+      img: "/news/外観①.jpg",
       alt: "SENZU BASE オフィス",
       pill: "プレスリリース", pillCls: "",
       title: "新ウェブサイト公開 — SENZU BASE の新たな一歩",
@@ -60,7 +60,7 @@ const newsJa: typeof newsVi = {
       date: "2024年8月",
     },
     {
-      img: "https://www.senzu-base.vn/_next/image?url=%2Fnews%2F%E3%83%A9%E3%82%A6%E3%83%B3%E3%82%B8%E2%91%A0.jpg&w=3840&q=75",
+      img: "/news/ラウンジ①.jpg",
       alt: "SENZU BASE ワークスペース",
       pill: "採用中", pillCls: "hire",
       title: "デジタルプランナー / マーケティングコンサルタント",
@@ -76,7 +76,7 @@ const newsJa: typeof newsVi = {
       tags: ["Remote", "Full-time", "Creative"],
     },
     {
-      img: "https://www.senzu-base.vn/_next/image?url=%2Fnews%2F%E3%82%A8%E3%83%B3%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%E2%91%A0.jpg&w=3840&q=75",
+      img: "/news/エントランス①.jpg",
       alt: "SENZU BASE エントランス",
       pill: "特集ブログ・近日公開", pillCls: "soon",
       title: "AI時代のCX最適化",
