@@ -32,6 +32,7 @@ const adminVi = {
     newButton: "+ Bài viết mới",
     newTitle: "Bài viết mới",
     editTitle: "Sửa bài viết",
+    preview: "Xem trước",
     colTitle: "Tiêu đề",
     colCategory: "Chuyên mục",
     colStatus: "Trạng thái",
@@ -152,6 +153,7 @@ const adminJa: typeof adminVi = {
   news: {
     listTitle: "記事",
     newButton: "+ 新規記事",
+    preview: "プレビュー",
     newTitle: "新規記事",
     editTitle: "記事を編集",
     colTitle: "タイトル",

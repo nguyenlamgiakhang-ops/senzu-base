@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import RichTextEditor from "./RichTextEditor";
-import { ImageIcon } from "lucide-react";
+import { ImageIcon, Eye } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import getAdminContent from "@/lib/i18n/admin";
 import { Button } from "@/components/ui/button";
@@ -14,6 +14,7 @@ import { Switch } from "@/components/ui/switch";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import type { AdminRole } from "@/auth";
 
 export type NewsStatus = "draft" | "pending" | "published";
@@ -43,6 +44,7 @@ export default function NewsForm({ initial, role }: { initial?: NewsFormValues; 
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const [categories, setCategories] = useState<CategoryOption[]>([]);
+  const [previewLang, setPreviewLang] = useState<"vi" | "ja">("vi");
 
   const [values, setValues] = useState<NewsFormValues>(
     initial ?? {
@@ -128,11 +130,66 @@ export default function NewsForm({ initial, role }: { initial?: NewsFormValues; 
     return (locale === "ja" ? c.name_ja : c.name_vi) || c.name_vi || c.name_ja;
   })();
 
+  const previewTitle = (previewLang === "ja" ? values.title_ja : values.title_vi) || "";
+  const previewBody = (previewLang === "ja" ? values.body_ja : values.body_vi) || "";
+
   return (
     <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
       {error && (
         <p className="rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive">{error}</p>
       )}
+
+      <div className="flex justify-end">
+        <Dialog>
+          <DialogTrigger
+            render={
+              <Button type="button" variant="outline">
+                <Eye className="size-4" />
+                {t.news.preview}
+              </Button>
+            }
+          />
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>{t.news.preview}</DialogTitle>
+            </DialogHeader>
+            <div className="mb-4 inline-flex gap-0.5 rounded-full bg-muted p-1">
+              <button
+                type="button"
+                onClick={() => setPreviewLang("vi")}
+                className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
+                  previewLang === "vi" ? "bg-background text-primary shadow-sm" : "text-muted-foreground"
+                }`}
+              >
+                {t.news.tabVi}
+              </button>
+              <button
+                type="button"
+                onClick={() => setPreviewLang("ja")}
+                className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
+                  previewLang === "ja" ? "bg-background text-primary shadow-sm" : "text-muted-foreground"
+                }`}
+              >
+                {t.news.tabJa}
+              </button>
+            </div>
+            {values.image_url && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={values.image_url}
+                alt={values.image_alt || previewTitle}
+                className="mb-5 aspect-video w-full rounded-xl object-cover"
+              />
+            )}
+            <h1 className="mb-4 text-2xl font-bold text-foreground">
+              {previewTitle || t.news.untitled}
+            </h1>
+            {previewBody && (
+              <div className="news-article-body" dangerouslySetInnerHTML={{ __html: previewBody }} />
+            )}
+          </DialogContent>
+        </Dialog>
+      </div>
 
       <Card>
         <CardHeader>

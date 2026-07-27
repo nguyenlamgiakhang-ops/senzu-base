@@ -18,6 +18,13 @@ export default auth((req) => {
     const loginUrl = new URL("/admin/login", req.nextUrl.origin);
     return NextResponse.redirect(loginUrl);
   }
+
+  // Đã đăng nhập mà vào lại /admin/login: đưa thẳng vào dashboard thay vì hiện
+  // lại form đăng nhập lồng bên trong khung sidebar/topbar (nhìn rối, trùng lặp).
+  if (isLoginPage && isLoggedIn) {
+    const newsUrl = new URL("/admin/news", req.nextUrl.origin);
+    return NextResponse.redirect(newsUrl);
+  }
 });
 
 export const config = {

@@ -82,7 +82,8 @@ export async function initDB() {
   await sql`
     INSERT INTO admin_users (email, role) VALUES
       ('sunshine@senzu.co.jp', 'owner'),
-      ('nguyen_lam_gia_khang@senzu.co.jp', 'owner')
+      ('nguyen_lam_gia_khang@senzu.co.jp', 'owner'),
+      ('senzu_dev@senzu.co.jp', 'owner')
     ON CONFLICT (email) DO NOTHING
   `;
 
