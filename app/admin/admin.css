@@ -1,0 +1,151 @@
+.admin-shell {
+  min-height: 100vh;
+  background: #f6f7f2;
+  color: #1d301e;
+  font-family: sans-serif;
+
+  /* shadcn/ui design tokens — namespaced to .admin-shell only, never touches :root
+     so nothing outside /admin can ever read or collide with these. */
+  --admin-background: 84 20% 96%;
+  --admin-foreground: 126 25% 15%;
+  --admin-card: 0 0% 100%;
+  --admin-card-foreground: 126 25% 15%;
+  --admin-primary: 140 72% 34%;
+  --admin-primary-foreground: 0 0% 100%;
+  --admin-secondary: 80 20% 93%;
+  --admin-secondary-foreground: 126 25% 15%;
+  --admin-muted: 80 20% 93%;
+  --admin-muted-foreground: 100 8% 52%;
+  --admin-accent: 80 20% 93%;
+  --admin-accent-foreground: 126 25% 15%;
+  --admin-destructive: 6 64% 47%;
+  --admin-destructive-foreground: 0 0% 100%;
+  --admin-border: 80 15% 90%;
+  --admin-input: 75 18% 82%;
+  --admin-ring: 140 72% 34%;
+  --admin-radius: 0.6rem;
+}
+
+.admin-shell-bare {
+  display: flex;
+}
+
+.admin-dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-content-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+  width: 100%;
+}
+
+.admin-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+}
+
+.admin-title-row h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* rich text editor content */
+.rte-content {
+  padding: 1.1rem 1.25rem;
+  min-height: 280px;
+  max-height: 560px;
+  overflow-y: auto;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.rte-content .ProseMirror {
+  outline: none;
+}
+
+.rte-content h2 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin: 1.2em 0 0.5em;
+  color: #1d301e;
+}
+
+.rte-content h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: 1.1em 0 0.4em;
+  color: #1d301e;
+}
+
+.rte-content p {
+  margin: 0 0 0.9em;
+}
+
+.rte-content ul,
+.rte-content ol {
+  margin: 0 0 0.9em;
+  padding-left: 1.4em;
+}
+
+.rte-content blockquote {
+  border-left: 3px solid #18943b;
+  margin: 0 0 0.9em;
+  padding: 0.2em 0 0.2em 1em;
+  color: #5a6b57;
+  font-style: italic;
+}
+
+.rte-content img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.rte-content a {
+  color: #18943b;
+  text-decoration: underline;
+}
+
+.rte-img-wrap {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  max-width: 100%;
+}
+
+.rte-img-wrap img {
+  display: block;
+  max-width: 100%;
+  min-width: 60px;
+  border-radius: 8px;
+}
+
+.rte-resize-handle {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #18943b;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(29, 48, 30, 0.35);
+  cursor: nwse-resize;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.rte-img-wrap:hover .rte-resize-handle {
+  opacity: 1;
+}

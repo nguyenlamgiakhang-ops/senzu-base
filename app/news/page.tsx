@@ -1,15 +1,71 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import translations from "@/lib/translations";
 import getNewsContent from "@/lib/i18n/news";
 import PageHero from "@/components/PageHero";
 
+type DbPost = {
+  slug: string;
+  category_vi: string | null;
+  category_ja: string | null;
+  title_vi: string | null;
+  title_ja: string | null;
+  excerpt_vi: string | null;
+  excerpt_ja: string | null;
+  image_url: string | null;
+  image_alt: string | null;
+  published_at: string | null;
+};
+
+type NewsCard = {
+  img: string;
+  alt: string;
+  pill: string;
+  pillCls: string;
+  title: string;
+  desc: string;
+  date?: string;
+  tags?: string[];
+  slug?: string;
+};
+
 export default function NewsPage() {
   const { locale } = useLanguage();
   const n = getNewsContent(locale);
   const nav = translations[locale].nav;
+  const [dbPosts, setDbPosts] = useState<DbPost[]>([]);
+
+  useEffect(() => {
+    fetch("/api/news")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.ok) setDbPosts(data.posts);
+      })
+      .catch(() => {});
+  }, []);
+
+  const dbCards: NewsCard[] = dbPosts.map((p) => {
+    const title = (locale === "ja" ? p.title_ja : p.title_vi) || p.title_vi || p.title_ja || "";
+    const desc = (locale === "ja" ? p.excerpt_ja : p.excerpt_vi) || p.excerpt_vi || p.excerpt_ja || "";
+    const category = (locale === "ja" ? p.category_ja : p.category_vi) || p.category_vi || p.category_ja || "";
+    return {
+      img: p.image_url || "/images/lp/creative.jpg",
+      alt: p.image_alt || title,
+      pill: category,
+      pillCls: "",
+      title,
+      desc,
+      date: p.published_at
+        ? new Date(p.published_at).toLocaleDateString(locale === "ja" ? "ja-JP" : "vi-VN")
+        : "",
+      slug: p.slug,
+    };
+  });
+
+  const allCards: NewsCard[] = [...dbCards, ...n.cards];
 
   return (
     <>
@@ -26,8 +82,8 @@ export default function NewsPage() {
             </div>
 
             <div className="news-grid-img">
-              {n.cards.map((card, i) => (
-                <a className="ncard-img reveal" href="#" key={i}>
+              {allCards.map((card, i) => (
+                <a className="ncard-img reveal" href={card.slug ? `/news/${card.slug}` : "#"} key={i}>
                   <Image
                     className="ni"
                     src={card.img}

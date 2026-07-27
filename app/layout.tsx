@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Be_Vietnam_Pro, Fraunces } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/Footer";
-import ScrollReveal from "@/components/ScrollReveal";
+import SiteChrome from "@/components/SiteChrome";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const beVietnamPro = Be_Vietnam_Pro({
@@ -146,9 +145,7 @@ export default function RootLayout({
       </head>
       <body>
         <LanguageProvider>
-          <ScrollReveal />
-          {children}
-          <Footer />
+          <SiteChrome>{children}</SiteChrome>
         </LanguageProvider>
       </body>
     </html>

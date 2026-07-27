@@ -5,14 +5,6 @@ const newsVi = {
   h2: "Nhật ký & Tuyển dụng",
   cards: [
     {
-      img: "/news/外観①.jpg",
-      alt: "Văn phòng SENZU BASE",
-      pill: "Thông cáo báo chí", pillCls: "",
-      title: "Website mới ra mắt — Bước ngoặt mới của SENZU BASE",
-      desc: "Chúng tôi tự hào ra mắt website mới với giao diện hiện đại, phản ánh rõ hơn định hướng và giá trị cốt lõi của SENZU BASE.",
-      date: "Tháng 8, 2024",
-    },
-    {
       img: "/news/ラウンジ①.jpg",
       alt: "Không gian làm việc SENZU BASE",
       pill: "Đang tuyển dụng", pillCls: "hire",
@@ -27,14 +19,6 @@ const newsVi = {
       title: "Creative Designer / Visual Director",
       desc: "Phụ trách visual thương hiệu, creative quảng cáo và thiết kế CX. Vị trí mang chất lượng sáng tạo Nhật Bản đến thị trường Việt Nam.",
       tags: ["Remote", "Full-time", "Creative"],
-    },
-    {
-      img: "/news/エントランス①.jpg",
-      alt: "Entrance SENZU BASE",
-      pill: "Blog chuyên sâu · Sắp ra mắt", pillCls: "soon",
-      title: "Tối ưu trải nghiệm khách hàng trong kỷ nguyên AI",
-      desc: "Góc nhìn của SENZU BASE về cách AI đang thay đổi cách thương hiệu kết nối với khách hàng.",
-      date: "Sắp ra mắt",
     },
   ],
   careers: {
@@ -52,14 +36,6 @@ const newsJa: typeof newsVi = {
   h2: "ジャーナル & 採用",
   cards: [
     {
-      img: "/news/外観①.jpg",
-      alt: "SENZU BASE オフィス",
-      pill: "プレスリリース", pillCls: "",
-      title: "新ウェブサイト公開 — SENZU BASE の新たな一歩",
-      desc: "定位置と核心的価値をより鮮明に反映する、モダンなインターフェイスの新サイトを公開しました。",
-      date: "2024年8月",
-    },
-    {
       img: "/news/ラウンジ①.jpg",
       alt: "SENZU BASE ワークスペース",
       pill: "採用中", pillCls: "hire",
@@ -74,14 +50,6 @@ const newsJa: typeof newsVi = {
       title: "クリエイティブデザイナー / ビジュアルディレクター",
       desc: "ブランドビジュアル、広告クリエイティブ、CXデザインを担当。日本品質のクリエイティブをベトナム市場に届けるポジションです。",
       tags: ["Remote", "Full-time", "Creative"],
-    },
-    {
-      img: "/news/エントランス①.jpg",
-      alt: "SENZU BASE エントランス",
-      pill: "特集ブログ・近日公開", pillCls: "soon",
-      title: "AI時代のCX最適化",
-      desc: "AIがブランドと顧客のつながり方をどう変えているか — SENZU BASE の視点から。",
-      date: "近日公開",
     },
   ],
   careers: {
