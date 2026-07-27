@@ -3,7 +3,13 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import getAdminContent from "@/lib/i18n/admin";
 
-type HeadingKey = "newsNew" | "newsEdit" | "categoriesNew" | "categoriesEdit";
+type HeadingKey =
+  | "newsNew"
+  | "newsEdit"
+  | "categoriesNew"
+  | "categoriesEdit"
+  | "membersNew"
+  | "membersEdit";
 
 export default function AdminPageHeading({ titleKey }: { titleKey: HeadingKey }) {
   const { locale } = useLanguage();
@@ -14,6 +20,8 @@ export default function AdminPageHeading({ titleKey }: { titleKey: HeadingKey })
     newsEdit: t.news.editTitle,
     categoriesNew: t.categories.newTitle,
     categoriesEdit: t.categories.editTitle,
+    membersNew: t.members.newTitle,
+    membersEdit: t.members.editTitle,
   };
 
   return (

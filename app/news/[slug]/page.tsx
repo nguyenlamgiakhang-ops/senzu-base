@@ -13,7 +13,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
            p.image_url, p.image_alt, p.published_at
     FROM news_posts p
     LEFT JOIN news_categories c ON c.id = p.category_id
-    WHERE p.slug = ${slug} AND p.published = TRUE
+    WHERE p.slug = ${slug} AND p.status = 'published'
     LIMIT 1
   `;
   if (rows.length === 0) notFound();

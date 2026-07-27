@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { auth } from "@/auth";
 import { initDB } from "@/lib/db";
 import { slugify } from "@/lib/slugify";
 
@@ -20,6 +21,10 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
 }
 
 export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const session = await auth();
+  if (!session?.user?.role) {
+    return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+  }
   try {
     const { id } = await params;
     const body = await req.json();
@@ -33,7 +38,7 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
       body_ja,
       image_url,
       image_alt,
-      published,
+      status,
       slug: incomingSlug,
     } = body;
 
@@ -43,9 +48,21 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
 
     const sql = await initDB();
 
-    const current = await sql`SELECT slug, published, published_at FROM news_posts WHERE id = ${id}`;
+    const current = await sql`SELECT slug, status, published_at FROM news_posts WHERE id = ${id}`;
     if (current.length === 0) {
       return NextResponse.json({ ok: false, error: "Not found" }, { status: 404 });
+    }
+
+    const requestedStatus = status === "published" || status === "pending" ? status : "draft";
+    let finalStatus: string;
+    if (session.user.role === "owner") {
+      finalStatus = requestedStatus;
+    } else if (current[0].status === "published") {
+      // Member sửa bài đã đăng: chỉ lưu nội dung, không được tự đổi trạng thái công khai.
+      finalStatus = "published";
+    } else {
+      // Member không bao giờ được tự set published, kể cả khi cố gửi thẳng qua API.
+      finalStatus = requestedStatus === "published" ? "pending" : requestedStatus;
     }
 
     let slug = incomingSlug ? slugify(incomingSlug) : current[0].slug;
@@ -55,10 +72,8 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
       if (clash.length > 0) slug = `${slug}-${Date.now()}`;
     }
 
-    const willPublish = !!published;
-    const publishedAt = willPublish
-      ? current[0].published_at ?? new Date().toISOString()
-      : null;
+    const publishedAt =
+      finalStatus === "published" ? current[0].published_at ?? new Date().toISOString() : null;
 
     await sql`
       UPDATE news_posts SET
@@ -72,7 +87,7 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
         body_ja = ${body_ja ?? null},
         image_url = ${image_url ?? null},
         image_alt = ${image_alt ?? null},
-        published = ${willPublish},
+        status = ${finalStatus},
         published_at = ${publishedAt},
         updated_at = NOW()
       WHERE id = ${id}

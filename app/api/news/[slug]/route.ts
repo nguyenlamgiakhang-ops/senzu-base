@@ -13,7 +13,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ slug
              p.body_vi, p.body_ja, p.image_url, p.image_alt, p.published_at
       FROM news_posts p
       LEFT JOIN news_categories c ON c.id = p.category_id
-      WHERE p.slug = ${slug} AND p.published = TRUE
+      WHERE p.slug = ${slug} AND p.status = 'published'
       LIMIT 1
     `;
     if (rows.length === 0) {

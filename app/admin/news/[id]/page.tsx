@@ -1,11 +1,13 @@
 import { initDB } from "@/lib/db";
-import NewsForm from "@/components/admin/NewsForm";
+import NewsForm, { type NewsStatus } from "@/components/admin/NewsForm";
 import AdminPageHeading from "@/components/admin/AdminPageHeading";
+import { auth } from "@/auth";
 import { notFound } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
 export default async function EditNewsPage({ params }: { params: Promise<{ id: string }> }) {
+  const session = await auth();
   const { id } = await params;
   const sql = await initDB();
   const rows = await sql`SELECT * FROM news_posts WHERE id = ${id}`;
@@ -21,13 +23,14 @@ export default async function EditNewsPage({ params }: { params: Promise<{ id: s
     body_ja: string | null;
     image_url: string | null;
     image_alt: string | null;
-    published: boolean;
+    status: NewsStatus;
   };
 
   return (
     <>
       <AdminPageHeading titleKey="newsEdit" />
       <NewsForm
+        role={session?.user?.role ?? "member"}
         initial={{
           id: p.id,
           category_id: p.category_id,
@@ -39,7 +42,7 @@ export default async function EditNewsPage({ params }: { params: Promise<{ id: s
           body_ja: p.body_ja ?? "",
           image_url: p.image_url ?? "",
           image_alt: p.image_alt ?? "",
-          published: p.published,
+          status: p.status,
         }}
       />
     </>

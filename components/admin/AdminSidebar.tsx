@@ -4,10 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/contexts/LanguageContext";
 import getAdminContent from "@/lib/i18n/admin";
-import { Newspaper, Tag } from "@phosphor-icons/react";
+import { Newspaper, Tag, Users } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
+import type { AdminRole } from "@/auth";
 
-export default function AdminSidebar() {
+export default function AdminSidebar({ role }: { role: AdminRole }) {
   const pathname = usePathname();
   const { locale } = useLanguage();
   const t = getAdminContent(locale);
@@ -15,6 +16,7 @@ export default function AdminSidebar() {
   const items = [
     { href: "/admin/news", label: t.sidebar.news, icon: Newspaper },
     { href: "/admin/categories", label: t.sidebar.categories, icon: Tag },
+    ...(role === "owner" ? [{ href: "/admin/members", label: t.sidebar.members, icon: Users }] : []),
   ];
 
   return (

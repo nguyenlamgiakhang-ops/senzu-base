@@ -12,7 +12,7 @@ export async function GET() {
              p.image_url, p.image_alt, p.published_at
       FROM news_posts p
       LEFT JOIN news_categories c ON c.id = p.category_id
-      WHERE p.published = TRUE
+      WHERE p.status = 'published'
       ORDER BY p.published_at DESC NULLS LAST, p.created_at DESC
     `;
     return NextResponse.json({ ok: true, posts: rows });

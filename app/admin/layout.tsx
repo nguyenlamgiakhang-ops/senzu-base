@@ -6,7 +6,7 @@ import AdminTopbar from "@/components/admin/AdminTopbar";
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const session = await auth();
 
-  if (!session?.user) {
+  if (!session?.user?.role) {
     return <div className="admin-shell admin-shell-bare">{children}</div>;
   }
 
@@ -17,7 +17,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
 
   return (
     <div className="admin-shell admin-dashboard">
-      <AdminSidebar />
+      <AdminSidebar role={session.user.role} />
       <div className="admin-content-col">
         <AdminTopbar userEmail={session.user.email} onSignOut={handleSignOut} />
         <main className="admin-main">{children}</main>

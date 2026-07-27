@@ -1,11 +1,14 @@
 import NewsForm from "@/components/admin/NewsForm";
 import AdminPageHeading from "@/components/admin/AdminPageHeading";
+import { auth } from "@/auth";
 
-export default function NewNewsPage() {
+export default async function NewNewsPage() {
+  const session = await auth();
+
   return (
     <>
       <AdminPageHeading titleKey="newsNew" />
-      <NewsForm />
+      <NewsForm role={session?.user?.role ?? "member"} />
     </>
   );
 }

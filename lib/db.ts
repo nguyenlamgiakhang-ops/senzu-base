@@ -71,6 +71,26 @@ export async function initDB() {
 
   await sql`ALTER TABLE news_posts ADD COLUMN IF NOT EXISTS category_id INTEGER REFERENCES news_categories(id) ON DELETE SET NULL`;
 
+  await sql`
+    CREATE TABLE IF NOT EXISTS admin_users (
+      id          SERIAL PRIMARY KEY,
+      email       VARCHAR(255) UNIQUE NOT NULL,
+      role        VARCHAR(20) NOT NULL DEFAULT 'member',
+      created_at  TIMESTAMPTZ DEFAULT NOW()
+    )
+  `;
+  await sql`
+    INSERT INTO admin_users (email, role) VALUES
+      ('sunshine@senzu.co.jp', 'owner'),
+      ('nguyen_lam_gia_khang@senzu.co.jp', 'owner')
+    ON CONFLICT (email) DO NOTHING
+  `;
+
+  // status thay cho published boolean — cho phép luồng duyệt bài (draft → pending → published).
+  // Cột published cũ vẫn còn trong bảng (không xoá để tránh rủi ro migrate) nhưng không nơi nào đọc nữa.
+  await sql`ALTER TABLE news_posts ADD COLUMN IF NOT EXISTS status VARCHAR(20) NOT NULL DEFAULT 'draft'`;
+  await sql`UPDATE news_posts SET status = 'published' WHERE published = TRUE AND status = 'draft'`;
+
   return sql;
 }
 

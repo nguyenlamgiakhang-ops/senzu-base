@@ -3,7 +3,10 @@ import { NextResponse } from "next/server";
 
 export default auth((req) => {
   const { pathname } = req.nextUrl;
-  const isLoggedIn = !!req.auth;
+  // Vai trò được gán trong callback jwt/session của auth.ts — nếu Owner đã xoá
+  // thành viên khỏi admin_users, session cũ vẫn còn nhưng role sẽ rỗng, coi như
+  // chưa đăng nhập để chặn truy cập ngay, không cần đợi hết hạn cookie.
+  const isLoggedIn = !!req.auth?.user?.role;
   const isLoginPage = pathname === "/admin/login";
   const isAdminPage = pathname.startsWith("/admin") && !isLoginPage;
   const isAdminApi = pathname.startsWith("/api/admin");
