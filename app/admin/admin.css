@@ -1,11 +1,9 @@
-.admin-shell {
-  min-height: 100vh;
-  background: #f6f7f2;
-  color: #1d301e;
-  font-family: sans-serif;
-
-  /* shadcn/ui design tokens — namespaced to .admin-shell only, never touches :root
-     so nothing outside /admin can ever read or collide with these. */
+/* shadcn/ui design tokens — every var is namespaced with an --admin- prefix so it can
+   never collide with anything the public site defines. Declared on :root (not
+   .admin-shell) because Base UI portals (Select/AlertDialog popups) render into
+   document.body, outside .admin-shell — a scoped var wouldn't cascade to them and
+   the popup background would resolve to transparent. */
+:root {
   --admin-background: 84 20% 96%;
   --admin-foreground: 126 25% 15%;
   --admin-card: 0 0% 100%;
@@ -24,6 +22,13 @@
   --admin-input: 75 18% 82%;
   --admin-ring: 140 72% 34%;
   --admin-radius: 0.6rem;
+}
+
+.admin-shell {
+  min-height: 100vh;
+  background: #f6f7f2;
+  color: #1d301e;
+  font-family: sans-serif;
 }
 
 .admin-shell-bare {
