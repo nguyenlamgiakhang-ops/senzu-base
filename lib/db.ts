@@ -13,8 +13,16 @@ function getSQL(): NeonQueryFunction<false, false> {
   return _sql;
 }
 
+// initDB() chạy ~10 câu CREATE/ALTER mỗi lần gọi — vốn được thiết kế để idempotent
+// (an toàn chạy lại nhiều lần), nhưng KHÔNG cần chạy lại mỗi request. Cache theo
+// vòng đời process (mỗi cold start của serverless function tự có scope module mới,
+// nên vẫn chạy đúng 1 lần sau mỗi lần "nguội") để đỡ tốn round-trip lên Neon.
+let _migrated = false;
+
 export async function initDB() {
   const sql = getSQL();
+  if (_migrated) return sql;
+
   await sql`
     CREATE TABLE IF NOT EXISTS contact_submissions (
       id          SERIAL PRIMARY KEY,
@@ -92,6 +100,7 @@ export async function initDB() {
   await sql`ALTER TABLE news_posts ADD COLUMN IF NOT EXISTS status VARCHAR(20) NOT NULL DEFAULT 'draft'`;
   await sql`UPDATE news_posts SET status = 'published' WHERE published = TRUE AND status = 'draft'`;
 
+  _migrated = true;
   return sql;
 }
 

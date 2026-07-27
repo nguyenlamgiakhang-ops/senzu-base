@@ -14,7 +14,13 @@ declare module "next-auth" {
 
 // next-auth v5 beta's "next-auth/jwt" subpath isn't reliably resolvable for type
 // augmentation across versions — cast at the two call sites below instead.
-type TokenWithRole = { email?: string | null; role?: AdminRole };
+type TokenWithRole = { email?: string | null; role?: AdminRole; roleCheckedAt?: number };
+
+// Tra lại admin_users mỗi request làm chậm hẳn việc điều hướng (mỗi request đều
+// cộng thêm 1 round-trip lên Neon). Chỉ tra lại lúc đăng nhập, hoặc định kỳ vài
+// phút/lần để nếu Owner xoá quyền ai đó thì vẫn có hiệu lực sau một lúc, thay vì
+// tra lại y hệt trên MỌI request.
+const ROLE_REVALIDATE_MS = 5 * 60 * 1000;
 
 async function getAdminRole(email: string): Promise<AdminRole | null> {
   const sql = await initDB();
@@ -39,10 +45,12 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       const role = await getAdminRole(email);
       return role !== null;
     },
-    async jwt({ token }) {
+    async jwt({ token, trigger }) {
       const t = token as TokenWithRole;
-      if (t.email) {
+      const stale = !t.roleCheckedAt || Date.now() - t.roleCheckedAt > ROLE_REVALIDATE_MS;
+      if (t.email && (trigger === "signIn" || stale)) {
         t.role = (await getAdminRole(t.email)) ?? undefined;
+        t.roleCheckedAt = Date.now();
       }
       return token;
     },
