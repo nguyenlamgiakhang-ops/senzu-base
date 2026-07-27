@@ -37,6 +37,7 @@ export default function NewsPage() {
   const n = getNewsContent(locale);
   const nav = translations[locale].nav;
   const [dbPosts, setDbPosts] = useState<DbPost[]>([]);
+  const [loadingPosts, setLoadingPosts] = useState(true);
 
   useEffect(() => {
     fetch("/api/news")
@@ -44,7 +45,8 @@ export default function NewsPage() {
       .then((data) => {
         if (data.ok) setDbPosts(data.posts);
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setLoadingPosts(false));
   }, []);
 
   const dbCards: NewsCard[] = dbPosts.map((p) => {
@@ -81,7 +83,7 @@ export default function NewsPage() {
               </div>
             </div>
 
-            {allCards.length === 0 && (
+            {!loadingPosts && allCards.length === 0 && (
               <p className="news-empty reveal">{n.empty}</p>
             )}
 
