@@ -7,9 +7,6 @@ export default function ScrollReveal() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const els = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
-    if (!els.length) return;
-
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -22,13 +19,34 @@ export default function ScrollReveal() {
       { threshold: 0.14, rootMargin: "0px 0px -7% 0px" }
     );
 
-    els.forEach((el, i) => {
+    let delayIndex = 0;
+    const observe = (el: HTMLElement) => {
       el.classList.remove("in");
-      el.style.transitionDelay = `${Math.min(i % 3, 2) * 80}ms`;
+      el.style.transitionDelay = `${Math.min(delayIndex % 3, 2) * 80}ms`;
+      delayIndex++;
       io.observe(el);
-    });
+    };
 
-    return () => io.disconnect();
+    document.querySelectorAll<HTMLElement>(".reveal").forEach(observe);
+
+    // Nội dung tải sau (vd danh sách bài viết lấy qua fetch client-side ở /news)
+    // chưa tồn tại trong DOM lúc effect này chạy lần đầu — MutationObserver bắt
+    // các phần tử .reveal được thêm vào sau đó để tránh bị kẹt vĩnh viễn ở opacity:0.
+    const mo = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        mutation.addedNodes.forEach((node) => {
+          if (!(node instanceof HTMLElement)) return;
+          if (node.classList.contains("reveal")) observe(node);
+          node.querySelectorAll?.<HTMLElement>(".reveal").forEach(observe);
+        });
+      }
+    });
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      io.disconnect();
+      mo.disconnect();
+    };
   }, [pathname]);
 
   return null;
