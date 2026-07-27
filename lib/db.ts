@@ -58,15 +58,16 @@ export async function initDB() {
       created_at  TIMESTAMPTZ DEFAULT NOW()
     )
   `;
-  const categoryCount = await sql`SELECT COUNT(*)::int AS c FROM news_categories`;
-  if (categoryCount[0].c === 0) {
-    await sql`
-      INSERT INTO news_categories (name_vi, name_ja) VALUES
-        ('Thông cáo báo chí', 'プレスリリース'),
-        ('Blog chuyên sâu', '特集ブログ'),
-        ('Tin tức', 'ニュース')
-    `;
-  }
+  // Unique index thay cho kiểu kiểm tra "COUNT rồi INSERT" cũ — cách cũ bị race
+  // condition khi nhiều request nguội (cold start) cùng gọi initDB() một lúc,
+  // dẫn tới chèn trùng chuyên mục mặc định nhiều lần.
+  await sql`CREATE UNIQUE INDEX IF NOT EXISTS news_categories_name_vi_idx ON news_categories (name_vi)`;
+  await sql`
+    INSERT INTO news_categories (name_vi, name_ja) VALUES
+      ('Blog chuyên sâu', '特集ブログ'),
+      ('Tin tức', 'ニュース')
+    ON CONFLICT (name_vi) DO NOTHING
+  `;
 
   await sql`ALTER TABLE news_posts ADD COLUMN IF NOT EXISTS category_id INTEGER REFERENCES news_categories(id) ON DELETE SET NULL`;
 

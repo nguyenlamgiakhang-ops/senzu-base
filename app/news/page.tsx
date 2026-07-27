@@ -81,6 +81,10 @@ export default function NewsPage() {
               </div>
             </div>
 
+            {allCards.length === 0 && (
+              <p className="news-empty reveal">{n.empty}</p>
+            )}
+
             <div className="news-grid-img">
               {allCards.map((card, i) => (
                 <a className="ncard-img reveal" href={card.slug ? `/news/${card.slug}` : "#"} key={i}>
