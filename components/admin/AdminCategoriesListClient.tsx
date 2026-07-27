@@ -47,7 +47,7 @@ export default function AdminCategoriesListClient({ categories }: { categories: 
                   <TableCell className="pl-6 font-semibold">{c.name_vi || "—"}</TableCell>
                   <TableCell>{c.name_ja || "—"}</TableCell>
                   <TableCell className="pr-6">
-                    <div className="flex justify-end gap-2">
+                    <div className="flex justify-end gap-4">
                       <Link
                         href={`/admin/categories/${c.id}`}
                         className={buttonVariants({ variant: "outline", size: "sm" })}

@@ -31,7 +31,7 @@ export default function AdminLoginPage() {
                   "rounded-full px-3 py-1 text-xs font-semibold transition-colors",
                   locale === code
                     ? "bg-background text-primary shadow-sm"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-foreground/70 hover:text-foreground"
                 )}
               >
                 {label}

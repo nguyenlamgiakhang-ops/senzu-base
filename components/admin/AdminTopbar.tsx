@@ -34,7 +34,7 @@ export default function AdminTopbar({
               "rounded-full px-3 py-1 text-xs font-semibold transition-colors",
               locale === code
                 ? "bg-background text-primary shadow-sm"
-                : "text-muted-foreground hover:text-foreground"
+                : "text-foreground/70 hover:text-foreground"
             )}
           >
             {label}
@@ -42,8 +42,8 @@ export default function AdminTopbar({
         ))}
       </div>
 
-      <div className="flex items-center gap-4 text-sm text-muted-foreground">
-        {userEmail && <span>{userEmail}</span>}
+      <div className="flex items-center gap-4">
+        {userEmail && <span className="text-sm text-muted-foreground">{userEmail}</span>}
         <form action={onSignOut}>
           <Button type="submit" variant="outline" size="sm">
             <SignOut size={15} />

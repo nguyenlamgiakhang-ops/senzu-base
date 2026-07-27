@@ -96,7 +96,7 @@ export default function AdminNewsListClient({ posts, role }: { posts: PostRow[];
                     </TableCell>
                     <TableCell>{new Date(p.created_at).toLocaleDateString(locale === "ja" ? "ja-JP" : "vi-VN")}</TableCell>
                     <TableCell className="pr-6">
-                      <div className="flex justify-end gap-2">
+                      <div className="flex justify-end gap-4">
                         {role === "owner" && p.status === "pending" && (
                           <ApproveButton id={p.id} confirmMessage={t.news.approveConfirm} label={t.news.approve} />
                         )}

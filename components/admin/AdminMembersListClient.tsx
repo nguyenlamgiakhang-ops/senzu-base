@@ -52,7 +52,7 @@ export default function AdminMembersListClient({ members }: { members: MemberRow
                     </Badge>
                   </TableCell>
                   <TableCell className="pr-6">
-                    <div className="flex justify-end gap-2">
+                    <div className="flex justify-end gap-4">
                       <Link
                         href={`/admin/members/${m.id}`}
                         className={buttonVariants({ variant: "outline", size: "sm" })}
